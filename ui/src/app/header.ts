@@ -10,7 +10,7 @@ import {Component} from '@angular/core';
         </a>
       </p>
       <p class="header-date">
-        Generated with FountainJS v0.5.4 on Tue Jun 28 2016 08:17:42 GMT-0500 (CDT)
+        Generated with FountainJS v0.5.5 on Tue Jun 28 2016 19:36:53 GMT-0500 (CDT)
       </p>
     </header>
   `
