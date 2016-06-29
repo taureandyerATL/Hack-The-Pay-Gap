@@ -14,6 +14,7 @@ module.exports = function () {
         '/src': 'src'
       }
     },
-    open: false
+    open: false,
+    port:8080
   };
 };
