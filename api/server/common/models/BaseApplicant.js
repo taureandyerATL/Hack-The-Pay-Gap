@@ -1,73 +1,140 @@
 var https = require("https");
+var request = require('request');
+var _ = require('lodash');
 
 module.exports = function(BaseApplicant) {
 
-    BaseApplicant.getGender= function(name, profile, next){
-        
-        var firstName = username.split(" ");//HTPG
+    BaseApplicant.genderize = function(name, picURL, source, userId, next){
+        var firstName = profile.name.split(/[ ,]+/);//HTPG
         var path= 'https://api.genderize.io/?name=' + firstName[0];
-          console.log(path);
-          //send HTTP request and get the data
-          https.get(path, function(response){
+        var profile = {
+            sourceId: userId,
+            name: name,
+            firstName: firstName[0],
+            laborMarket: source,
+            lastUpdatedBy: "asdfads",
+            lastUpdatedOn: Date(),
+            createdBy: "asdfas",
+            createdOn: Date()
+        }
+      console.log(path);
+      //send HTTP request and get the data
+      https.get(path, function(response){
+          //debugger;
+          //console.log(response);
+          var body = ""
+          response.on('data', function(data) {
+            body += data;
+          });
+          response.on('end', function() {
+              var resp = JSON.parse(body);
+              console.log('response made for: ' + resp.length);
               //debugger;
-              //console.log(response);
-              var body = ""
-              response.on('data', function(data) {
-                body += data;
-              });
-              response.on('end', function() {
-                  var resp = JSON.parse(body);
-                  console.log('response made for: ' + resp.length);
-                  //debugger;
-                  debugger;
-                  console.log("adding company data");
-                  console.dir(resp);
-                  var gender = 'unknown';
-                  if(resp.probability > .7){
-                    gender = resp.gender
+              debugger;
+              console.log("adding company data");
+              console.dir(resp);
+              var genderInfo = resp;
+              if(resp.probability > .97){
+                createApplicant(genderInfo, profile, next);
+              }else{
+                  if(picURL){
+                      genderInfo.photo = getGenderByFace(picURL,next);
+                  }else{
+                      genderInfo.gender = "unknown";
                   }
-                  User.register(new User({
-                    username: username,
-                    Name: username,
-                    Email: email,
-                    Gender: gender,
-                    CVUrl: cv,
-                    OnBench: true,
-                    ProfileUrl: profile,
-                    crowdAdmin: true,
-                    systemAdmin: true
-                  }), req.body.password, function (err, user) {
-                    if (err) {
-                      console.log(err);
-                      res.redirect("/");
-                    } else {
-                      console.log(user);
-                      Passport.authenticate('local')(req, res, function () {
-                        res.redirect("/");
-                      });
-                    }
-                  });
-              });
-        var path= 'https://api.genderize.io/?name=' + name;
-        console.log(path);
-        //send HTTP request and get the data
-        https.get(path, function(response){
-            //debugger;
-            //console.log(response);
-            var body = ""
-            response.on('data', function(data) {
-              body += data;
-            });
-            response.on('end', function() {
-                var resp = JSON.parse(body);
-                console.log('response made for: ' + resp.length);
-                //debugger;
-                debugger;
-                console.log("adding company data");
-                console.dir(resp);
-                var params={};
-                next(resp);
-            });
+                  createApplicant(genderInfo, profile,next);
+              }
+          });
+      });
+    };
+
+              
+    /*
+        Author: Jerrid
+        Method: getGenderByFace(photoUrl, cb)
+        -- photoURL: Url to an online photo
+        -- cb: Callback function that takes in one status
+        Description: Finds a person's gender given the URL of an online photo
+    */
+    function getGenderByFace(photoUrl, cb)
+    {
+        if(!photoUrl){
+            cb && cb({code:422, message:"no data"});
+            return;
+        }
+    
+        var apiSecret = "qoGxWmMc7p6-7D05ekcyf9sXGfymP20V";
+        var apiKey = "e48b6dfc4a74a7098aa61085a4c1e1e3";
+         var facesPlusPlusUrl = "https://apius.faceplusplus.com/v2/detection/detect?url="+encodeURI(photoUrl)+"&api_secret="+apiSecret+"&api_key="+apiKey+"&attribute=glass,pose,gender,age,race,smiling";
+    
+        var options = {
+            method: 'GET',
+            url: facesPlusPlusUrl
+        }
+        
+        request(options, function callback(error, response, body) {
+            if(error){
+                console.log("getGenderByFace() Error: " + JSON.stringify(error));
+                cb({code:422, message:"getGenderByFace() Error: " + JSON.stringify(error)});
+                return;
+            }
+        
+            if(response.statusCode !== 200){
+                console.log("getGenderByFace() response code: "+ response.statusCode + " Body: " + JSON.stringify(body));
+                cb({code:422, message:"getGenderByFace() response code: "+ response.statusCode + " Body: " + JSON.stringify(body)}); 
+                return;
+            }
+            var faces = JSON.parse(body).face;
+            console.log("Response Data: " + JSON.stringify(faces) + "\n\n");              
+            if(faces.length > 1){
+                console.log("Multiple faces detected. Do something else like use name validation. We don't know who's who.");
+                cb({code:422, message:"Multiple faces detected. Do something else like use name validation. We don't know who's who."});
+                return;
+            }
+        
+            _.map(faces, function(face) {
+                console.log("Face: " + JSON.stringify(face));
+                cb({gender:face.attribute.gender.value, confidence:face.attribute.gender.confidence});
+            }); 
         });
     }
+
+    //Photo of Tyra Banks
+    var url = "http://images4.fanpop.com/image/photos/16500000/Smoke-eyes-pic-tyra-banks-16534918-450-450.jpg";
+    //Call above method
+    getGenderByFace(url, function(result){
+        if(result.code){
+            console.log("getGenderByFace() Error occurred: "+ result.message);
+            return;
+        }
+        
+        //Do what thou wilt with the result. It'll be a JSON obj
+        console.log(JSON.stringify(result));
+    });
+    
+    function createApplicant(genderInfo, profile, next){
+        profile.gender = genderInfo.gender
+        profile.genderNameConfidence = genderInfo.probability
+        if(genderInfo.photo){
+            if(!genderInfo.photo.code){
+                profile.genderPictureConfidence = genderInfo.photo.confidence
+                profile.gender = genderInfo.photo.gender
+            }
+        }
+        BaseApplicant.create(profile, function(err, applicant) {
+            if (err) {
+                next(err);
+            } else {
+                console.log(applicant);
+            }
+        });
+    };
+    
+    BaseApplicant.remoteMethod(
+        'genderize', 
+        {
+          accepts: [{arg: 'name', type: 'string'},{arg: 'picURL', type: 'string'},{arg: 'source', type: 'string'},{arg: 'userId', type: 'string'}],
+          returns: {arg: 'greeting', type: 'string'}
+        }
+    );
 }
