@@ -1,0 +1,37 @@
+{
+    "name": "ProjectApplication",
+    "base": "BaseModel",
+    "options": {
+        "validateUpsert": true
+    },
+    "properties": {
+        "applicantionId": {
+            "type": "string"
+        },
+        "name": {
+            "type": "string"
+        },
+        "firstName": {
+            "type": "string"
+        },
+        "lastName": {
+            "type": "string"
+        },
+        "laborMarket": {
+            "type": "string"
+        },
+        "gender": {
+            "type": "string"
+        }
+    },
+    "validations": [],
+    "relations": {
+        "relProjectApplications": {
+            "type": "hasMany",
+            "model": "ProjectApplication",
+            "foreignKey":"applicantionId"
+        }
+    },
+    "acls": [],
+    "methods": []
+}

@@ -1,0 +1,49 @@
+{
+    "name": "BaseApplicant",
+    "base": "BaseModel",
+    "options": {
+        "validateUpsert": true
+    },
+    "properties": {
+        "sourceId": {
+            "type": "string",
+            "required": "true"
+        },
+        "name": {
+            "type": "string",
+            "required": "true"
+        },
+        "firstName": {
+            "type": "string"
+        },
+        "lastName": {
+            "type": "string"
+        },
+        "laborMarket": {
+            "type": "string",
+            "required": "true"
+        },
+        "gender": {
+            "type": "string"
+        },
+        "genderNameConfidence": {
+            "type": "number"
+        },
+        "genderPictureConfidence": {
+            "type": "number"
+        },
+        "pictureURL": {
+            "type": "string"
+        }
+    },
+    "validations": [],
+    "relations": {
+        "relProjectApplications": {
+            "type": "hasMany",
+            "model": "ProjectApplication",
+            "foreignKey":"applicantionId"
+        }
+    },
+    "acls": [],
+    "methods": []
+}

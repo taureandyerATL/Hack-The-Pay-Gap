@@ -1,0 +1,43 @@
+{
+    "name": "InternalApplicant",
+    "base": "BaseApplicant",
+    "options": {
+        "validateUpsert": true
+    },
+    "properties": {
+        "qeoUnit": {
+            "type": "string"
+        },
+    "country": {
+            "type": "string"
+        },
+    "metroCity": {
+            "type": "string"
+        },
+    "location":{
+            "type": "string"
+        },
+    "monthsatLevel":{
+            "type": "string"
+        },
+    "lastPromotionDate": {
+            "type": "string"
+        },
+    "hireDate": {
+            "type": "string"
+        },
+    "priorWorkExperienceCredit": {
+            "type": "string"
+        },
+    "skills": {
+            "type": "array"
+        },
+    "certification": {
+            "type": "array"
+        }
+    },
+    "validations": [],
+    "relations": {},
+    "acls": [],
+    "methods": []
+}

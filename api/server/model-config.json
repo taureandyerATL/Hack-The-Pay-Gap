@@ -3,6 +3,7 @@
     "sources": [
       "loopback/common/models",
       "loopback/server/models",
+      "./common/models",
       "../common/models",
       "./models"
     ],
@@ -31,5 +32,14 @@
   "Role": {
     "dataSource": "db",
     "public": false
+  },
+  "BaseApplicant":{
+    "dataSource": "db"
+  },
+  "InternalApplicant":{
+    "dataSource": "db"
+  },
+  "ProjectApplication":{
+    "dataSource": "db"
   }
 }
