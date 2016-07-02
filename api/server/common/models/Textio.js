@@ -6,6 +6,7 @@ var documentIdReceived = false, changeNumReceived = false, docSessionIDReceived 
 var SESSION_ID, AUTHORIZATION_TOKEN, VERSION, DOCUMENT_ID, CHANGE_NUM, DOC_SESSION_ID;
 var jobDescription = 'Accenture helps leading Automotive and Industrial companies drive superior performance in their global and complex supply chains to deliver products to their customers.  We offer a comprehensive suite of capabilities in the supply chain space including defining and implementing operating capabilities across the long, medium and short term planning horizons as well as demonstrating advanced technologies to enable these complex yet integrated functions. ';
 var textiourl = 'https://textio.com/signin.html';
+var slimer = require('slimer');
 
 /**
 '{
@@ -54,8 +55,8 @@ steps = [
         page.viewportSize = {width: 1280, height: 1024};
 		page.open(textiourl, function (status) {
 				page.evaluate(function(){				
-				document.getElementById('email').value= 'srinivasan.sairam@accenture.com';
-				document.getElementById('password').value='@Accenture1';
+				document.getElementById('email').value= 'chris.hawkins@accenture.com';
+				document.getElementById('password').value='password1';
 				document.getElementById('signInButton').click();
 			});
 		})
