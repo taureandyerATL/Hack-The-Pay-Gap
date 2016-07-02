@@ -524,7 +524,7 @@ module.exports = function(DraftCheck) {
         {
           http: {path: '/checkDraft', verb: 'Post'},
           accepts: [{arg: 'jobDescription', type: 'string'},{arg: 'userId', type: 'string'},{arg: 'userName', type: 'string'},{arg: 'draftSource', type: 'string'},{arg: 'draftId', type: 'string'},{arg: 'jobCategory', type: 'string'},{arg: 'roleName', type: 'string'},{arg: 'marketSource', type: 'array'}],
-          returns: {arg: 'You did it!', type: 'string'}
+          returns: {arg: 'scores', type: 'string'}
         }
     );
 }
