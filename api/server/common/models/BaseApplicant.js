@@ -5,7 +5,8 @@ var _ = require('lodash');
 module.exports = function(BaseApplicant) {
 
     BaseApplicant.genderize = function(name, picURL, source, userId, next){
-        var firstName = profile.name.split(/[ ,]+/);//HTPG
+        console.log(name, picURL, source, userId);
+        var firstName = name.split(/[ ,]+/);//HTPG
         var path= 'https://api.genderize.io/?name=' + firstName[0];
         var profile = {
             sourceId: userId,
@@ -17,6 +18,7 @@ module.exports = function(BaseApplicant) {
             createdBy: "asdfas",
             createdOn: Date()
         }
+        console.log(profile);
       console.log(path);
       //send HTTP request and get the data
       https.get(path, function(response){
@@ -65,7 +67,7 @@ module.exports = function(BaseApplicant) {
     
         var apiSecret = "qoGxWmMc7p6-7D05ekcyf9sXGfymP20V";
         var apiKey = "e48b6dfc4a74a7098aa61085a4c1e1e3";
-         var facesPlusPlusUrl = "https://apius.faceplusplus.com/v2/detection/detect?url="+encodeURI(photoUrl)+"&api_secret="+apiSecret+"&api_key="+apiKey+"&attribute=glass,pose,gender,age,race,smiling";
+         var facesPlusPlusUrl = "https://apius.faceplusplus.com/v2/detection/detect?url="+encodeURI(photoUrl)+"&api_secret="+apiSecret+"&api_key="+apiKey+"&attribute=gender,age,race,smiling";
     
         var options = {
             method: 'GET',
@@ -84,6 +86,8 @@ module.exports = function(BaseApplicant) {
                 cb({code:422, message:"getGenderByFace() response code: "+ response.statusCode + " Body: " + JSON.stringify(body)}); 
                 return;
             }
+            
+            //Valid data
             var faces = JSON.parse(body).face;
             console.log("Response Data: " + JSON.stringify(faces) + "\n\n");              
             if(faces.length > 1){
@@ -133,6 +137,7 @@ module.exports = function(BaseApplicant) {
     BaseApplicant.remoteMethod(
         'genderize', 
         {
+          http: {path: '/genderize', verb: 'Post'},
           accepts: [{arg: 'name', type: 'string'},{arg: 'picURL', type: 'string'},{arg: 'source', type: 'string'},{arg: 'userId', type: 'string'}],
           returns: {arg: 'greeting', type: 'string'}
         }

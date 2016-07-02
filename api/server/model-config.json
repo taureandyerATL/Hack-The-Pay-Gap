@@ -33,13 +33,19 @@
     "dataSource": "db",
     "public": false
   },
-  "BaseApplicant":{
+  "BaseApplicant": {
     "dataSource": "db"
   },
-  "InternalApplicant":{
+  "InternalApplicant": {
     "dataSource": "db"
   },
-  "ProjectApplication":{
+  "ProjectApplication": {
+    "dataSource": "db"
+  },
+  "JobPost": {
+    "dataSource": "db"
+  },
+  "DraftCheck": {
     "dataSource": "db"
   }
 }
