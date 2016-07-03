@@ -1,0 +1,188 @@
+{
+    "name": "Appuser",
+    "base": "User",
+    "idInjection": true,
+    "options": {
+        "validateUpsert": true
+    },
+    "properties": {
+        "FirstName": {
+            "type": "string",
+            "required": false
+        },
+        "MiddleInitial": {
+            "type": "string",
+            "required": false
+        },
+        "LastName": {
+            "type": "string",
+            "required": false
+        },
+        "AvailabilityStatus": {
+            "type": "string",
+            "required": false
+        },
+        "AvailabilityDetail": {
+            "type": "string",
+            "required": false
+        },
+        "NowAvailableCategory": {
+            "type": "string",
+            "required": false
+        },
+        "ComingAvailable": {
+            "type": "string",
+            "required": false
+        },
+        "FirstAvailableDate": {
+            "type": "string",
+            "required": false
+        },
+        "GeneralComments": {
+            "type": "string",
+            "required": false
+        },
+        "Workforce": {
+            "type": "string",
+            "required": false
+        },
+        "Gender": {
+            "type": "string",
+            "required": false
+        },
+        "TalentSegment": {
+            "type": "string",
+            "required": false
+        },
+        "RoleFamily": {
+            "type": "string",
+            "required": false
+        },
+        "Role": {
+            "type": "string",
+            "required": false
+        },
+        "TalentFulfillmentSpecialist": {
+            "type": "string",
+            "required": false
+        },
+        "ClientContractBased": {
+            "type": "string",
+            "required": false
+        },
+        "Level": {
+            "type": "string",
+            "required": false
+        },
+        "RequiredFunctionalTechnicalSpecialtyLevel": {
+            "type": "string",
+            "required": false
+        },
+        "RequiredIndustrySpecialtyProficiency": {
+            "type": "string",
+            "required": false
+        },
+        "OptionalSpecialtyAProficiency": {
+            "type": "string",
+            "required": false
+        },
+        "OptionalSpecialtyBProficiency": {
+            "type": "string",
+            "required": false
+        },
+        "GeoUnit": {
+            "type": "string",
+            "required": false
+        },
+        "Country": {
+            "type": "string",
+            "required": false
+        },
+        "Metrocity": {
+            "type": "string",
+            "required": false
+        },
+        "Location": {
+            "type": "string",
+            "required": false
+        },
+        "MonthsatLevel": {
+            "type": "string",
+            "required": false
+        },
+        "LastPromotionDate": {
+            "type": "string",
+            "required": false
+        },
+        "HireDate": {
+            "type": "string",
+            "required": false
+        },
+        "PriorWorkExperienceCredit": {
+            "type": "string",
+            "required": false
+        },
+        "Skills": {
+            "type": "string",
+            "required": false
+        },
+        "Certification": {
+            "type": "string",
+            "required": false
+        },
+        "CurrentCalendarEntry": {
+            "type": "string",
+            "required": false
+        },
+        "CareerCounselor": {
+            "type": "string",
+            "required": false
+        },
+        "EnterpriseID": {
+            "type": "string",
+            "required": false
+        },
+        "OnBench": {
+            "type": "boolean",
+            "required": false
+        },
+        "LastLogin": {
+            "type": "date",
+            "required": false
+        },
+        "Email": {
+            "type": "string",
+            "required": true
+        },
+        "CVUrl": {
+            "type": "string",
+            "required": false
+        },
+        "ProfileUrl": {
+            "type": "string",
+            "required": false
+        },
+        "personnelNumber": {
+            "type": "number",
+            "required": false
+        },
+        "authProfile": {
+            "type": "number",
+            "required": false
+        },
+        "crowdAdmin": {
+            "type": "Boolean",
+            "required": true,
+            "default": false
+        },
+        "systemAdmin": {
+            "type": "Boolean",
+            "required": true,
+            "default": false
+        }
+    },
+    "validations": [],
+    "relations": {},
+    "acls": [],
+    "methods": {}
+}
