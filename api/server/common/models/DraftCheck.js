@@ -177,7 +177,7 @@ module.exports = function(DraftCheck) {
               },
               "textio_check": 35
         */
-        var textioResponse = 
+        var draftScoring = 
         {
             overall_score: textioResponse.data.document.textio_check,
             phrasing_score: textioResponse.data.document.feature_metadata.phrases_pos - textioResponse.data.document.feature_metadata.phrases_neg,
@@ -186,10 +186,32 @@ module.exports = function(DraftCheck) {
             factors_score: textioResponse.data.document.feature_metadata.factors_pos- textioResponse.data.document.feature_metadata.factors_neg,
             factors_pos: textioResponse.data.document.feature_metadata.factors_pos,
             factors_neg: textioResponse.data.document.feature_metadata.factors_neg,
-            genderscore: textioResponse.data.document.feature_metadata.phrases_masculine - textioResponse.data.document.feature_metadata.phrases_feminine,
+            phrases_masculine: textioResponse.data.document.feature_metadata.phrases_masculine,
+            phrases_feminine: textioResponse.data.document.feature_metadata.phrases_feminine,
             jargon: textioResponse.data.document.stats.phrases_jargon_freq,
-            attributes: textioResponse.data.document.generic_scorer
+            attributes: textioResponse.data.document.filtered_factors.generic_scorer
         };
+        var genderscore = parseInt(textioResponse.data.document.feature_metadata.phrases_masculine) - parseInt(textioResponse.data.document.feature_metadata.phrases_feminine)
+        console.log(genderscore);
+        if(genderscore > 0){ //Gets female bias
+            if(genderscore < 2){
+                draftScoring.genderscore = "Slightly Female Biased"
+            }else if(genderscore < 4){
+                draftScoring.genderscore = "Female Biased"
+            }else{
+                draftScoring.genderscore = "Very Female Biased"
+            }
+        }else if(genderscore < 0 ){ //gets male bias
+            if(genderscore > -2){
+                draftScoring.genderscore = "Slightly Male Biased"
+            }else if(genderscore > -4){
+                draftScoring.genderscore = "Male Biased"
+            }else{
+                draftScoring.genderscore = "Very Male Biased"
+            }
+        }else { //gender neutral
+            draftScoring.genderscore = "Gender Neutral"
+        }
         
         DraftCheck.create({
             jobDescription: jobDescription,
@@ -207,7 +229,7 @@ module.exports = function(DraftCheck) {
                 console.log(draftPost);
                 
             }
-            next(err, textioResponse);
+            next(err, draftScoring);
         });
     }
     function sendTextio(jobdescription, next){
