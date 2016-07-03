@@ -14,22 +14,26 @@
     ]
   },
   "User": {
-    "dataSource": "db"
+    "dataSource": "htpg_db"
   },
   "AccessToken": {
-    "dataSource": "db",
+    "dataSource": "htpg_db",
     "public": false
   },
   "ACL": {
-    "dataSource": "db",
+    "dataSource": "htpg_db",
     "public": false
   },
   "RoleMapping": {
-    "dataSource": "db",
+    "dataSource": "htpg_db",
     "public": false
   },
   "Role": {
-    "dataSource": "db",
+    "dataSource": "htpg_db",
     "public": false
+  },
+  "Appuser": {
+    "dataSource": "htpg_db",
+    "public": true
   }
 }

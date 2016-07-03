@@ -2,5 +2,17 @@
   "db": {
     "name": "db",
     "connector": "memory"
+  },
+  "htpg_db": {
+    "host": "localhost",
+    "port": 27017,
+    "database": "htpg_db",
+    "name": "htpg_db",
+    "connector": "mongodb",
+    "server": {
+      "auto_reconnect": true,
+      "reconnectTries": 100,
+      "reconnectInterval": 1000
+    }
   }
 }
