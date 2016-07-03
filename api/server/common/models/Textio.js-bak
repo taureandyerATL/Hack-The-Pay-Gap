@@ -6,7 +6,8 @@ var documentIdReceived = false, changeNumReceived = false, docSessionIDReceived 
 var SESSION_ID, AUTHORIZATION_TOKEN, VERSION, DOCUMENT_ID, CHANGE_NUM, DOC_SESSION_ID;
 var jobDescription = 'Accenture helps leading Automotive and Industrial companies drive superior performance in their global and complex supply chains to deliver products to their customers.  We offer a comprehensive suite of capabilities in the supply chain space including defining and implementing operating capabilities across the long, medium and short term planning horizons as well as demonstrating advanced technologies to enable these complex yet integrated functions. ';
 var textiourl = 'https://textio.com/signin.html';
-var slimer = require("slimer")
+//var slimer = require("slimer")
+var phantom = require("phantom");
 
 /**
 '{
@@ -29,8 +30,8 @@ var slimer = require("slimer")
 
 
 /*********SETTINGS*********************/
-//var page = require('webpage').create();
-var page = {settings:{}};
+var page = require('webpage').create();
+
 page.settings.userAgent = 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.157 Safari/537.36';
 page.settings.javascriptEnabled = true;
 page.settings.loadImages = false;  //Script is much faster with this field set to false
@@ -250,7 +251,7 @@ function getDocumentId()
 //Execute steps one by one
 interval = setInterval(executeRequestsStepByStep,2000);
 
-function executeRequestsStepByStep(){
+function executeRequestsStepByStep(jobDescription, jobCategory, next){
     if (loadInProgress == false && typeof steps[testindex] == "function") {
         steps[testindex]();
         testindex++;

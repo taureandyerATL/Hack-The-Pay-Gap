@@ -1,0 +1,35 @@
+{
+  "name": "Economics",
+  "base": "BaseModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "year": {
+      "type": "number",
+      "required": true,
+      "default": "2015"
+    },
+    "state": {
+      "type": "string"
+    },
+    "race": {
+      "type": "string"
+    },
+    "sex": {
+      "type": "string"
+    },
+    "agegroup": {
+      "type": "string"
+    },
+    "compare": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

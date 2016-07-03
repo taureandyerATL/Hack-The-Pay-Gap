@@ -45,6 +45,9 @@
   "JobPost": {
     "dataSource": "db"
   },
+  "Economics": {
+    "dataSource": "db"
+  },
   "DraftCheck": {
     "dataSource": "db"
   }
