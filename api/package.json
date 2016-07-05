@@ -20,7 +20,8 @@
     "merge": "^1.2.0",
     "request": "^2.72.0",
     "serve-favicon": "^2.0.1",
-    "strong-error-handler": "^1.0.1"
+    "strong-error-handler": "^1.0.1",
+    "wordcount": "^1.1.1"
   },
   "devDependencies": {
     "eslint": "^2.5.3",

@@ -1,6 +1,7 @@
 var btoa = require("btoa");
 var unirest = require('unirest');
 var merge = require("merge");
+var wordcount = require('wordcount');
 var userName = "a@thakral.in";
 var password = "password1";
 
@@ -112,11 +113,11 @@ var submitRequestPromise = (authObj, description) => {
         var requestData = {
             title: "Accenture Doc",
             description:description,
-            changeNum: 33,
+            changeNum: 0,
             docSessionID: generateUUID(),
             document_id: generateUUID(),
             jobType: "",
-            client_word_count: 64,
+            client_word_count: wordcount(description) ,
             location: {
                 fullText: "",
                 placeId: "",
