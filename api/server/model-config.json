@@ -3,7 +3,6 @@
     "sources": [
       "loopback/common/models",
       "loopback/server/models",
-      "./common/models",
       "../common/models",
       "./models"
     ],
@@ -48,7 +47,13 @@
   "Economics": {
     "dataSource": "db"
   },
+    "JobsStats": {
+    "dataSource": "db"
+  },
   "DraftCheck": {
     "dataSource": "db"
+  },
+  "Textio": {
+    "dataSource":"db"
   }
 }
