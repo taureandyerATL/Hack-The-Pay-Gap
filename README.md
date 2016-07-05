@@ -7,6 +7,6 @@ do this by adding following line to  ~/.profile
 npm_config_port=8081
 
 ```
- ( echo "npm_config_port=8081" ; echo "" ) >> ~/.profile
+ ( echo "export npm_config_port=8081" ; echo "" ) >> ~/.profile
  
 ```
