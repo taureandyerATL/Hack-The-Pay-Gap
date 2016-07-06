@@ -9,6 +9,10 @@
             "type": "string",
             "required": "true"
         },
+        "source": {
+            "type": "string",
+            "required": "true"
+        },
         "name": {
             "type": "string",
             "required": "true"
@@ -18,6 +22,37 @@
         },
         "lastName": {
             "type": "string"
+        },
+        "userId": {
+            "type": "string",
+            "required": "true"
+        },
+        "picURL": {
+            "type": "string"
+        },
+        "city": {
+            "type": "string",
+        },
+        "state_shortname": {
+            "type": "string",
+        },
+        "state_longname": {
+            "type": "string",
+        },
+        "country": {
+            "type": "string",
+        },
+        "jobId": {
+            "type": "string",
+        },
+        "jobCategory": {
+            "type": "string",
+        },
+        "wageRequested": {
+            "type": "string",
+        },
+        "timezone": {
+            "type": "string",
         },
         "laborMarket": {
             "type": "string",
@@ -32,16 +67,14 @@
         "genderPictureConfidence": {
             "type": "number"
         },
-        "pictureURL": {
-            "type": "string"
-        }
+
     },
     "validations": [],
     "relations": {
         "relProjectApplications": {
             "type": "hasMany",
             "model": "ProjectApplication",
-            "foreignKey":"applicantionId"
+            "foreignKey": "applicantionId"
         }
     },
     "acls": [],
