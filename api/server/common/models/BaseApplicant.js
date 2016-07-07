@@ -24,10 +24,18 @@ module.exports = function(BaseApplicant) {
             wageRequested: wageRequested,
             timezone: timezone,
             laborMarket: source,
+            state_longname: "NA",
+            state_shortname: "NA",
             lastUpdatedBy: "asdfads",
             lastUpdatedOn: Date(),
             createdBy: "asdfas",
             createdOn: Date()
+        }
+        if (country !== 'us'){
+            stateFinder(city).then(state => {
+                profile.state_shortname = state.short_name;
+                profile.state_longname = state.long_name;
+            })
         }
         console.log(profile);
         console.log(path);
@@ -162,7 +170,7 @@ module.exports = function(BaseApplicant) {
                 next(applicant);
             });
         };
-        if (profile.country !== 'us')
+        /*if (profile.country !== 'us')
             finalFunc();
 
         stateFinder(profile.city).then(state => {
@@ -170,8 +178,7 @@ module.exports = function(BaseApplicant) {
             profile.state_longname = state.long_name;
             finalFunc();
         })
-        .catch(next);
-
+        .catch(next);*/
     }
 
     BaseApplicant.remoteMethod(

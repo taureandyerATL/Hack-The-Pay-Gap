@@ -31,28 +31,28 @@
             "type": "string"
         },
         "city": {
-            "type": "string",
+            "type": "string"
         },
         "state_shortname": {
-            "type": "string",
+            "type": "string"
         },
         "state_longname": {
-            "type": "string",
+            "type": "string"
         },
         "country": {
-            "type": "string",
+            "type": "string"
         },
         "jobId": {
-            "type": "string",
+            "type": "string"
         },
         "jobCategory": {
-            "type": "string",
+            "type": "string"
         },
         "wageRequested": {
-            "type": "string",
+            "type": "string"
         },
         "timezone": {
-            "type": "string",
+            "type": "string"
         },
         "laborMarket": {
             "type": "string",
@@ -66,8 +66,7 @@
         },
         "genderPictureConfidence": {
             "type": "number"
-        },
-
+        }
     },
     "validations": [],
     "relations": {
