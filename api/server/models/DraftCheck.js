@@ -1,6 +1,7 @@
 var https = require("https");
 var request = require('request');
 var _ = require('lodash');
+var jobDescription = 'Accenture helps leading Automotive and Industrial companies drive superior performance in their global and complex supply chains to deliver products to their customers.  We offer a comprehensive suite of capabilities in the supply chain space including defining and implementing operating capabilities across the long, medium and short term planning horizons as well as demonstrating advanced technologies to enable these complex yet integrated functions. ';
 
 /*FOR TEXTIO TO WORK*/
 //var textio = require("./Textio");
@@ -183,7 +184,27 @@ module.exports = function(DraftCheck) {
             jargon: textioResponse.data.document.stats.phrases_jargon_freq,
             attributes: textioResponse.data.document.filtered_factors.generic_scorer
         };
-        
+var genderscore = parseInt(textioResponse.data.document.feature_metadata.phrases_masculine) - parseInt(textioResponse.data.document.feature_metadata.phrases_feminine)
+        console.log(genderscore);
+        if(genderscore > 0){ //Gets female bias
+            if(genderscore < 2){
+                draftScoring.genderscore = "Slightly Female Biased"
+            }else if(genderscore < 4){
+                draftScoring.genderscore = "Female Biased"
+            }else{
+                draftScoring.genderscore = "Very Female Biased"
+            }
+        }else if(genderscore < 0 ){ //gets male bias
+            if(genderscore > -2){
+                draftScoring.genderscore = "Slightly Male Biased"
+            }else if(genderscore > -4){
+                draftScoring.genderscore = "Male Biased"
+            }else{
+                draftScoring.genderscore = "Very Male Biased"
+            }
+        }else { //gender neutral
+            draftScoring.genderscore = "Gender Neutral"
+        }        
         DraftCheck.create({
             jobDescription: jobDescription,
             draftSource: draftSource,
