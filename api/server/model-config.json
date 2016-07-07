@@ -55,6 +55,7 @@
   },
   "Textio": {
     "dataSource":"db"
+  },
   "Appuser": {
     "dataSource": "htpg_db",
     "public": true
