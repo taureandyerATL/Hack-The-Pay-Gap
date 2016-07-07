@@ -34,7 +34,32 @@
         },
         "pictureURL": {
             "type": "string"
+        },
+        "wageRequested": {
+            "type": "number"
+        },
+        "wageAccepted": {
+            "type": "number"
+        },
+        "wageAdjusted": {
+            "type": "number"
+        },
+        "city": {
+            "type": "string"
+        },
+        "state": {
+            "type": "string"
+        },
+        "country": {
+            "type": "string"
+        },
+        "timezone": {
+            "type": "string"
+        },
+        "skills":{
+            "type": "array"
         }
+        
     },
     "validations": [],
     "relations": {

@@ -1,0 +1,4514 @@
+[
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Total",
+    "Total": "57,960",
+    "women": 51.5,
+    "pipeline": 0.000888544,
+    "%": 0.088854382
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Management, business, and financial operations occupations",
+    "Total": "24,108",
+    "women": 43.6,
+    "pipeline": 0.001808528,
+    "%": 0.180852829
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Management occupations",
+    "Total": "16,994",
+    "women": 39.2,
+    "pipeline": 0.002306696,
+    "%": 0.230669648
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Chief executives",
+    "Total": "1,517",
+    "women": 27.9,
+    "pipeline": 0.018391562,
+    "%": 1.839156229
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "General and operations managers",
+    "Total": 899,
+    "women": 27.6,
+    "pipeline": 0.030700779,
+    "%": 3.070077864
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Legislators",
+    "Total": 13,
+    "women": -1,
+    "pipeline": -0.076923077,
+    "%": -7.692307692
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Advertising and promotions managers",
+    "Total": 67,
+    "women": 53.6,
+    "pipeline": 0.8,
+    "%": 80
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Marketing and sales managers",
+    "Total": "1,006",
+    "women": 43.2,
+    "pipeline": 0.042942346,
+    "%": 4.294234592
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Public relations and fundraising managers",
+    "Total": 61,
+    "women": 59.2,
+    "pipeline": 0.970491803,
+    "%": 97.04918033
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Administrative services managers",
+    "Total": 195,
+    "women": 47.7,
+    "pipeline": 0.244615385,
+    "%": 24.46153846
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Computer and information systems managers",
+    "Total": 652,
+    "women": 27.2,
+    "pipeline": 0.041717791,
+    "%": 4.171779141
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Financial managers",
+    "Total": "1,197",
+    "women": 49.6,
+    "pipeline": 0.041436926,
+    "%": 4.143692565
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Compensation and benefits managers",
+    "Total": 23,
+    "women": -1,
+    "pipeline": -0.043478261,
+    "%": -4.347826087
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Human resources managers",
+    "Total": 290,
+    "women": 73.3,
+    "pipeline": 0.252758621,
+    "%": 25.27586207
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Training and development managers",
+    "Total": 41,
+    "women": -1,
+    "pipeline": -0.024390244,
+    "%": -2.43902439
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Industrial production managers",
+    "Total": 280,
+    "women": 18.3,
+    "pipeline": 0.065357143,
+    "%": 6.535714286
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Purchasing managers",
+    "Total": 198,
+    "women": 44.8,
+    "pipeline": 0.226262626,
+    "%": 22.62626263
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Transportation, storage, and distribution managers",
+    "Total": 263,
+    "women": 21.1,
+    "pipeline": 0.080228137,
+    "%": 8.022813688
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Farmers, ranchers, and other agricultural managers",
+    "Total": "1,052",
+    "women": 23.9,
+    "pipeline": 0.022718631,
+    "%": 2.271863118
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Construction managers",
+    "Total": 737,
+    "women": 6.7,
+    "pipeline": 0.009090909,
+    "%": 0.909090909
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Education administrators",
+    "Total": 928,
+    "women": 65.7,
+    "pipeline": 0.070797414,
+    "%": 7.079741379
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Architectural and engineering managers",
+    "Total": 110,
+    "women": 7.4,
+    "pipeline": 0.067272727,
+    "%": 6.727272727
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Food service managers",
+    "Total": "1,192",
+    "women": 47.1,
+    "pipeline": 0.039513423,
+    "%": 3.951342282
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Funeral service managers",
+    "Total": 15,
+    "women": -1,
+    "pipeline": -0.066666667,
+    "%": -6.666666667
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Gaming managers",
+    "Total": 23,
+    "women": -1,
+    "pipeline": -0.043478261,
+    "%": -4.347826087
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Lodging managers",
+    "Total": 159,
+    "women": 53.5,
+    "pipeline": 0.336477987,
+    "%": 33.64779874
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Medical and health services managers",
+    "Total": 636,
+    "women": 73.7,
+    "pipeline": 0.115880503,
+    "%": 11.58805031
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Natural sciences managers",
+    "Total": 25,
+    "women": -1,
+    "pipeline": -0.04,
+    "%": -4
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Postmasters and mail superintendents",
+    "Total": 24,
+    "women": -1,
+    "pipeline": -0.041666667,
+    "%": -4.166666667
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Property, real estate, and community association managers",
+    "Total": 685,
+    "women": 50.9,
+    "pipeline": 0.074306569,
+    "%": 7.430656934
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Social and community service managers",
+    "Total": 378,
+    "women": 67.4,
+    "pipeline": 0.178306878,
+    "%": 17.83068783
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Emergency management directors",
+    "Total": 10,
+    "women": -1,
+    "pipeline": -0.1,
+    "%": -10
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Managers, all other",
+    "Total": "4,315",
+    "women": 34.3,
+    "pipeline": 0.007949015,
+    "%": 0.794901506
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Business and financial operations occupations",
+    "Total": "7,114",
+    "women": 54.3,
+    "pipeline": 0.007632837,
+    "%": 0.763283666
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Agents and business managers of artists, performers, and athletes",
+    "Total": 46,
+    "women": -1,
+    "pipeline": -0.02173913,
+    "%": -2.173913043
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Buyers and purchasing agents, farm products",
+    "Total": 10,
+    "women": -1,
+    "pipeline": -0.1,
+    "%": -10
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Wholesale and retail buyers, except farm products",
+    "Total": 190,
+    "women": 52.7,
+    "pipeline": 0.277368421,
+    "%": 27.73684211
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Purchasing agents, except wholesale, retail, and farm products",
+    "Total": 280,
+    "women": 49.7,
+    "pipeline": 0.1775,
+    "%": 17.75
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Claims adjusters, appraisers, examiners, and investigators",
+    "Total": 321,
+    "women": 55.3,
+    "pipeline": 0.172274143,
+    "%": 17.22741433
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Compliance officers",
+    "Total": 246,
+    "women": 49,
+    "pipeline": 0.199186992,
+    "%": 19.91869919
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Cost estimators",
+    "Total": 112,
+    "women": 17.8,
+    "pipeline": 0.158928571,
+    "%": 15.89285714
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Human resources workers",
+    "Total": 662,
+    "women": 74,
+    "pipeline": 0.111782477,
+    "%": 11.17824773
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Compensation, benefits, and job analysis specialists",
+    "Total": 68,
+    "women": 73,
+    "pipeline": 1.073529412,
+    "%": 107.3529412
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Training and development specialists",
+    "Total": 118,
+    "women": 62.1,
+    "pipeline": 0.526271186,
+    "%": 52.62711864
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Logisticians",
+    "Total": 117,
+    "women": 40.9,
+    "pipeline": 0.34957265,
+    "%": 34.95726496
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Management analysts",
+    "Total": 848,
+    "women": 39.7,
+    "pipeline": 0.046816038,
+    "%": 4.681603774
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Meeting, convention, and event planners",
+    "Total": 159,
+    "women": 78.6,
+    "pipeline": 0.494339623,
+    "%": 49.43396226
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Fundraisers",
+    "Total": 77,
+    "women": 73.4,
+    "pipeline": 0.953246753,
+    "%": 95.32467532
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Market research analysts and marketing specialists",
+    "Total": 261,
+    "women": 58.8,
+    "pipeline": 0.225287356,
+    "%": 22.52873563
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Business operations specialists, all other",
+    "Total": 213,
+    "women": 56.7,
+    "pipeline": 0.266197183,
+    "%": 26.61971831
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Accountants and auditors",
+    "Total": "1,732",
+    "women": 59.7,
+    "pipeline": 0.034468822,
+    "%": 3.446882217
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Appraisers and assessors of real estate",
+    "Total": 76,
+    "women": 39.3,
+    "pipeline": 0.517105263,
+    "%": 51.71052632
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Budget analysts",
+    "Total": 44,
+    "women": -1,
+    "pipeline": -0.022727273,
+    "%": -2.272727273
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Credit analysts",
+    "Total": 21,
+    "women": -1,
+    "pipeline": -0.047619048,
+    "%": -4.761904762
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Financial analysts",
+    "Total": 322,
+    "women": 43,
+    "pipeline": 0.133540373,
+    "%": 13.35403727
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Personal financial advisors",
+    "Total": 498,
+    "women": 37.9,
+    "pipeline": 0.076104418,
+    "%": 7.610441767
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Insurance underwriters",
+    "Total": 107,
+    "women": 58.6,
+    "pipeline": 0.547663551,
+    "%": 54.76635514
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Financial examiners",
+    "Total": 15,
+    "women": -1,
+    "pipeline": -0.066666667,
+    "%": -6.666666667
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Credit counselors and loan officers",
+    "Total": 332,
+    "women": 54.6,
+    "pipeline": 0.164457831,
+    "%": 16.44578313
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Tax examiners and collectors, and revenue agents",
+    "Total": 58,
+    "women": 65.5,
+    "pipeline": 1.129310345,
+    "%": 112.9310345
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Tax preparers",
+    "Total": 109,
+    "women": 61.4,
+    "pipeline": 0.563302752,
+    "%": 56.33027523
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Financial specialists, all other",
+    "Total": 71,
+    "women": 54.6,
+    "pipeline": 0.769014085,
+    "%": 76.90140845
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Professional and related occupations",
+    "Total": "33,852",
+    "women": 57.2,
+    "pipeline": 0.001689708,
+    "%": 0.168970814
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Computer and mathematical occupations",
+    "Total": "4,369",
+    "women": 24.7,
+    "pipeline": 0.005653468,
+    "%": 0.565346761
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Computer and information research scientists",
+    "Total": 24,
+    "women": -1,
+    "pipeline": -0.041666667,
+    "%": -4.166666667
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Computer systems analysts",
+    "Total": 552,
+    "women": 34.2,
+    "pipeline": 0.061956522,
+    "%": 6.195652174
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Information security analysts",
+    "Total": 70,
+    "women": 19.7,
+    "pipeline": 0.281428571,
+    "%": 28.14285714
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Computer programmers",
+    "Total": 480,
+    "women": 21,
+    "pipeline": 0.04375,
+    "%": 4.375
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Software developers, applications and systems software",
+    "Total": "1,353",
+    "women": 17.9,
+    "pipeline": 0.01322986,
+    "%": 1.322985957
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Web developers",
+    "Total": 204,
+    "women": 34.3,
+    "pipeline": 0.168137255,
+    "%": 16.81372549
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Computer support specialists",
+    "Total": 475,
+    "women": 26.4,
+    "pipeline": 0.055578947,
+    "%": 5.557894737
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Database administrators",
+    "Total": 93,
+    "women": 38,
+    "pipeline": 0.408602151,
+    "%": 40.86021505
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Network and computer systems administrators",
+    "Total": 218,
+    "women": 15.9,
+    "pipeline": 0.07293578,
+    "%": 7.293577982
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Computer network architects",
+    "Total": 114,
+    "women": 12.1,
+    "pipeline": 0.106140351,
+    "%": 10.61403509
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Computer occupations, all other",
+    "Total": 547,
+    "women": 24.3,
+    "pipeline": 0.044424132,
+    "%": 4.442413163
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Actuaries",
+    "Total": 21,
+    "women": -1,
+    "pipeline": -0.047619048,
+    "%": -4.761904762
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Mathematicians",
+    "Total": 6,
+    "women": -1,
+    "pipeline": -0.166666667,
+    "%": -16.66666667
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Operations research analysts",
+    "Total": 123,
+    "women": 50.7,
+    "pipeline": 0.412195122,
+    "%": 41.2195122
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Statisticians",
+    "Total": 86,
+    "women": 52.9,
+    "pipeline": 0.615116279,
+    "%": 61.51162791
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Miscellaneous mathematical science occupations",
+    "Total": 4,
+    "women": -1,
+    "pipeline": -0.25,
+    "%": -25
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Architecture and engineering occupations",
+    "Total": "2,954",
+    "women": 15.1,
+    "pipeline": 0.005111713,
+    "%": 0.511171293
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Architects, except naval",
+    "Total": 203,
+    "women": 25.7,
+    "pipeline": 0.126600985,
+    "%": 12.66009852
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Surveyors, cartographers, and photogrammetrists",
+    "Total": 38,
+    "women": -1,
+    "pipeline": -0.026315789,
+    "%": -2.631578947
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Aerospace engineers",
+    "Total": 138,
+    "women": 11.3,
+    "pipeline": 0.081884058,
+    "%": 8.188405797
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Agricultural engineers",
+    "Total": 6,
+    "women": -1,
+    "pipeline": -0.166666667,
+    "%": -16.66666667
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Biomedical engineers",
+    "Total": 16,
+    "women": -1,
+    "pipeline": -0.0625,
+    "%": -6.25
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Chemical engineers",
+    "Total": 84,
+    "women": 14.7,
+    "pipeline": 0.175,
+    "%": 17.5
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Civil engineers",
+    "Total": 360,
+    "women": 12.6,
+    "pipeline": 0.035,
+    "%": 3.5
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Computer hardware engineers",
+    "Total": 72,
+    "women": 12.8,
+    "pipeline": 0.177777778,
+    "%": 17.77777778
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Electrical and electronics engineers",
+    "Total": 302,
+    "women": 12.5,
+    "pipeline": 0.041390728,
+    "%": 4.139072848
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Environmental engineers",
+    "Total": 40,
+    "women": -1,
+    "pipeline": -0.025,
+    "%": -2.5
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Industrial engineers, including health and safety",
+    "Total": 214,
+    "women": 20.2,
+    "pipeline": 0.094392523,
+    "%": 9.439252336
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Marine engineers and naval architects",
+    "Total": 11,
+    "women": -1,
+    "pipeline": -0.090909091,
+    "%": -9.090909091
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Materials engineers",
+    "Total": 40,
+    "women": -1,
+    "pipeline": -0.025,
+    "%": -2.5
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Mechanical engineers",
+    "Total": 323,
+    "women": 8.3,
+    "pipeline": 0.025696594,
+    "%": 2.569659443
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Mining and geological engineers, including mining safety engineers",
+    "Total": 15,
+    "women": -1,
+    "pipeline": -0.066666667,
+    "%": -6.666666667
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Nuclear engineers",
+    "Total": 6,
+    "women": -1,
+    "pipeline": -0.166666667,
+    "%": -16.66666667
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Petroleum engineers",
+    "Total": 44,
+    "women": -1,
+    "pipeline": -0.022727273,
+    "%": -2.272727273
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Engineers, all other",
+    "Total": 440,
+    "women": 13.6,
+    "pipeline": 0.030909091,
+    "%": 3.090909091
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Drafters",
+    "Total": 133,
+    "women": 21.2,
+    "pipeline": 0.159398496,
+    "%": 15.93984962
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Engineering technicians, except drafters",
+    "Total": 403,
+    "women": 20.3,
+    "pipeline": 0.050372208,
+    "%": 5.037220844
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Surveying and mapping technicians",
+    "Total": 65,
+    "women": 5.2,
+    "pipeline": 0.08,
+    "%": 8
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Life, physical, and social science occupations",
+    "Total": "1,404",
+    "women": 46.6,
+    "pipeline": 0.033190883,
+    "%": 3.319088319
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Agricultural and food scientists",
+    "Total": 25,
+    "women": -1,
+    "pipeline": -0.04,
+    "%": -4
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Biological scientists",
+    "Total": 86,
+    "women": 42.6,
+    "pipeline": 0.495348837,
+    "%": 49.53488372
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Conservation scientists and foresters",
+    "Total": 25,
+    "women": -1,
+    "pipeline": -0.04,
+    "%": -4
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Medical scientists",
+    "Total": 157,
+    "women": 54.9,
+    "pipeline": 0.349681529,
+    "%": 34.96815287
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Life scientists, all other",
+    "Total": 1,
+    "women": -1,
+    "pipeline": -1,
+    "%": -100
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Astronomers and physicists",
+    "Total": 19,
+    "women": -1,
+    "pipeline": -0.052631579,
+    "%": -5.263157895
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Atmospheric and space scientists",
+    "Total": 12,
+    "women": -1,
+    "pipeline": -0.083333333,
+    "%": -8.333333333
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Chemists and materials scientists",
+    "Total": 99,
+    "women": 36.1,
+    "pipeline": 0.364646465,
+    "%": 36.46464646
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Environmental scientists and geoscientists",
+    "Total": 92,
+    "women": 27.5,
+    "pipeline": 0.298913043,
+    "%": 29.89130435
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Physical scientists, all other",
+    "Total": 232,
+    "women": 41.4,
+    "pipeline": 0.178448276,
+    "%": 17.84482759
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Economists",
+    "Total": 34,
+    "women": -1,
+    "pipeline": -0.029411765,
+    "%": -2.941176471
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Survey researchers",
+    "Total": 0,
+    "women": -1,
+    "pipeline": "#DIV/0!",
+    "%": "#DIV/0!"
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Psychologists",
+    "Total": 193,
+    "women": 70.3,
+    "pipeline": 0.364248705,
+    "%": 36.42487047
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Sociologists",
+    "Total": 1,
+    "women": -1,
+    "pipeline": -1,
+    "%": -100
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Urban and regional planners",
+    "Total": 25,
+    "women": -1,
+    "pipeline": -0.04,
+    "%": -4
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Miscellaneous social scientists and related workers",
+    "Total": 45,
+    "women": -1,
+    "pipeline": -0.022222222,
+    "%": -2.222222222
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Agricultural and food science technicians",
+    "Total": 25,
+    "women": -1,
+    "pipeline": -0.04,
+    "%": -4
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Biological technicians",
+    "Total": 18,
+    "women": -1,
+    "pipeline": -0.055555556,
+    "%": -5.555555556
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Chemical technicians",
+    "Total": 82,
+    "women": 40,
+    "pipeline": 0.487804878,
+    "%": 48.7804878
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Geological and petroleum technicians",
+    "Total": 21,
+    "women": -1,
+    "pipeline": -0.047619048,
+    "%": -4.761904762
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Nuclear technicians",
+    "Total": 3,
+    "women": -1,
+    "pipeline": -0.333333333,
+    "%": -33.33333333
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Social science research assistants",
+    "Total": 4,
+    "women": -1,
+    "pipeline": -0.25,
+    "%": -25
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Miscellaneous life, physical, and social science technicians",
+    "Total": 203,
+    "women": 53.9,
+    "pipeline": 0.265517241,
+    "%": 26.55172414
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Community and social service occupations",
+    "Total": "2,596",
+    "women": 65.3,
+    "pipeline": 0.025154083,
+    "%": 2.51540832
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Counselors",
+    "Total": 802,
+    "women": 71.4,
+    "pipeline": 0.089027431,
+    "%": 8.902743142
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Social workers",
+    "Total": 765,
+    "women": 83.8,
+    "pipeline": 0.109542484,
+    "%": 10.95424837
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Probation officers and correctional treatment specialists",
+    "Total": 99,
+    "women": 55.4,
+    "pipeline": 0.55959596,
+    "%": 55.95959596
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Social and human service assistants",
+    "Total": 194,
+    "women": 82.6,
+    "pipeline": 0.425773196,
+    "%": 42.57731959
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Miscellaneous community and social service specialists, including\nhealth educators and community health workers",
+    "Total": 117,
+    "women": 70.8,
+    "pipeline": 0.605128205,
+    "%": 60.51282051
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Clergy",
+    "Total": 469,
+    "women": 20.6,
+    "pipeline": 0.043923241,
+    "%": 4.392324094
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Directors, religious activities and education",
+    "Total": 78,
+    "women": 57.8,
+    "pipeline": 0.741025641,
+    "%": 74.1025641
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Religious workers, all other",
+    "Total": 73,
+    "women": 59,
+    "pipeline": 0.808219178,
+    "%": 80.82191781
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Legal occupations",
+    "Total": "1,803",
+    "women": 50.2,
+    "pipeline": 0.027842485,
+    "%": 2.784248475
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Lawyers",
+    "Total": "1,160",
+    "women": 34.5,
+    "pipeline": 0.029741379,
+    "%": 2.974137931
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Judicial law clerks",
+    "Total": 13,
+    "women": -1,
+    "pipeline": -0.076923077,
+    "%": -7.692307692
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Judges, magistrates, and other judicial workers",
+    "Total": 58,
+    "women": 39,
+    "pipeline": 0.672413793,
+    "%": 67.24137931
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Paralegals and legal assistants",
+    "Total": 400,
+    "women": 85.4,
+    "pipeline": 0.2135,
+    "%": 21.35
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Miscellaneous legal support workers",
+    "Total": 172,
+    "women": 76.4,
+    "pipeline": 0.444186047,
+    "%": 44.41860465
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Education, training, and library occupations",
+    "Total": "8,908",
+    "women": 73.4,
+    "pipeline": 0.008239784,
+    "%": 0.823978446
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Postsecondary teachers",
+    "Total": "1,341",
+    "women": 46.5,
+    "pipeline": 0.034675615,
+    "%": 3.467561521
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Preschool and kindergarten teachers",
+    "Total": 695,
+    "women": 96.8,
+    "pipeline": 0.139280576,
+    "%": 13.92805755
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Elementary and middle school teachers",
+    "Total": "3,152",
+    "women": 80.7,
+    "pipeline": 0.025602792,
+    "%": 2.560279188
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Secondary school teachers",
+    "Total": "1,144",
+    "women": 59.2,
+    "pipeline": 0.051748252,
+    "%": 5.174825175
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Special education teachers",
+    "Total": 330,
+    "women": 87.5,
+    "pipeline": 0.265151515,
+    "%": 26.51515152
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Other teachers and instructors",
+    "Total": 876,
+    "women": 62.3,
+    "pipeline": 0.071118721,
+    "%": 7.111872146
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Archivists, curators, and museum technicians",
+    "Total": 53,
+    "women": 60.1,
+    "pipeline": 1.133962264,
+    "%": 113.3962264
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Librarians",
+    "Total": 166,
+    "women": 83,
+    "pipeline": 0.5,
+    "%": 50
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Library technicians",
+    "Total": 31,
+    "women": -1,
+    "pipeline": -0.032258065,
+    "%": -3.225806452
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Teacher assistants",
+    "Total": 960,
+    "women": 91.4,
+    "pipeline": 0.095208333,
+    "%": 9.520833333
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Other education, training, and library workers",
+    "Total": 161,
+    "women": 73.7,
+    "pipeline": 0.457763975,
+    "%": 45.77639752
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Arts, design, entertainment, sports, and media occupations",
+    "Total": "3,051",
+    "women": 47.6,
+    "pipeline": 0.015601442,
+    "%": 1.560144215
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Artists and related workers",
+    "Total": 222,
+    "women": 56.9,
+    "pipeline": 0.256306306,
+    "%": 25.63063063
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Designers",
+    "Total": 899,
+    "women": 54.9,
+    "pipeline": 0.061067853,
+    "%": 6.106785317
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Actors",
+    "Total": 49,
+    "women": -1,
+    "pipeline": -0.020408163,
+    "%": -2.040816327
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Producers and directors",
+    "Total": 169,
+    "women": 36.9,
+    "pipeline": 0.218343195,
+    "%": 21.83431953
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Athletes, coaches, umpires, and related workers",
+    "Total": 296,
+    "women": 36.1,
+    "pipeline": 0.121959459,
+    "%": 12.19594595
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Dancers and choreographers",
+    "Total": 19,
+    "women": -1,
+    "pipeline": -0.052631579,
+    "%": -5.263157895
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Musicians, singers, and related workers",
+    "Total": 202,
+    "women": 34.5,
+    "pipeline": 0.170792079,
+    "%": 17.07920792
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Entertainers and performers, sports and related workers, all other",
+    "Total": 41,
+    "women": -1,
+    "pipeline": -0.024390244,
+    "%": -2.43902439
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Announcers",
+    "Total": 55,
+    "women": 16.5,
+    "pipeline": 0.3,
+    "%": 30
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "News analysts, reporters and correspondents",
+    "Total": 68,
+    "women": 46.7,
+    "pipeline": 0.686764706,
+    "%": 68.67647059
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Public relations specialists",
+    "Total": 147,
+    "women": 61.3,
+    "pipeline": 0.417006803,
+    "%": 41.70068027
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Editors",
+    "Total": 160,
+    "women": 51,
+    "pipeline": 0.31875,
+    "%": 31.875
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Technical writers",
+    "Total": 68,
+    "women": 58.2,
+    "pipeline": 0.855882353,
+    "%": 85.58823529
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Writers and authors",
+    "Total": 208,
+    "women": 59.4,
+    "pipeline": 0.285576923,
+    "%": 28.55769231
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Miscellaneous media and communication workers",
+    "Total": 84,
+    "women": 67.9,
+    "pipeline": 0.808333333,
+    "%": 80.83333333
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Broadcast and sound engineering technicians and radio operators",
+    "Total": 119,
+    "women": 9.2,
+    "pipeline": 0.077310924,
+    "%": 7.731092437
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Photographers",
+    "Total": 180,
+    "women": 49.9,
+    "pipeline": 0.277222222,
+    "%": 27.72222222
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Television, video, and motion picture camera operators and editors",
+    "Total": 64,
+    "women": 14.8,
+    "pipeline": 0.23125,
+    "%": 23.125
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Media and communication equipment workers, all other",
+    "Total": 2,
+    "women": -1,
+    "pipeline": -0.5,
+    "%": -50
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Healthcare practitioners and technical occupations",
+    "Total": "8,766",
+    "women": 75.1,
+    "pipeline": 0.008567191,
+    "%": 0.856719142
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Chiropractors",
+    "Total": 75,
+    "women": 29.5,
+    "pipeline": 0.393333333,
+    "%": 39.33333333
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Dentists",
+    "Total": 196,
+    "women": 25.9,
+    "pipeline": 0.132142857,
+    "%": 13.21428571
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Dietitians and nutritionists",
+    "Total": 108,
+    "women": 94.6,
+    "pipeline": 0.875925926,
+    "%": 87.59259259
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Optometrists",
+    "Total": 39,
+    "women": -1,
+    "pipeline": -0.025641026,
+    "%": -2.564102564
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Pharmacists",
+    "Total": 282,
+    "women": 57,
+    "pipeline": 0.20212766,
+    "%": 20.21276596
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Physicians and surgeons",
+    "Total": "1,007",
+    "women": 37.9,
+    "pipeline": 0.037636544,
+    "%": 3.763654419
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Physician assistants",
+    "Total": 74,
+    "women": 72.6,
+    "pipeline": 0.981081081,
+    "%": 98.10810811
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Podiatrists",
+    "Total": 15,
+    "women": -1,
+    "pipeline": -0.066666667,
+    "%": -6.666666667
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Audiologists",
+    "Total": 16,
+    "women": -1,
+    "pipeline": -0.0625,
+    "%": -6.25
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Occupational therapists",
+    "Total": 116,
+    "women": 88,
+    "pipeline": 0.75862069,
+    "%": 75.86206897
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Physical therapists",
+    "Total": 274,
+    "women": 72.1,
+    "pipeline": 0.263138686,
+    "%": 26.31386861
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Radiation therapists",
+    "Total": 13,
+    "women": -1,
+    "pipeline": -0.076923077,
+    "%": -7.692307692
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Recreational therapists",
+    "Total": 11,
+    "women": -1,
+    "pipeline": -0.090909091,
+    "%": -9.090909091
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Respiratory therapists",
+    "Total": 108,
+    "women": 66.8,
+    "pipeline": 0.618518519,
+    "%": 61.85185185
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Speech-language pathologists",
+    "Total": 158,
+    "women": 98.6,
+    "pipeline": 0.624050633,
+    "%": 62.40506329
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Exercise physiologists",
+    "Total": 5,
+    "women": -1,
+    "pipeline": -0.2,
+    "%": -20
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Therapists, all other",
+    "Total": 189,
+    "women": 80.9,
+    "pipeline": 0.428042328,
+    "%": 42.8042328
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Veterinarians",
+    "Total": 90,
+    "women": 60.5,
+    "pipeline": 0.672222222,
+    "%": 67.22222222
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Registered nurses",
+    "Total": "2,973",
+    "women": 89.4,
+    "pipeline": 0.030070636,
+    "%": 3.007063572
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Nurse anesthetists",
+    "Total": 27,
+    "women": -1,
+    "pipeline": -0.037037037,
+    "%": -3.703703704
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Nurse midwives",
+    "Total": 7,
+    "women": -1,
+    "pipeline": -0.142857143,
+    "%": -14.28571429
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Nurse practitioners",
+    "Total": 149,
+    "women": 90.8,
+    "pipeline": 0.609395973,
+    "%": 60.93959732
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Health diagnosing and treating practitioners, all other",
+    "Total": 17,
+    "women": -1,
+    "pipeline": -0.058823529,
+    "%": -5.882352941
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Clinical laboratory technologists and technicians",
+    "Total": 327,
+    "women": 76.1,
+    "pipeline": 0.232721713,
+    "%": 23.27217125
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Dental hygienists",
+    "Total": 177,
+    "women": 96.4,
+    "pipeline": 0.544632768,
+    "%": 54.46327684
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Diagnostic related technologists and technicians",
+    "Total": 322,
+    "women": 73.7,
+    "pipeline": 0.228881988,
+    "%": 22.88819876
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Emergency medical technicians and paramedics",
+    "Total": 220,
+    "women": 32.9,
+    "pipeline": 0.149545455,
+    "%": 14.95454545
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Health practitioner support technologists and technicians",
+    "Total": 626,
+    "women": 81.5,
+    "pipeline": 0.130191693,
+    "%": 13.01916933
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Licensed practical and licensed vocational nurses",
+    "Total": 670,
+    "women": 90.1,
+    "pipeline": 0.134477612,
+    "%": 13.44776119
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Medical records and health information technicians",
+    "Total": 200,
+    "women": 89.6,
+    "pipeline": 0.448,
+    "%": 44.8
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Opticians, dispensing",
+    "Total": 52,
+    "women": 60.4,
+    "pipeline": 1.161538462,
+    "%": 116.1538462
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Miscellaneous health technologists and technicians",
+    "Total": 117,
+    "women": 67.5,
+    "pipeline": 0.576923077,
+    "%": 57.69230769
+  },
+  {
+    "Occupation": "Management, professional, and related occupations",
+    "Role": "Other healthcare practitioners and technical occupations",
+    "Total": 108,
+    "women": 52.7,
+    "pipeline": 0.487962963,
+    "%": 48.7962963
+  },
+  {
+    "Occupation": "Service occupations",
+    "Role": "Total",
+    "Total": "25,896",
+    "women": 56.7,
+    "pipeline": 0.002189527,
+    "%": 0.218952734
+  },
+  {
+    "Occupation": "Service occupations",
+    "Role": "Healthcare support occupations",
+    "Total": "3,514",
+    "women": 87.6,
+    "pipeline": 0.024928856,
+    "%": 2.4928856
+  },
+  {
+    "Occupation": "Service occupations",
+    "Role": "Nursing, psychiatric, and home health aides",
+    "Total": "2,032",
+    "women": 89.4,
+    "pipeline": 0.043996063,
+    "%": 4.399606299
+  },
+  {
+    "Occupation": "Service occupations",
+    "Role": "Occupational therapy assistants and aides",
+    "Total": 23,
+    "women": -1,
+    "pipeline": -0.043478261,
+    "%": -4.347826087
+  },
+  {
+    "Occupation": "Service occupations",
+    "Role": "Physical therapist assistants and aides",
+    "Total": 68,
+    "women": 67.7,
+    "pipeline": 0.995588235,
+    "%": 99.55882353
+  },
+  {
+    "Occupation": "Service occupations",
+    "Role": "Massage therapists",
+    "Total": 189,
+    "women": 77.9,
+    "pipeline": 0.412169312,
+    "%": 41.21693122
+  },
+  {
+    "Occupation": "Service occupations",
+    "Role": "Dental assistants",
+    "Total": 286,
+    "women": 94.1,
+    "pipeline": 0.329020979,
+    "%": 32.9020979
+  },
+  {
+    "Occupation": "Service occupations",
+    "Role": "Medical assistants",
+    "Total": 524,
+    "women": 90.7,
+    "pipeline": 0.173091603,
+    "%": 17.30916031
+  },
+  {
+    "Occupation": "Service occupations",
+    "Role": "Medical transcriptionists",
+    "Total": 42,
+    "women": -1,
+    "pipeline": -0.023809524,
+    "%": -2.380952381
+  },
+  {
+    "Occupation": "Service occupations",
+    "Role": "Pharmacy aides",
+    "Total": 36,
+    "women": -1,
+    "pipeline": -0.027777778,
+    "%": -2.777777778
+  },
+  {
+    "Occupation": "Service occupations",
+    "Role": "Veterinary assistants and laboratory animal caretakers",
+    "Total": 38,
+    "women": -1,
+    "pipeline": -0.026315789,
+    "%": -2.631578947
+  },
+  {
+    "Occupation": "Service occupations",
+    "Role": "Phlebotomists",
+    "Total": 106,
+    "women": 84.1,
+    "pipeline": 0.793396226,
+    "%": 79.33962264
+  },
+  {
+    "Occupation": "Service occupations",
+    "Role": "Miscellaneous healthcare support occupations, including medical equipment preparers",
+    "Total": 170,
+    "women": 69.6,
+    "pipeline": 0.409411765,
+    "%": 40.94117647
+  },
+  {
+    "Occupation": "Service occupations",
+    "Role": "Protective service occupations",
+    "Total": "3,109",
+    "women": 21.3,
+    "pipeline": 0.006851078,
+    "%": 0.685107752
+  },
+  {
+    "Occupation": "Service occupations",
+    "Role": "First-line supervisors of correctional officers",
+    "Total": 52,
+    "women": 31.4,
+    "pipeline": 0.603846154,
+    "%": 60.38461538
+  },
+  {
+    "Occupation": "Service occupations",
+    "Role": "First-line supervisors of police and detectives",
+    "Total": 110,
+    "women": 12.8,
+    "pipeline": 0.116363636,
+    "%": 11.63636364
+  },
+  {
+    "Occupation": "Service occupations",
+    "Role": "First-line supervisors of fire fighting and prevention workers",
+    "Total": 49,
+    "women": -1,
+    "pipeline": -0.020408163,
+    "%": -2.040816327
+  },
+  {
+    "Occupation": "Service occupations",
+    "Role": "First-line supervisors of protective service workers, all other",
+    "Total": 81,
+    "women": 23.2,
+    "pipeline": 0.286419753,
+    "%": 28.64197531
+  },
+  {
+    "Occupation": "Service occupations",
+    "Role": "Firefighters",
+    "Total": 293,
+    "women": 5.9,
+    "pipeline": 0.020136519,
+    "%": 2.013651877
+  },
+  {
+    "Occupation": "Service occupations",
+    "Role": "Fire inspectors",
+    "Total": 19,
+    "women": -1,
+    "pipeline": -0.052631579,
+    "%": -5.263157895
+  },
+  {
+    "Occupation": "Service occupations",
+    "Role": "Bailiffs, correctional officers, and jailers",
+    "Total": 443,
+    "women": 23.8,
+    "pipeline": 0.053724605,
+    "%": 5.372460497
+  },
+  {
+    "Occupation": "Service occupations",
+    "Role": "Detectives and criminal investigators",
+    "Total": 144,
+    "women": 27.2,
+    "pipeline": 0.188888889,
+    "%": 18.88888889
+  },
+  {
+    "Occupation": "Service occupations",
+    "Role": "Fish and game wardens",
+    "Total": 6,
+    "women": -1,
+    "pipeline": -0.166666667,
+    "%": -16.66666667
+  },
+  {
+    "Occupation": "Service occupations",
+    "Role": "Parking enforcement workers",
+    "Total": 10,
+    "women": -1,
+    "pipeline": -0.1,
+    "%": -10
+  },
+  {
+    "Occupation": "Service occupations",
+    "Role": "Police and sheriff's patrol officers",
+    "Total": 688,
+    "women": 13.6,
+    "pipeline": 0.019767442,
+    "%": 1.976744186
+  },
+  {
+    "Occupation": "Service occupations",
+    "Role": "Transit and railroad police",
+    "Total": 1,
+    "women": -1,
+    "pipeline": -1,
+    "%": -100
+  },
+  {
+    "Occupation": "Service occupations",
+    "Role": "Animal control workers",
+    "Total": 5,
+    "women": -1,
+    "pipeline": -0.2,
+    "%": -20
+  },
+  {
+    "Occupation": "Service occupations",
+    "Role": "Private detectives and investigators",
+    "Total": 100,
+    "women": 38.4,
+    "pipeline": 0.384,
+    "%": 38.4
+  },
+  {
+    "Occupation": "Service occupations",
+    "Role": "Security guards and gaming surveillance officers",
+    "Total": 869,
+    "women": 22,
+    "pipeline": 0.025316456,
+    "%": 2.53164557
+  },
+  {
+    "Occupation": "Service occupations",
+    "Role": "Crossing guards",
+    "Total": 57,
+    "women": 59.8,
+    "pipeline": 1.049122807,
+    "%": 104.9122807
+  },
+  {
+    "Occupation": "Service occupations",
+    "Role": "Transportation security screeners",
+    "Total": 38,
+    "women": -1,
+    "pipeline": -0.026315789,
+    "%": -2.631578947
+  },
+  {
+    "Occupation": "Service occupations",
+    "Role": "Lifeguards and other recreational, and all other protective service workers",
+    "Total": 144,
+    "women": 43.7,
+    "pipeline": 0.303472222,
+    "%": 30.34722222
+  },
+  {
+    "Occupation": "Service occupations",
+    "Role": "Food preparation and serving related occupations",
+    "Total": "8,142",
+    "women": 54.5,
+    "pipeline": 0.006693687,
+    "%": 0.669368705
+  },
+  {
+    "Occupation": "Service occupations",
+    "Role": "Chefs and head cooks",
+    "Total": 415,
+    "women": 19.6,
+    "pipeline": 0.047228916,
+    "%": 4.722891566
+  },
+  {
+    "Occupation": "Service occupations",
+    "Role": "First-line supervisors of food preparation and serving workers",
+    "Total": 527,
+    "women": 57.4,
+    "pipeline": 0.108918406,
+    "%": 10.89184061
+  },
+  {
+    "Occupation": "Service occupations",
+    "Role": "Cooks",
+    "Total": "2,091",
+    "women": 39.9,
+    "pipeline": 0.019081779,
+    "%": 1.908177905
+  },
+  {
+    "Occupation": "Service occupations",
+    "Role": "Food preparation workers",
+    "Total": 858,
+    "women": 59.1,
+    "pipeline": 0.068881119,
+    "%": 6.888111888
+  },
+  {
+    "Occupation": "Service occupations",
+    "Role": "Bartenders",
+    "Total": 451,
+    "women": 59.8,
+    "pipeline": 0.132594235,
+    "%": 13.2594235
+  },
+  {
+    "Occupation": "Service occupations",
+    "Role": "Combined food preparation and serving workers, including fast food",
+    "Total": 420,
+    "women": 63.4,
+    "pipeline": 0.150952381,
+    "%": 15.0952381
+  },
+  {
+    "Occupation": "Service occupations",
+    "Role": "Counter attendants, cafeteria, food concession, and coffee shop",
+    "Total": 233,
+    "women": 66.7,
+    "pipeline": 0.286266094,
+    "%": 28.62660944
+  },
+  {
+    "Occupation": "Service occupations",
+    "Role": "Waiters and waitresses",
+    "Total": "2,057",
+    "women": 70.1,
+    "pipeline": 0.034078755,
+    "%": 3.407875547
+  },
+  {
+    "Occupation": "Service occupations",
+    "Role": "Food servers, nonrestaurant",
+    "Total": 190,
+    "women": 70.9,
+    "pipeline": 0.373157895,
+    "%": 37.31578947
+  },
+  {
+    "Occupation": "Service occupations",
+    "Role": "Dining room and cafeteria attendants and bartender helpers",
+    "Total": 321,
+    "women": 44.2,
+    "pipeline": 0.137694704,
+    "%": 13.7694704
+  },
+  {
+    "Occupation": "Service occupations",
+    "Role": "Dishwashers",
+    "Total": 281,
+    "women": 21.3,
+    "pipeline": 0.075800712,
+    "%": 7.580071174
+  },
+  {
+    "Occupation": "Service occupations",
+    "Role": "Hosts and hostesses, restaurant, lounge, and coffee shop",
+    "Total": 293,
+    "women": 82.1,
+    "pipeline": 0.280204778,
+    "%": 28.02047782
+  },
+  {
+    "Occupation": "Service occupations",
+    "Role": "Food preparation and serving related workers, all other",
+    "Total": 5,
+    "women": -1,
+    "pipeline": -0.2,
+    "%": -20
+  },
+  {
+    "Occupation": "Service occupations",
+    "Role": "Building and grounds cleaning and maintenance occupations",
+    "Total": "5,716",
+    "women": 41.1,
+    "pipeline": 0.007190343,
+    "%": 0.71903429
+  },
+  {
+    "Occupation": "Service occupations",
+    "Role": "First-line supervisors of housekeeping and janitorial workers",
+    "Total": 293,
+    "women": 40.6,
+    "pipeline": 0.138566553,
+    "%": 13.85665529
+  },
+  {
+    "Occupation": "Service occupations",
+    "Role": "First-line supervisors of landscaping, lawn service, and groundskeeping workers",
+    "Total": 215,
+    "women": 6.6,
+    "pipeline": 0.030697674,
+    "%": 3.069767442
+  },
+  {
+    "Occupation": "Service occupations",
+    "Role": "Janitors and building cleaners",
+    "Total": "2,263",
+    "women": 34.3,
+    "pipeline": 0.015156871,
+    "%": 1.515687141
+  },
+  {
+    "Occupation": "Service occupations",
+    "Role": "Maids and housekeeping cleaners",
+    "Total": "1,510",
+    "women": 89.3,
+    "pipeline": 0.059139073,
+    "%": 5.913907285
+  },
+  {
+    "Occupation": "Service occupations",
+    "Role": "Pest control workers",
+    "Total": 85,
+    "women": 4.7,
+    "pipeline": 0.055294118,
+    "%": 5.529411765
+  },
+  {
+    "Occupation": "Service occupations",
+    "Role": "Grounds maintenance workers",
+    "Total": "1,349",
+    "women": 6.4,
+    "pipeline": 0.004744255,
+    "%": 0.4744255
+  },
+  {
+    "Occupation": "Service occupations",
+    "Role": "Personal care and service occupations",
+    "Total": "5,415",
+    "women": 76.8,
+    "pipeline": 0.014182825,
+    "%": 1.418282548
+  },
+  {
+    "Occupation": "Service occupations",
+    "Role": "First-line supervisors of gaming workers",
+    "Total": 168,
+    "women": 46.6,
+    "pipeline": 0.277380952,
+    "%": 27.73809524
+  },
+  {
+    "Occupation": "Service occupations",
+    "Role": "First-line supervisors of personal service workers",
+    "Total": 185,
+    "women": 71,
+    "pipeline": 0.383783784,
+    "%": 38.37837838
+  },
+  {
+    "Occupation": "Service occupations",
+    "Role": "Animal trainers",
+    "Total": 54,
+    "women": 50.9,
+    "pipeline": 0.942592593,
+    "%": 94.25925926
+  },
+  {
+    "Occupation": "Service occupations",
+    "Role": "Nonfarm animal caretakers",
+    "Total": 252,
+    "women": 67.9,
+    "pipeline": 0.269444444,
+    "%": 26.94444444
+  },
+  {
+    "Occupation": "Service occupations",
+    "Role": "Gaming services workers",
+    "Total": 89,
+    "women": 52.2,
+    "pipeline": 0.586516854,
+    "%": 58.65168539
+  },
+  {
+    "Occupation": "Service occupations",
+    "Role": "Motion picture projectionists",
+    "Total": 6,
+    "women": -1,
+    "pipeline": -0.166666667,
+    "%": -16.66666667
+  },
+  {
+    "Occupation": "Service occupations",
+    "Role": "Ushers, lobby attendants, and ticket takers",
+    "Total": 44,
+    "women": -1,
+    "pipeline": -0.022727273,
+    "%": -2.272727273
+  },
+  {
+    "Occupation": "Service occupations",
+    "Role": "Miscellaneous entertainment attendants and related workers",
+    "Total": 221,
+    "women": 39.2,
+    "pipeline": 0.177375566,
+    "%": 17.73755656
+  },
+  {
+    "Occupation": "Service occupations",
+    "Role": "Embalmers and funeral attendants",
+    "Total": 9,
+    "women": -1,
+    "pipeline": -0.111111111,
+    "%": -11.11111111
+  },
+  {
+    "Occupation": "Service occupations",
+    "Role": "Morticians, undertakers, and funeral directors",
+    "Total": 35,
+    "women": -1,
+    "pipeline": -0.028571429,
+    "%": -2.857142857
+  },
+  {
+    "Occupation": "Service occupations",
+    "Role": "Barbers",
+    "Total": 116,
+    "women": 22.1,
+    "pipeline": 0.190517241,
+    "%": 19.05172414
+  },
+  {
+    "Occupation": "Service occupations",
+    "Role": "Hairdressers, hairstylists, and cosmetologists",
+    "Total": 707,
+    "women": 94.2,
+    "pipeline": 0.133239038,
+    "%": 13.32390382
+  },
+  {
+    "Occupation": "Service occupations",
+    "Role": "Miscellaneous personal appearance workers",
+    "Total": 324,
+    "women": 85.3,
+    "pipeline": 0.263271605,
+    "%": 26.32716049
+  },
+  {
+    "Occupation": "Service occupations",
+    "Role": "Baggage porters, bellhops, and concierges",
+    "Total": 76,
+    "women": 16.1,
+    "pipeline": 0.211842105,
+    "%": 21.18421053
+  },
+  {
+    "Occupation": "Service occupations",
+    "Role": "Tour and travel guides",
+    "Total": 54,
+    "women": 54.3,
+    "pipeline": 1.005555556,
+    "%": 100.5555556
+  },
+  {
+    "Occupation": "Service occupations",
+    "Role": "Childcare workers",
+    "Total": "1,206",
+    "women": 94.9,
+    "pipeline": 0.078689884,
+    "%": 7.868988391
+  },
+  {
+    "Occupation": "Service occupations",
+    "Role": "Personal care aides",
+    "Total": "1,251",
+    "women": 85.1,
+    "pipeline": 0.06802558,
+    "%": 6.802557954
+  },
+  {
+    "Occupation": "Service occupations",
+    "Role": "Recreation and fitness workers",
+    "Total": 429,
+    "women": 61.6,
+    "pipeline": 0.143589744,
+    "%": 14.35897436
+  },
+  {
+    "Occupation": "Service occupations",
+    "Role": "Residential advisors",
+    "Total": 38,
+    "women": -1,
+    "pipeline": -0.026315789,
+    "%": -2.631578947
+  },
+  {
+    "Occupation": "Service occupations",
+    "Role": "Personal care and service workers, all other",
+    "Total": 149,
+    "women": 49.8,
+    "pipeline": 0.334228188,
+    "%": 33.42281879
+  },
+  {
+    "Occupation": "Sales and office occupations",
+    "Role": "Total",
+    "Total": "33,598",
+    "women": 61.5,
+    "pipeline": 0.001830466,
+    "%": 0.18304661
+  },
+  {
+    "Occupation": "Sales and office occupations",
+    "Role": "Sales and related occupations",
+    "Total": "15,700",
+    "women": 49.3,
+    "pipeline": 0.003140127,
+    "%": 0.314012739
+  },
+  {
+    "Occupation": "Sales and office occupations",
+    "Role": "First-line supervisors of retail sales workers",
+    "Total": "3,245",
+    "women": 44,
+    "pipeline": 0.013559322,
+    "%": 1.355932203
+  },
+  {
+    "Occupation": "Sales and office occupations",
+    "Role": "First-line supervisors of non-retail sales workers",
+    "Total": "1,242",
+    "women": 28.7,
+    "pipeline": 0.02310789,
+    "%": 2.31078905
+  },
+  {
+    "Occupation": "Sales and office occupations",
+    "Role": "Cashiers",
+    "Total": "3,246",
+    "women": 72.5,
+    "pipeline": 0.022335182,
+    "%": 2.233518176
+  },
+  {
+    "Occupation": "Sales and office occupations",
+    "Role": "Counter and rental clerks",
+    "Total": 109,
+    "women": 50.9,
+    "pipeline": 0.466972477,
+    "%": 46.69724771
+  },
+  {
+    "Occupation": "Sales and office occupations",
+    "Role": "Parts salespersons",
+    "Total": 124,
+    "women": 12.4,
+    "pipeline": 0.1,
+    "%": 10
+  },
+  {
+    "Occupation": "Sales and office occupations",
+    "Role": "Retail salespersons",
+    "Total": "3,346",
+    "women": 49.4,
+    "pipeline": 0.014763897,
+    "%": 1.476389719
+  },
+  {
+    "Occupation": "Sales and office occupations",
+    "Role": "Advertising sales agents",
+    "Total": 200,
+    "women": 49.7,
+    "pipeline": 0.2485,
+    "%": 24.85
+  },
+  {
+    "Occupation": "Sales and office occupations",
+    "Role": "Insurance sales agents",
+    "Total": 615,
+    "women": 51.2,
+    "pipeline": 0.083252033,
+    "%": 8.325203252
+  },
+  {
+    "Occupation": "Sales and office occupations",
+    "Role": "Securities, commodities, and financial services sales agents",
+    "Total": 258,
+    "women": 26.2,
+    "pipeline": 0.101550388,
+    "%": 10.15503876
+  },
+  {
+    "Occupation": "Sales and office occupations",
+    "Role": "Travel agents",
+    "Total": 89,
+    "women": 75.9,
+    "pipeline": 0.852808989,
+    "%": 85.28089888
+  },
+  {
+    "Occupation": "Sales and office occupations",
+    "Role": "Sales representatives, services, all other",
+    "Total": 479,
+    "women": 34.8,
+    "pipeline": 0.072651357,
+    "%": 7.265135699
+  },
+  {
+    "Occupation": "Sales and office occupations",
+    "Role": "Sales representatives, wholesale and manufacturing",
+    "Total": "1,281",
+    "women": 27.9,
+    "pipeline": 0.021779859,
+    "%": 2.177985948
+  },
+  {
+    "Occupation": "Sales and office occupations",
+    "Role": "Models, demonstrators, and product promoters",
+    "Total": 68,
+    "women": 70.7,
+    "pipeline": 1.039705882,
+    "%": 103.9705882
+  },
+  {
+    "Occupation": "Sales and office occupations",
+    "Role": "Real estate brokers and sales agents",
+    "Total": 906,
+    "women": 55.5,
+    "pipeline": 0.061258278,
+    "%": 6.125827815
+  },
+  {
+    "Occupation": "Sales and office occupations",
+    "Role": "Sales engineers",
+    "Total": 42,
+    "women": -1,
+    "pipeline": -0.023809524,
+    "%": -2.380952381
+  },
+  {
+    "Occupation": "Sales and office occupations",
+    "Role": "Telemarketers",
+    "Total": 60,
+    "women": 64.3,
+    "pipeline": 1.071666667,
+    "%": 107.1666667
+  },
+  {
+    "Occupation": "Sales and office occupations",
+    "Role": "Door-to-door sales workers, news and street vendors, and related workers",
+    "Total": 156,
+    "women": 67,
+    "pipeline": 0.429487179,
+    "%": 42.94871795
+  },
+  {
+    "Occupation": "Sales and office occupations",
+    "Role": "Sales and related workers, all other",
+    "Total": 236,
+    "women": 46.8,
+    "pipeline": 0.198305085,
+    "%": 19.83050847
+  },
+  {
+    "Occupation": "Sales and office occupations",
+    "Role": "Office and administrative support occupations",
+    "Total": "17,897",
+    "women": 72.2,
+    "pipeline": 0.004034196,
+    "%": 0.403419568
+  },
+  {
+    "Occupation": "Sales and office occupations",
+    "Role": "First-line supervisors of office and administrative support workers",
+    "Total": "1,474",
+    "women": 68.3,
+    "pipeline": 0.046336499,
+    "%": 4.633649932
+  },
+  {
+    "Occupation": "Sales and office occupations",
+    "Role": "Switchboard operators, including answering service",
+    "Total": 16,
+    "women": -1,
+    "pipeline": -0.0625,
+    "%": -6.25
+  },
+  {
+    "Occupation": "Sales and office occupations",
+    "Role": "Telephone operators",
+    "Total": 34,
+    "women": -1,
+    "pipeline": -0.029411765,
+    "%": -2.941176471
+  },
+  {
+    "Occupation": "Sales and office occupations",
+    "Role": "Communications equipment operators, all other",
+    "Total": 5,
+    "women": -1,
+    "pipeline": -0.2,
+    "%": -20
+  },
+  {
+    "Occupation": "Sales and office occupations",
+    "Role": "Bill and account collectors",
+    "Total": 168,
+    "women": 68.3,
+    "pipeline": 0.406547619,
+    "%": 40.6547619
+  },
+  {
+    "Occupation": "Sales and office occupations",
+    "Role": "Billing and posting clerks",
+    "Total": 473,
+    "women": 90.1,
+    "pipeline": 0.190486258,
+    "%": 19.04862579
+  },
+  {
+    "Occupation": "Sales and office occupations",
+    "Role": "Bookkeeping, accounting, and auditing clerks",
+    "Total": "1,182",
+    "women": 89.8,
+    "pipeline": 0.075972927,
+    "%": 7.597292724
+  },
+  {
+    "Occupation": "Sales and office occupations",
+    "Role": "Gaming cage workers",
+    "Total": 14,
+    "women": -1,
+    "pipeline": -0.071428571,
+    "%": -7.142857143
+  },
+  {
+    "Occupation": "Sales and office occupations",
+    "Role": "Payroll and timekeeping clerks",
+    "Total": 138,
+    "women": 89.3,
+    "pipeline": 0.647101449,
+    "%": 64.71014493
+  },
+  {
+    "Occupation": "Sales and office occupations",
+    "Role": "Procurement clerks",
+    "Total": 40,
+    "women": -1,
+    "pipeline": -0.025,
+    "%": -2.5
+  },
+  {
+    "Occupation": "Sales and office occupations",
+    "Role": "Tellers",
+    "Total": 357,
+    "women": 87.3,
+    "pipeline": 0.244537815,
+    "%": 24.45378151
+  },
+  {
+    "Occupation": "Sales and office occupations",
+    "Role": "Financial clerks, all other",
+    "Total": 69,
+    "women": 63.3,
+    "pipeline": 0.917391304,
+    "%": 91.73913043
+  },
+  {
+    "Occupation": "Sales and office occupations",
+    "Role": "Brokerage clerks",
+    "Total": 3,
+    "women": -1,
+    "pipeline": -0.333333333,
+    "%": -33.33333333
+  },
+  {
+    "Occupation": "Sales and office occupations",
+    "Role": "Correspondence clerks",
+    "Total": 3,
+    "women": -1,
+    "pipeline": -0.333333333,
+    "%": -33.33333333
+  },
+  {
+    "Occupation": "Sales and office occupations",
+    "Role": "Court, municipal, and license clerks",
+    "Total": 71,
+    "women": 87,
+    "pipeline": 1.225352113,
+    "%": 122.5352113
+  },
+  {
+    "Occupation": "Sales and office occupations",
+    "Role": "Credit authorizers, checkers, and clerks",
+    "Total": 52,
+    "women": 72.9,
+    "pipeline": 1.401923077,
+    "%": 140.1923077
+  },
+  {
+    "Occupation": "Sales and office occupations",
+    "Role": "Customer service representatives",
+    "Total": "2,271",
+    "women": 65.1,
+    "pipeline": 0.028665786,
+    "%": 2.8665786
+  },
+  {
+    "Occupation": "Sales and office occupations",
+    "Role": "Eligibility interviewers, government programs",
+    "Total": 74,
+    "women": 77.3,
+    "pipeline": 1.044594595,
+    "%": 104.4594595
+  },
+  {
+    "Occupation": "Sales and office occupations",
+    "Role": "File clerks",
+    "Total": 203,
+    "women": 82.2,
+    "pipeline": 0.404926108,
+    "%": 40.49261084
+  },
+  {
+    "Occupation": "Sales and office occupations",
+    "Role": "Hotel, motel, and resort desk clerks",
+    "Total": 156,
+    "women": 59.5,
+    "pipeline": 0.381410256,
+    "%": 38.14102564
+  },
+  {
+    "Occupation": "Sales and office occupations",
+    "Role": "Interviewers, except eligibility and loan",
+    "Total": 151,
+    "women": 83.2,
+    "pipeline": 0.550993377,
+    "%": 55.09933775
+  },
+  {
+    "Occupation": "Sales and office occupations",
+    "Role": "Library assistants, clerical",
+    "Total": 98,
+    "women": 77.3,
+    "pipeline": 0.78877551,
+    "%": 78.87755102
+  },
+  {
+    "Occupation": "Sales and office occupations",
+    "Role": "Loan interviewers and clerks",
+    "Total": 139,
+    "women": 83.5,
+    "pipeline": 0.600719424,
+    "%": 60.07194245
+  },
+  {
+    "Occupation": "Sales and office occupations",
+    "Role": "New accounts clerks",
+    "Total": 26,
+    "women": -1,
+    "pipeline": -0.038461538,
+    "%": -3.846153846
+  },
+  {
+    "Occupation": "Sales and office occupations",
+    "Role": "Order clerks",
+    "Total": 84,
+    "women": 65.6,
+    "pipeline": 0.780952381,
+    "%": 78.0952381
+  },
+  {
+    "Occupation": "Sales and office occupations",
+    "Role": "Human resources assistants, except payroll and timekeeping",
+    "Total": 59,
+    "women": 82.9,
+    "pipeline": 1.405084746,
+    "%": 140.5084746
+  },
+  {
+    "Occupation": "Sales and office occupations",
+    "Role": "Receptionists and information clerks",
+    "Total": "1,232",
+    "women": 90.6,
+    "pipeline": 0.073538961,
+    "%": 7.353896104
+  },
+  {
+    "Occupation": "Sales and office occupations",
+    "Role": "Reservation and transportation ticket agents and travel clerks",
+    "Total": 111,
+    "women": 61.3,
+    "pipeline": 0.552252252,
+    "%": 55.22522523
+  },
+  {
+    "Occupation": "Sales and office occupations",
+    "Role": "Information and record clerks, all other",
+    "Total": 127,
+    "women": 76.9,
+    "pipeline": 0.605511811,
+    "%": 60.5511811
+  },
+  {
+    "Occupation": "Sales and office occupations",
+    "Role": "Cargo and freight agents",
+    "Total": 21,
+    "women": -1,
+    "pipeline": -0.047619048,
+    "%": -4.761904762
+  },
+  {
+    "Occupation": "Sales and office occupations",
+    "Role": "Couriers and messengers",
+    "Total": 235,
+    "women": 14.3,
+    "pipeline": 0.060851064,
+    "%": 6.085106383
+  },
+  {
+    "Occupation": "Sales and office occupations",
+    "Role": "Dispatchers",
+    "Total": 277,
+    "women": 56.3,
+    "pipeline": 0.203249097,
+    "%": 20.32490975
+  },
+  {
+    "Occupation": "Sales and office occupations",
+    "Role": "Meter readers, utilities",
+    "Total": 41,
+    "women": -1,
+    "pipeline": -0.024390244,
+    "%": -2.43902439
+  },
+  {
+    "Occupation": "Sales and office occupations",
+    "Role": "Postal service clerks",
+    "Total": 130,
+    "women": 46,
+    "pipeline": 0.353846154,
+    "%": 35.38461538
+  },
+  {
+    "Occupation": "Sales and office occupations",
+    "Role": "Postal service mail carriers",
+    "Total": 320,
+    "women": 41.2,
+    "pipeline": 0.12875,
+    "%": 12.875
+  },
+  {
+    "Occupation": "Sales and office occupations",
+    "Role": "Postal service mail sorters, processors, and processing machine operators",
+    "Total": 64,
+    "women": 50,
+    "pipeline": 0.78125,
+    "%": 78.125
+  },
+  {
+    "Occupation": "Sales and office occupations",
+    "Role": "Production, planning, and expediting clerks",
+    "Total": 286,
+    "women": 55,
+    "pipeline": 0.192307692,
+    "%": 19.23076923
+  },
+  {
+    "Occupation": "Sales and office occupations",
+    "Role": "Shipping, receiving, and traffic clerks",
+    "Total": 575,
+    "women": 29.5,
+    "pipeline": 0.051304348,
+    "%": 5.130434783
+  },
+  {
+    "Occupation": "Sales and office occupations",
+    "Role": "Stock clerks and order fillers",
+    "Total": "1,529",
+    "women": 35.8,
+    "pipeline": 0.023413996,
+    "%": 2.341399608
+  },
+  {
+    "Occupation": "Sales and office occupations",
+    "Role": "Weighers, measurers, checkers, and samplers, recordkeeping",
+    "Total": 72,
+    "women": 57.8,
+    "pipeline": 0.802777778,
+    "%": 80.27777778
+  },
+  {
+    "Occupation": "Sales and office occupations",
+    "Role": "Secretaries and administrative assistants",
+    "Total": "2,870",
+    "women": 94.5,
+    "pipeline": 0.032926829,
+    "%": 3.292682927
+  },
+  {
+    "Occupation": "Sales and office occupations",
+    "Role": "Computer operators",
+    "Total": 69,
+    "women": 46.8,
+    "pipeline": 0.67826087,
+    "%": 67.82608696
+  },
+  {
+    "Occupation": "Sales and office occupations",
+    "Role": "Data entry keyers",
+    "Total": 281,
+    "women": 74.3,
+    "pipeline": 0.264412811,
+    "%": 26.44128114
+  },
+  {
+    "Occupation": "Sales and office occupations",
+    "Role": "Word processors and typists",
+    "Total": 103,
+    "women": 92.1,
+    "pipeline": 0.894174757,
+    "%": 89.41747573
+  },
+  {
+    "Occupation": "Sales and office occupations",
+    "Role": "Desktop publishers",
+    "Total": 1,
+    "women": -1,
+    "pipeline": -1,
+    "%": -100
+  },
+  {
+    "Occupation": "Sales and office occupations",
+    "Role": "Insurance claims and policy processing clerks",
+    "Total": 287,
+    "women": 77.1,
+    "pipeline": 0.268641115,
+    "%": 26.8641115
+  },
+  {
+    "Occupation": "Sales and office occupations",
+    "Role": "Mail clerks and mail machine operators, except postal service",
+    "Total": 81,
+    "women": 59.4,
+    "pipeline": 0.733333333,
+    "%": 73.33333333
+  },
+  {
+    "Occupation": "Sales and office occupations",
+    "Role": "Office clerks, general",
+    "Total": "1,288",
+    "women": 82.3,
+    "pipeline": 0.063897516,
+    "%": 6.389751553
+  },
+  {
+    "Occupation": "Sales and office occupations",
+    "Role": "Office machine operators, except computer",
+    "Total": 37,
+    "women": -1,
+    "pipeline": -0.027027027,
+    "%": -2.702702703
+  },
+  {
+    "Occupation": "Sales and office occupations",
+    "Role": "Proofreaders and copy markers",
+    "Total": 8,
+    "women": -1,
+    "pipeline": -0.125,
+    "%": -12.5
+  },
+  {
+    "Occupation": "Sales and office occupations",
+    "Role": "Statistical assistants",
+    "Total": 17,
+    "women": -1,
+    "pipeline": -0.058823529,
+    "%": -5.882352941
+  },
+  {
+    "Occupation": "Sales and office occupations",
+    "Role": "Office and administrative support workers, all other",
+    "Total": 477,
+    "women": 77.4,
+    "pipeline": 0.162264151,
+    "%": 16.22641509
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Total",
+    "Total": "13,733",
+    "women": 4.7,
+    "pipeline": 0.000342241,
+    "%": 0.034224132
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Farming, fishing, and forestry occupations",
+    "Total": "1,073",
+    "women": 24.2,
+    "pipeline": 0.022553588,
+    "%": 2.255358807
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "First-line supervisors of farming, fishing, and forestry workers",
+    "Total": 54,
+    "women": 21.2,
+    "pipeline": 0.392592593,
+    "%": 39.25925926
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Agricultural inspectors",
+    "Total": 18,
+    "women": -1,
+    "pipeline": -0.055555556,
+    "%": -5.555555556
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Animal breeders",
+    "Total": 8,
+    "women": -1,
+    "pipeline": -0.125,
+    "%": -12.5
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Graders and sorters, agricultural products",
+    "Total": 97,
+    "women": 61.7,
+    "pipeline": 0.636082474,
+    "%": 63.60824742
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Miscellaneous agricultural workers",
+    "Total": 789,
+    "women": 21.9,
+    "pipeline": 0.027756654,
+    "%": 2.775665399
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Fishers and related fishing workers",
+    "Total": 39,
+    "women": -1,
+    "pipeline": -0.025641026,
+    "%": -2.564102564
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Hunters and trappers",
+    "Total": 0,
+    "women": -1,
+    "pipeline": "#DIV/0!",
+    "%": "#DIV/0!"
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Forest and conservation workers",
+    "Total": 18,
+    "women": -1,
+    "pipeline": -0.055555556,
+    "%": -5.555555556
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Logging workers",
+    "Total": 51,
+    "women": 2.8,
+    "pipeline": 0.054901961,
+    "%": 5.490196078
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Construction and extraction occupations",
+    "Total": "7,652",
+    "women": 2.7,
+    "pipeline": 0.000352849,
+    "%": 0.035284893
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "First-line supervisors of construction trades and extraction workers",
+    "Total": 712,
+    "women": 3.3,
+    "pipeline": 0.004634831,
+    "%": 0.463483146
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Boilermakers",
+    "Total": 20,
+    "women": -1,
+    "pipeline": -0.05,
+    "%": -5
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Brickmasons, blockmasons, and stonemasons",
+    "Total": 172,
+    "women": 0.7,
+    "pipeline": 0.004069767,
+    "%": 0.406976744
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Carpenters",
+    "Total": "1,281",
+    "women": 1.8,
+    "pipeline": 0.001405152,
+    "%": 0.140515222
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Carpet, floor, and tile installers and finishers",
+    "Total": 156,
+    "women": 1.7,
+    "pipeline": 0.010897436,
+    "%": 1.08974359
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Cement masons, concrete finishers, and terrazzo workers",
+    "Total": 54,
+    "women": 0.2,
+    "pipeline": 0.003703704,
+    "%": 0.37037037
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Construction laborers",
+    "Total": "1,649",
+    "women": 2.9,
+    "pipeline": 0.001758642,
+    "%": 0.17586416
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Paving, surfacing, and tamping equipment operators",
+    "Total": 12,
+    "women": -1,
+    "pipeline": -0.083333333,
+    "%": -8.333333333
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Pile-driver operators",
+    "Total": 2,
+    "women": -1,
+    "pipeline": -0.5,
+    "%": -50
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Operating engineers and other construction equipment operators",
+    "Total": 357,
+    "women": 1.9,
+    "pipeline": 0.005322129,
+    "%": 0.532212885
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Drywall installers, ceiling tile installers, and tapers",
+    "Total": 151,
+    "women": 1.6,
+    "pipeline": 0.010596026,
+    "%": 1.059602649
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Electricians",
+    "Total": 773,
+    "women": 2.3,
+    "pipeline": 0.00297542,
+    "%": 0.297542044
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Glaziers",
+    "Total": 47,
+    "women": -1,
+    "pipeline": -0.021276596,
+    "%": -2.127659574
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Insulation workers",
+    "Total": 49,
+    "women": -1,
+    "pipeline": -0.020408163,
+    "%": -2.040816327
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Painters, construction and maintenance",
+    "Total": 572,
+    "women": 5.7,
+    "pipeline": 0.009965035,
+    "%": 0.996503497
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Paperhangers",
+    "Total": 1,
+    "women": -1,
+    "pipeline": -1,
+    "%": -100
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Pipelayers, plumbers, pipefitters, and steamfitters",
+    "Total": 573,
+    "women": 0.7,
+    "pipeline": 0.00122164,
+    "%": 0.122164049
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Plasterers and stucco masons",
+    "Total": 28,
+    "women": -1,
+    "pipeline": -0.035714286,
+    "%": -3.571428571
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Reinforcing iron and rebar workers",
+    "Total": 10,
+    "women": -1,
+    "pipeline": -0.1,
+    "%": -10
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Roofers",
+    "Total": 221,
+    "women": 2.3,
+    "pipeline": 0.01040724,
+    "%": 1.040723982
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Sheet metal workers",
+    "Total": 122,
+    "women": 4.5,
+    "pipeline": 0.036885246,
+    "%": 3.68852459
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Structural iron and steel workers",
+    "Total": 58,
+    "women": 2.2,
+    "pipeline": 0.037931034,
+    "%": 3.793103448
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Solar photovoltaic installers",
+    "Total": 11,
+    "women": -1,
+    "pipeline": -0.090909091,
+    "%": -9.090909091
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Helpers, construction trades",
+    "Total": 52,
+    "women": 1.3,
+    "pipeline": 0.025,
+    "%": 2.5
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Construction and building inspectors",
+    "Total": 90,
+    "women": 9.9,
+    "pipeline": 0.11,
+    "%": 11
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Elevator installers and repairers",
+    "Total": 30,
+    "women": -1,
+    "pipeline": -0.033333333,
+    "%": -3.333333333
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Fence erectors",
+    "Total": 34,
+    "women": -1,
+    "pipeline": -0.029411765,
+    "%": -2.941176471
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Hazardous materials removal workers",
+    "Total": 42,
+    "women": -1,
+    "pipeline": -0.023809524,
+    "%": -2.380952381
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Highway maintenance workers",
+    "Total": 103,
+    "women": 2,
+    "pipeline": 0.019417476,
+    "%": 1.941747573
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Rail-track laying and maintenance equipment operators",
+    "Total": 11,
+    "women": -1,
+    "pipeline": -0.090909091,
+    "%": -9.090909091
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Septic tank servicers and sewer pipe cleaners",
+    "Total": 12,
+    "women": -1,
+    "pipeline": -0.083333333,
+    "%": -8.333333333
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Miscellaneous construction and related workers",
+    "Total": 32,
+    "women": -1,
+    "pipeline": -0.03125,
+    "%": -3.125
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Derrick, rotary drill, and service unit operators, oil, gas, and mining",
+    "Total": 34,
+    "women": -1,
+    "pipeline": -0.029411765,
+    "%": -2.941176471
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Earth drillers, except oil and gas",
+    "Total": 29,
+    "women": -1,
+    "pipeline": -0.034482759,
+    "%": -3.448275862
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Explosives workers, ordnance handling experts, and blasters",
+    "Total": 9,
+    "women": -1,
+    "pipeline": -0.111111111,
+    "%": -11.11111111
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Mining machine operators",
+    "Total": 67,
+    "women": 2.5,
+    "pipeline": 0.037313433,
+    "%": 3.731343284
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Roof bolters, mining",
+    "Total": 2,
+    "women": -1,
+    "pipeline": -0.5,
+    "%": -50
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Roustabouts, oil and gas",
+    "Total": 9,
+    "women": -1,
+    "pipeline": -0.111111111,
+    "%": -11.11111111
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Helpers--extraction workers",
+    "Total": 4,
+    "women": -1,
+    "pipeline": -0.25,
+    "%": -25
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Other extraction workers",
+    "Total": 64,
+    "women": 3.8,
+    "pipeline": 0.059375,
+    "%": 5.9375
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Installation, maintenance, and repair occupations",
+    "Total": "5,008",
+    "women": 3.5,
+    "pipeline": 0.000698882,
+    "%": 0.069888179
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "First-line supervisors of mechanics, installers, and repairers",
+    "Total": 262,
+    "women": 6.1,
+    "pipeline": 0.023282443,
+    "%": 2.328244275
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Computer, automated teller, and office machine repairers",
+    "Total": 241,
+    "women": 13.2,
+    "pipeline": 0.054771784,
+    "%": 5.477178423
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Radio and telecommunications equipment installers and repairers",
+    "Total": 158,
+    "women": 8.5,
+    "pipeline": 0.053797468,
+    "%": 5.379746835
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Avionics technicians",
+    "Total": 5,
+    "women": -1,
+    "pipeline": -0.2,
+    "%": -20
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Electric motor, power tool, and related repairers",
+    "Total": 23,
+    "women": -1,
+    "pipeline": -0.043478261,
+    "%": -4.347826087
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Electrical and electronics installers and repairers, transportation equipment",
+    "Total": 1,
+    "women": -1,
+    "pipeline": -1,
+    "%": -100
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Electrical and electronics repairers, industrial and utility",
+    "Total": 20,
+    "women": -1,
+    "pipeline": -0.05,
+    "%": -5
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Electronic equipment installers and repairers, motor vehicles",
+    "Total": 18,
+    "women": -1,
+    "pipeline": -0.055555556,
+    "%": -5.555555556
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Electronic home entertainment equipment installers and repairers",
+    "Total": 38,
+    "women": -1,
+    "pipeline": -0.026315789,
+    "%": -2.631578947
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Security and fire alarm systems installers",
+    "Total": 74,
+    "women": 3.8,
+    "pipeline": 0.051351351,
+    "%": 5.135135135
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Aircraft mechanics and service technicians",
+    "Total": 140,
+    "women": 5.2,
+    "pipeline": 0.037142857,
+    "%": 3.714285714
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Automotive body and related repairers",
+    "Total": 154,
+    "women": 0.6,
+    "pipeline": 0.003896104,
+    "%": 0.38961039
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Automotive glass installers and repairers",
+    "Total": 22,
+    "women": -1,
+    "pipeline": -0.045454545,
+    "%": -4.545454545
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Automotive service technicians and mechanics",
+    "Total": 924,
+    "women": 1.5,
+    "pipeline": 0.001623377,
+    "%": 0.162337662
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Bus and truck mechanics and diesel engine specialists",
+    "Total": 345,
+    "women": 0.1,
+    "pipeline": 0.000289855,
+    "%": 0.028985507
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Heavy vehicle and mobile equipment service technicians and mechanics",
+    "Total": 233,
+    "women": 0,
+    "pipeline": 0,
+    "%": 0
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Small engine mechanics",
+    "Total": 54,
+    "women": 3.1,
+    "pipeline": 0.057407407,
+    "%": 5.740740741
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Miscellaneous vehicle and mobile equipment mechanics, installers, and repairers",
+    "Total": 81,
+    "women": 1.9,
+    "pipeline": 0.02345679,
+    "%": 2.345679012
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Control and valve installers and repairers",
+    "Total": 29,
+    "women": -1,
+    "pipeline": -0.034482759,
+    "%": -3.448275862
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Heating, air conditioning, and refrigeration mechanics and installers",
+    "Total": 408,
+    "women": 1.7,
+    "pipeline": 0.004166667,
+    "%": 0.416666667
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Home appliance repairers",
+    "Total": 53,
+    "women": 3.8,
+    "pipeline": 0.071698113,
+    "%": 7.169811321
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Industrial and refractory machinery mechanics",
+    "Total": 425,
+    "women": 3.6,
+    "pipeline": 0.008470588,
+    "%": 0.847058824
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Maintenance and repair workers, general",
+    "Total": 527,
+    "women": 3.2,
+    "pipeline": 0.006072106,
+    "%": 0.607210626
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Maintenance workers, machinery",
+    "Total": 29,
+    "women": -1,
+    "pipeline": -0.034482759,
+    "%": -3.448275862
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Millwrights",
+    "Total": 57,
+    "women": 3.3,
+    "pipeline": 0.057894737,
+    "%": 5.789473684
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Electrical power-line installers and repairers",
+    "Total": 119,
+    "women": 1.2,
+    "pipeline": 0.010084034,
+    "%": 1.008403361
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Telecommunications line installers and repairers",
+    "Total": 177,
+    "women": 6,
+    "pipeline": 0.033898305,
+    "%": 3.389830508
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Precision instrument and equipment repairers",
+    "Total": 66,
+    "women": 4.8,
+    "pipeline": 0.072727273,
+    "%": 7.272727273
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Wind turbine service technicians",
+    "Total": 4,
+    "women": -1,
+    "pipeline": -0.25,
+    "%": -25
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Coin, vending, and amusement machine servicers and repairers",
+    "Total": 48,
+    "women": -1,
+    "pipeline": -0.020833333,
+    "%": -2.083333333
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Commercial divers",
+    "Total": 1,
+    "women": -1,
+    "pipeline": -1,
+    "%": -100
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Locksmiths and safe repairers",
+    "Total": 21,
+    "women": -1,
+    "pipeline": -0.047619048,
+    "%": -4.761904762
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Manufactured building and mobile home installers",
+    "Total": 5,
+    "women": -1,
+    "pipeline": -0.2,
+    "%": -20
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Riggers",
+    "Total": 10,
+    "women": -1,
+    "pipeline": -0.1,
+    "%": -10
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Signal and track switch repairers",
+    "Total": 8,
+    "women": -1,
+    "pipeline": -0.125,
+    "%": -12.5
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Helpers--installation, maintenance, and repair workers",
+    "Total": 28,
+    "women": -1,
+    "pipeline": -0.035714286,
+    "%": -3.571428571
+  },
+  {
+    "Occupation": "Natural resources, construction, and maintenance occupations",
+    "Role": "Other installation, maintenance, and repair workers",
+    "Total": 200,
+    "women": 5.8,
+    "pipeline": 0.029,
+    "%": 2.9
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Total",
+    "Total": "17,647",
+    "women": 21.8,
+    "pipeline": 0.001235337,
+    "%": 0.123533745
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Production occupations",
+    "Total": "8,522",
+    "women": 28.8,
+    "pipeline": 0.003379488,
+    "%": 0.337948838
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "First-line supervisors of production and operating workers",
+    "Total": 817,
+    "women": 18.6,
+    "pipeline": 0.022766218,
+    "%": 2.276621787
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Aircraft structure, surfaces, rigging, and systems assemblers",
+    "Total": 14,
+    "women": -1,
+    "pipeline": -0.071428571,
+    "%": -7.142857143
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Electrical, electronics, and electromechanical assemblers",
+    "Total": 133,
+    "women": 51.4,
+    "pipeline": 0.386466165,
+    "%": 38.64661654
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Engine and other machine assemblers",
+    "Total": 11,
+    "women": -1,
+    "pipeline": -0.090909091,
+    "%": -9.090909091
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Structural metal fabricators and fitters",
+    "Total": 32,
+    "women": -1,
+    "pipeline": -0.03125,
+    "%": -3.125
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Miscellaneous assemblers and fabricators",
+    "Total": "1,026",
+    "women": 38.6,
+    "pipeline": 0.037621832,
+    "%": 3.762183236
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Bakers",
+    "Total": 231,
+    "women": 60.8,
+    "pipeline": 0.263203463,
+    "%": 26.32034632
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Butchers and other meat, poultry, and fish processing workers",
+    "Total": 302,
+    "women": 25.7,
+    "pipeline": 0.085099338,
+    "%": 8.509933775
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Food and tobacco roasting, baking, and drying machine operators and tenders",
+    "Total": 14,
+    "women": -1,
+    "pipeline": -0.071428571,
+    "%": -7.142857143
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Food batchmakers",
+    "Total": 101,
+    "women": 72.3,
+    "pipeline": 0.715841584,
+    "%": 71.58415842
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Food cooking machine operators and tenders",
+    "Total": 13,
+    "women": -1,
+    "pipeline": -0.076923077,
+    "%": -7.692307692
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Food processing workers, all other",
+    "Total": 135,
+    "women": 34.2,
+    "pipeline": 0.253333333,
+    "%": 25.33333333
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Computer control programmers and operators",
+    "Total": 88,
+    "women": 3.9,
+    "pipeline": 0.044318182,
+    "%": 4.431818182
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Extruding and drawing machine setters, operators, and tenders, metal and plastic",
+    "Total": 9,
+    "women": -1,
+    "pipeline": -0.111111111,
+    "%": -11.11111111
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Forging machine setters, operators, and tenders, metal and plastic",
+    "Total": 8,
+    "women": -1,
+    "pipeline": -0.125,
+    "%": -12.5
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Rolling machine setters, operators, and tenders, metal and plastic",
+    "Total": 15,
+    "women": -1,
+    "pipeline": -0.066666667,
+    "%": -6.666666667
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Cutting, punching, and press machine setters, operators, and tenders, metal and plastic",
+    "Total": 82,
+    "women": 21.6,
+    "pipeline": 0.263414634,
+    "%": 26.34146341
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Drilling and boring machine tool setters, operators, and tenders, metal and plastic",
+    "Total": 5,
+    "women": -1,
+    "pipeline": -0.2,
+    "%": -20
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Grinding, lapping, polishing, and buffing machine tool setters, operators,\nand tenders, metal and plastic",
+    "Total": 51,
+    "women": 10.3,
+    "pipeline": 0.201960784,
+    "%": 20.19607843
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Lathe and turning machine tool setters, operators, and tenders, metal and plastic",
+    "Total": 11,
+    "women": -1,
+    "pipeline": -0.090909091,
+    "%": -9.090909091
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Milling and planing machine setters, operators, and tenders, metal and plastic",
+    "Total": 0,
+    "women": -1,
+    "pipeline": "#DIV/0!",
+    "%": "#DIV/0!"
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Machinists",
+    "Total": 363,
+    "women": 6.7,
+    "pipeline": 0.0184573,
+    "%": 1.845730028
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Metal furnace operators, tenders, pourers, and casters",
+    "Total": 30,
+    "women": -1,
+    "pipeline": -0.033333333,
+    "%": -3.333333333
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Model makers and patternmakers, metal and plastic",
+    "Total": 5,
+    "women": -1,
+    "pipeline": -0.2,
+    "%": -20
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Molders and molding machine setters, operators, and tenders, metal and plastic",
+    "Total": 46,
+    "women": -1,
+    "pipeline": -0.02173913,
+    "%": -2.173913043
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Multiple machine tool setters, operators, and tenders, metal and plastic",
+    "Total": 1,
+    "women": -1,
+    "pipeline": -1,
+    "%": -100
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Tool and die makers",
+    "Total": 47,
+    "women": -1,
+    "pipeline": -0.021276596,
+    "%": -2.127659574
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Welding, soldering, and brazing workers",
+    "Total": 615,
+    "women": 4.2,
+    "pipeline": 0.006829268,
+    "%": 0.682926829
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Heat treating equipment setters, operators, and tenders, metal and plastic",
+    "Total": 5,
+    "women": -1,
+    "pipeline": -0.2,
+    "%": -20
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Layout workers, metal and plastic",
+    "Total": 5,
+    "women": -1,
+    "pipeline": -0.2,
+    "%": -20
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Plating and coating machine setters, operators, and tenders, metal and plastic",
+    "Total": 23,
+    "women": -1,
+    "pipeline": -0.043478261,
+    "%": -4.347826087
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Tool grinders, filers, and sharpeners",
+    "Total": 6,
+    "women": -1,
+    "pipeline": -0.166666667,
+    "%": -16.66666667
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Metal workers and plastic workers, all other",
+    "Total": 376,
+    "women": 22.5,
+    "pipeline": 0.059840426,
+    "%": 5.984042553
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Prepress technicians and workers",
+    "Total": 22,
+    "women": -1,
+    "pipeline": -0.045454545,
+    "%": -4.545454545
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Printing press operators",
+    "Total": 180,
+    "women": 20,
+    "pipeline": 0.111111111,
+    "%": 11.11111111
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Print binding and finishing workers",
+    "Total": 20,
+    "women": -1,
+    "pipeline": -0.05,
+    "%": -5
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Laundry and dry-cleaning workers",
+    "Total": 192,
+    "women": 60.8,
+    "pipeline": 0.316666667,
+    "%": 31.66666667
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Pressers, textile, garment, and related materials",
+    "Total": 34,
+    "women": -1,
+    "pipeline": -0.029411765,
+    "%": -2.941176471
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Sewing machine operators",
+    "Total": 196,
+    "women": 74.8,
+    "pipeline": 0.381632653,
+    "%": 38.16326531
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Shoe and leather workers and repairers",
+    "Total": 7,
+    "women": -1,
+    "pipeline": -0.142857143,
+    "%": -14.28571429
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Shoe machine operators and tenders",
+    "Total": 2,
+    "women": -1,
+    "pipeline": -0.5,
+    "%": -50
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Tailors, dressmakers, and sewers",
+    "Total": 83,
+    "women": 82.2,
+    "pipeline": 0.990361446,
+    "%": 99.03614458
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Textile bleaching and dyeing machine operators and tenders",
+    "Total": 3,
+    "women": -1,
+    "pipeline": -0.333333333,
+    "%": -33.33333333
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Textile cutting machine setters, operators, and tenders",
+    "Total": 9,
+    "women": -1,
+    "pipeline": -0.111111111,
+    "%": -11.11111111
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Textile knitting and weaving machine setters, operators, and tenders",
+    "Total": 9,
+    "women": -1,
+    "pipeline": -0.111111111,
+    "%": -11.11111111
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Textile winding, twisting, and drawing out machine setters, operators, and tenders",
+    "Total": 9,
+    "women": -1,
+    "pipeline": -0.111111111,
+    "%": -11.11111111
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Extruding and forming machine setters, operators, and tenders, synthetic and glass fibers",
+    "Total": 0,
+    "women": -1,
+    "pipeline": "#DIV/0!",
+    "%": "#DIV/0!"
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Fabric and apparel patternmakers",
+    "Total": 4,
+    "women": -1,
+    "pipeline": -0.25,
+    "%": -25
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Upholsterers",
+    "Total": 40,
+    "women": -1,
+    "pipeline": -0.025,
+    "%": -2.5
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Textile, apparel, and furnishings workers, all other",
+    "Total": 16,
+    "women": -1,
+    "pipeline": -0.0625,
+    "%": -6.25
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Cabinetmakers and bench carpenters",
+    "Total": 60,
+    "women": 7.9,
+    "pipeline": 0.131666667,
+    "%": 13.16666667
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Furniture finishers",
+    "Total": 15,
+    "women": -1,
+    "pipeline": -0.066666667,
+    "%": -6.666666667
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Model makers and patternmakers, wood",
+    "Total": 1,
+    "women": -1,
+    "pipeline": -1,
+    "%": -100
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Sawing machine setters, operators, and tenders, wood",
+    "Total": 29,
+    "women": -1,
+    "pipeline": -0.034482759,
+    "%": -3.448275862
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Woodworking machine setters, operators, and tenders, except sawing",
+    "Total": 24,
+    "women": -1,
+    "pipeline": -0.041666667,
+    "%": -4.166666667
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Woodworkers, all other",
+    "Total": 31,
+    "women": -1,
+    "pipeline": -0.032258065,
+    "%": -3.225806452
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Power plant operators, distributors, and dispatchers",
+    "Total": 33,
+    "women": -1,
+    "pipeline": -0.03030303,
+    "%": -3.03030303
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Stationary engineers and boiler operators",
+    "Total": 81,
+    "women": 3.4,
+    "pipeline": 0.041975309,
+    "%": 4.197530864
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Water and wastewater treatment plant and system operators",
+    "Total": 89,
+    "women": 4.4,
+    "pipeline": 0.049438202,
+    "%": 4.943820225
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Miscellaneous plant and system operators",
+    "Total": 36,
+    "women": -1,
+    "pipeline": -0.027777778,
+    "%": -2.777777778
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Chemical processing machine setters, operators, and tenders",
+    "Total": 63,
+    "women": 13,
+    "pipeline": 0.206349206,
+    "%": 20.63492063
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Crushing, grinding, polishing, mixing, and blending workers",
+    "Total": 86,
+    "women": 11,
+    "pipeline": 0.127906977,
+    "%": 12.79069767
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Cutting workers",
+    "Total": 64,
+    "women": 16.7,
+    "pipeline": 0.2609375,
+    "%": 26.09375
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Extruding, forming, pressing, and compacting machine setters, operators, and tenders",
+    "Total": 28,
+    "women": -1,
+    "pipeline": -0.035714286,
+    "%": -3.571428571
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Furnace, kiln, oven, drier, and kettle operators and tenders",
+    "Total": 7,
+    "women": -1,
+    "pipeline": -0.142857143,
+    "%": -14.28571429
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Inspectors, testers, sorters, samplers, and weighers",
+    "Total": 752,
+    "women": 37.3,
+    "pipeline": 0.049601064,
+    "%": 4.960106383
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Jewelers and precious stone and metal workers",
+    "Total": 44,
+    "women": -1,
+    "pipeline": -0.022727273,
+    "%": -2.272727273
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Medical, dental, and ophthalmic laboratory technicians",
+    "Total": 110,
+    "women": 48.6,
+    "pipeline": 0.441818182,
+    "%": 44.18181818
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Packaging and filling machine operators and tenders",
+    "Total": 250,
+    "women": 49.9,
+    "pipeline": 0.1996,
+    "%": 19.96
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Painting workers",
+    "Total": 151,
+    "women": 12.9,
+    "pipeline": 0.085430464,
+    "%": 8.543046358
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Photographic process workers and processing machine operators",
+    "Total": 33,
+    "women": -1,
+    "pipeline": -0.03030303,
+    "%": -3.03030303
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Semiconductor processors",
+    "Total": 1,
+    "women": -1,
+    "pipeline": -1,
+    "%": -100
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Adhesive bonding machine operators and tenders",
+    "Total": 11,
+    "women": -1,
+    "pipeline": -0.090909091,
+    "%": -9.090909091
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Cleaning, washing, and metal pickling equipment operators and tenders",
+    "Total": 4,
+    "women": -1,
+    "pipeline": -0.25,
+    "%": -25
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Cooling and freezing equipment operators and tenders",
+    "Total": 4,
+    "women": -1,
+    "pipeline": -0.25,
+    "%": -25
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Etchers and engravers",
+    "Total": 19,
+    "women": -1,
+    "pipeline": -0.052631579,
+    "%": -5.263157895
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Molders, shapers, and casters, except metal and plastic",
+    "Total": 27,
+    "women": -1,
+    "pipeline": -0.037037037,
+    "%": -3.703703704
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Paper goods machine setters, operators, and tenders",
+    "Total": 30,
+    "women": -1,
+    "pipeline": -0.033333333,
+    "%": -3.333333333
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Tire builders",
+    "Total": 10,
+    "women": -1,
+    "pipeline": -0.1,
+    "%": -10
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Helpers--production workers",
+    "Total": 40,
+    "women": -1,
+    "pipeline": -0.025,
+    "%": -2.5
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Production workers, all other",
+    "Total": 944,
+    "women": 25.5,
+    "pipeline": 0.027012712,
+    "%": 2.701271186
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Transportation and material moving occupations",
+    "Total": "9,125",
+    "women": 15.3,
+    "pipeline": 0.001676712,
+    "%": 0.167671233
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Supervisors of transportation and material moving workers",
+    "Total": 205,
+    "women": 18.1,
+    "pipeline": 0.088292683,
+    "%": 8.829268293
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Aircraft pilots and flight engineers",
+    "Total": 140,
+    "women": 9.4,
+    "pipeline": 0.067142857,
+    "%": 6.714285714
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Air traffic controllers and airfield operations specialists",
+    "Total": 30,
+    "women": -1,
+    "pipeline": -0.033333333,
+    "%": -3.333333333
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Flight attendants",
+    "Total": 86,
+    "women": 74.9,
+    "pipeline": 0.870930233,
+    "%": 87.09302326
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Ambulance drivers and attendants, except emergency medical technicians",
+    "Total": 19,
+    "women": -1,
+    "pipeline": -0.052631579,
+    "%": -5.263157895
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Bus drivers",
+    "Total": 550,
+    "women": 47.1,
+    "pipeline": 0.085636364,
+    "%": 8.563636364
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Driver/sales workers and truck drivers",
+    "Total": "3,469",
+    "women": 5.1,
+    "pipeline": 0.001470164,
+    "%": 0.147016431
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Taxi drivers and chauffeurs",
+    "Total": 446,
+    "women": 14.6,
+    "pipeline": 0.032735426,
+    "%": 3.273542601
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Motor vehicle operators, all other",
+    "Total": 51,
+    "women": 9.4,
+    "pipeline": 0.184313725,
+    "%": 18.43137255
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Locomotive engineers and operators",
+    "Total": 50,
+    "women": 3.5,
+    "pipeline": 0.07,
+    "%": 7
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Railroad brake, signal, and switch operators",
+    "Total": 6,
+    "women": -1,
+    "pipeline": -0.166666667,
+    "%": -16.66666667
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Railroad conductors and yardmasters",
+    "Total": 52,
+    "women": 7.7,
+    "pipeline": 0.148076923,
+    "%": 14.80769231
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Subway, streetcar, and other rail transportation workers",
+    "Total": 15,
+    "women": -1,
+    "pipeline": -0.066666667,
+    "%": -6.666666667
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Sailors and marine oilers",
+    "Total": 11,
+    "women": -1,
+    "pipeline": -0.090909091,
+    "%": -9.090909091
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Ship and boat captains and operators",
+    "Total": 35,
+    "women": -1,
+    "pipeline": -0.028571429,
+    "%": -2.857142857
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Ship engineers",
+    "Total": 6,
+    "women": -1,
+    "pipeline": -0.166666667,
+    "%": -16.66666667
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Bridge and lock tenders",
+    "Total": 5,
+    "women": -1,
+    "pipeline": -0.2,
+    "%": -20
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Parking lot attendants",
+    "Total": 91,
+    "women": 10,
+    "pipeline": 0.10989011,
+    "%": 10.98901099
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Automotive and watercraft service attendants",
+    "Total": 99,
+    "women": 11,
+    "pipeline": 0.111111111,
+    "%": 11.11111111
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Transportation inspectors",
+    "Total": 29,
+    "women": -1,
+    "pipeline": -0.034482759,
+    "%": -3.448275862
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Transportation attendants, except flight attendants",
+    "Total": 22,
+    "women": -1,
+    "pipeline": -0.045454545,
+    "%": -4.545454545
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Other transportation workers",
+    "Total": 43,
+    "women": -1,
+    "pipeline": -0.023255814,
+    "%": -2.325581395
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Conveyor operators and tenders",
+    "Total": 7,
+    "women": -1,
+    "pipeline": -0.142857143,
+    "%": -14.28571429
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Crane and tower operators",
+    "Total": 76,
+    "women": 3.4,
+    "pipeline": 0.044736842,
+    "%": 4.473684211
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Dredge, excavating, and loading machine operators",
+    "Total": 35,
+    "women": -1,
+    "pipeline": -0.028571429,
+    "%": -2.857142857
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Hoist and winch operators",
+    "Total": 6,
+    "women": -1,
+    "pipeline": -0.166666667,
+    "%": -16.66666667
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Industrial truck and tractor operators",
+    "Total": 589,
+    "women": 7.1,
+    "pipeline": 0.012054329,
+    "%": 1.205432937
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Cleaners of vehicles and equipment",
+    "Total": 338,
+    "women": 11.1,
+    "pipeline": 0.032840237,
+    "%": 3.284023669
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Laborers and freight, stock, and material movers, hand",
+    "Total": "1,908",
+    "women": 17.6,
+    "pipeline": 0.009224319,
+    "%": 0.922431866
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Machine feeders and offbearers",
+    "Total": 33,
+    "women": -1,
+    "pipeline": -0.03030303,
+    "%": -3.03030303
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Packers and packagers, hand",
+    "Total": 505,
+    "women": 51.9,
+    "pipeline": 0.102772277,
+    "%": 10.27722772
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Pumping station operators",
+    "Total": 23,
+    "women": -1,
+    "pipeline": -0.043478261,
+    "%": -4.347826087
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Refuse and recyclable material collectors",
+    "Total": 97,
+    "women": 10.4,
+    "pipeline": 0.107216495,
+    "%": 10.72164948
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Mine shuttle car operators",
+    "Total": 1,
+    "women": -1,
+    "pipeline": -1,
+    "%": -100
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Tank car, truck, and ship loaders",
+    "Total": 5,
+    "women": -1,
+    "pipeline": -0.2,
+    "%": -20
+  },
+  {
+    "Occupation": "Production, transportation, and material moving occupations",
+    "Role": "Material moving workers, all other",
+    "Total": 43,
+    "women": -1,
+    "pipeline": -0.023255814,
+    "%": -2.325581395
+  }
+]
