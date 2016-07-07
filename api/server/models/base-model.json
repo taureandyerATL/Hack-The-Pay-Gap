@@ -1,0 +1,30 @@
+{
+  "name": "BaseModel",
+  "base": "PersistedModel",
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "lastUpdatedBy": {
+      "type": "string",
+      "required":true
+    },
+    "lastUpdatedOn": {
+      "type": "date",
+      "required":true
+    },
+    "createdBy": {
+      "type": "string",
+      "required":true
+    },
+    "createdOn": {
+      "type": "date",
+      "required":true
+
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

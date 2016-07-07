@@ -32,6 +32,29 @@
     "dataSource": "htpg_db",
     "public": false
   },
+  "BaseApplicant": {
+    "dataSource": "db"
+  },
+  "InternalApplicant": {
+    "dataSource": "db"
+  },
+  "ProjectApplication": {
+    "dataSource": "db"
+  },
+  "JobPost": {
+    "dataSource": "db"
+  },
+  "Economics": {
+    "dataSource": "db"
+  },
+    "JobsStats": {
+    "dataSource": "db"
+  },
+  "DraftCheck": {
+    "dataSource": "db"
+  },
+  "Textio": {
+    "dataSource":"db"
   "Appuser": {
     "dataSource": "htpg_db",
     "public": true

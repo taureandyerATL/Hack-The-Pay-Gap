@@ -247,17 +247,12 @@ SystemJS.config({
     'os': 'github:jspm/nodelibs-os@0.2.0-alpha',
     'process': 'github:jspm/nodelibs-process@0.2.0-alpha',
     'reflect-metadata': 'npm:reflect-metadata@0.1.2',
-    'rxjs': 'npm:rxjs@5.0.0-beta.8',
+    'rxjs': 'npm:rxjs@5.0.0-beta.6',
     'typescript': 'npm:typescript@1.8.10',
     'ui-router-ng2': 'npm:ui-router-ng2@1.0.0-alpha.5',
     'zone.js': 'npm:zone.js@0.6.12'
   },
   packages: {
-    'npm:rxjs@5.0.0-beta.8': {
-      'map': {
-        'symbol-observable': 'npm:symbol-observable@0.2.4'
-      }
-    },
     'github:jspm/nodelibs-os@0.2.0-alpha': {
       'map': {
         'os-browserify': 'npm:os-browserify@0.2.1'
