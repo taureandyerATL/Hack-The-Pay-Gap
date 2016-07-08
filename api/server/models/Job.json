@@ -1,0 +1,65 @@
+{
+    "name": "Job",
+    "base": "BaseModel",
+    "options": {
+        "validateUpsert": true
+    },
+    "properties": {
+        "jobCategory": {
+          "type": "string"
+        },
+        "jobProject": {
+          "type": "string"
+        },
+        "postedJobDescription": {
+            "type": "string",
+            "required": "true"
+        },
+        "postedMarkets": {
+            "type": "array"
+        },
+        "draftId": {
+            "type": "string"
+        },
+        "textioDocId": {
+            "type": "string"
+        },
+        "jobPostSourceId": {
+            "type": "string"
+        },
+        "posterId": {
+            "type": "string"
+        },
+        "skillsRequired": {
+            "type": "array"
+        },
+        "posted": {
+            "type": "boolean"
+        }
+    },
+    "validations": [],
+    "relations": {
+        "relProject": {
+            "type": "belongsTo",
+            "model": "Project",
+            "foreignKey": "projectId"
+        },
+        "relJobDrafts": {
+            "type": "hasMany",
+            "model": "JobDescriptionAnalysis",
+            "foreignKey": "draftAnalysisId"
+        },
+        "relRole": {
+            "type": "hasMany",
+            "model": "Role",
+            "foreignKey": "applicantionId"
+        },
+        "relApplicants": {
+            "type": "hasAndBelongsToMany",
+            "model": "BaseApplicant",
+            "foreignKey": "applicantId"
+        }
+    },
+    "acls": [],
+    "methods": []
+}
