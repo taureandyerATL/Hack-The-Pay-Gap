@@ -42,7 +42,7 @@ var loginPromise = (userName, password) => {
         // this is how username password should look
         //e = "chris.hawkins@accenture.com:password1"
         var concatedUserNamePassword = userName + ":" + password;
-        var version = "10108";
+        var version = "10224";
         var sessionId = generateUUID();
         var firstAuthPayLoad = {
             sessionId: sessionId,
