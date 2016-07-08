@@ -11,25 +11,69 @@
         "name": {
             "type": "string"
         },
-        "firstName": {
+        "sourceId": {
+            "type": "string",
+            "required": "true"
+        },
+        "source": {
+            "type": "string",
+            "required": "true"
+        },
+        "userId": {
+            "type": "string",
+            "required": "true"
+        },
+        "state_shortname": {
             "type": "string"
         },
-        "lastName": {
+        "state_longname": {
+            "type": "string"
+        },
+        "jobId": {
+            "type": "string"
+        },
+        "jobCategory": {
+            "type": "string"
+        },
+       "timezone": {
             "type": "string"
         },
         "laborMarket": {
-            "type": "string"
+            "type": "string",
+            "required": "true"
         },
         "gender": {
+            "type": "string"
+        },
+        "wageRequested": {
+            "type": "number"
+        },
+        "wageAccepted": {
+            "type": "number"
+        },
+        "wageAdjusted": {
+            "type": "number"
+        },
+        "city": {
             "type": "string"
         }
     },
     "validations": [],
     "relations": {
-        "relProjectApplications": {
-            "type": "hasMany",
+        "relBaseApplicant": {
+            "type": "hasOne",
+            "model": "BaseApplicant",
+            "foreignKey":"applicantId"
+        },
+        "relJob": {
+            "type": "hasOne",
             "model": "ProjectApplication",
-            "foreignKey":"applicantionId"
+            "foreignKey":"JobId"
+        },
+        "relRole":{
+            "type": "hasOne",
+            "model": "Role",
+            "foreignKey":"RoleId"
         }
     },
     "acls": [],

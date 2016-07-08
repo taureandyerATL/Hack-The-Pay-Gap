@@ -58,6 +58,11 @@
             "type": "hasAndBelongsToMany",
             "model": "BaseApplicant",
             "foreignKey": "applicantId"
+        },
+        "relProjectApplications": {
+            "type": "hasMany",
+            "model": "ProjectApplication",
+            "foreignKey": "applicantId"
         }
     },
     "acls": [],

@@ -7,6 +7,18 @@ module.exports = function(BaseApplicant) {
 
     BaseApplicant.genderize = function(name, picURL, source, sourceId, userId, laborMarket, city, country, jobId, jobCategoryGroup, jobCategory, wageRequested, timezone, next) {
         console.log(name, picURL, source, userId);
+        BaseApplicant.find({userId: userId}, function(err, applicant){
+            if(err){
+                console.log("Error looking up Applicants:"+ err);
+            }else if(!applicant){
+                BaseApplicant.buildApplicant(name, picURL, source, sourceId, userId, laborMarket, city, country, jobId, jobCategoryGroup, jobCategory, wageRequested, timezone, next)
+            }else{
+                BaseApplicant.updateApplicant(applicant, jobId, jobCategoryGroup, jobCategory, wageRequested, next);
+            }
+        })
+    },
+    
+    BaseApplicant.buildApplicant= function (name, picURL, source, sourceId, userId, laborMarket, city, country, jobId, jobCategoryGroup, jobCategory, wageRequested, timezone, next) {
         var firstName = name.split(/[ ,]+/); //HTPG
         var path = 'https://api.genderize.io/?name=' + firstName[0];
         var profile = {
@@ -70,7 +82,9 @@ module.exports = function(BaseApplicant) {
         });
     };
 
-
+    BaseApplicant.updateApplicant = function(applicant, jobId, jobCategoryGroup, jobCategory, wageRequested, next){
+        
+    }
     /*
         Author: Jerrid
         Method: getGenderByFace(photoUrl, cb)
