@@ -5,6 +5,19 @@ var stateFinder = require('./StateFinder');
 
 module.exports = function(BaseApplicant) {
 
+/*
+TODO
+1. Get base applicant data
+2. check and see if you have seen this applicant before
+    a) if yes, get gender and locationinformation and add to database
+    b) if no, update the applicant if needed
+3. check to see if this applicant has applied to this job before by looking ath their applications
+    a)  if no, add a new entry into the Project Application
+        i. relate applicant to application
+        ii. relate application to Job
+    b) if yes, make updates to application if necessary
+4. Send wage and gender info for  
+*/
     BaseApplicant.genderize = function(name, picURL, source, sourceId, userId, laborMarket, city, country, jobId, jobCategoryGroup, jobCategory, wageRequested, timezone, next) {
         console.log(name, picURL, source, userId);
         BaseApplicant.find({userId: userId}, function(err, applicant){
