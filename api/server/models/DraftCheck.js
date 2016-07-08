@@ -224,7 +224,27 @@ module.exports = function(DraftCheck) {
 
       });
     }
-    unirest('https://textio-api-taureandyeratl.c9users.io/').headers({
+    request.post(
+            {
+                url: "https://textio-api-taureandyeratl.c9users.io/",
+                body: {"description": jobDescription},
+                json: true,
+                headers: {
+                  'Accept': 'application/json',
+                  'Content-Type': 'application/json'
+                }
+            },
+            function(error, response, body) {
+            
+                if (error) {
+                    response.status(400).send(error);
+                } else {
+                    console.log(response.body);
+                    postTextioResponseFunc(response.body);
+                }
+            });
+            
+    /*unirest('https://textio-api-taureandyeratl.c9users.io/').headers({
         'Accept': 'application/json',
         'Content-Type': 'application/json'
       })
@@ -238,7 +258,7 @@ module.exports = function(DraftCheck) {
         }
         else
           next(response.body);
-      });
+      });*/
   };
 
 

@@ -33,25 +33,25 @@
     "public": false
   },
   "BaseApplicant": {
-    "dataSource": "db"
+    "dataSource": "htpg_db"
   },
   "InternalApplicant": {
-    "dataSource": "db"
+    "dataSource": "htpg_db"
   },
   "ProjectApplication": {
-    "dataSource": "db"
+    "dataSource": "htpg_db"
   },
   "Job": {
-    "dataSource": "db"
+    "dataSource": "htpg_db"
   },
   "Economics": {
-    "dataSource": "db"
+    "dataSource": "htpg_db"
   },
     "JobsStats": {
-    "dataSource": "db"
+    "dataSource": "htpg_db"
   },
   "DraftCheck": {
-    "dataSource": "db"
+    "dataSource": "htpg_db"
   },
   "Appuser": {
     "dataSource": "htpg_db",
