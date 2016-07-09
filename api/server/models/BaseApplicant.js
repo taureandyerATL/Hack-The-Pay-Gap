@@ -1,3 +1,4 @@
+'use strict';
 var https = require("https");
 var request = require('request');
 var _ = require('lodash');
@@ -5,33 +6,39 @@ var stateFinder = require('./StateFinder');
 
 module.exports = function(BaseApplicant) {
 
-/*
-TODO
-1. Get base applicant data
-2. check and see if you have seen this applicant before
-    a) if yes, get gender and locationinformation and add to database
-    b) if no, update the applicant if needed
-3. check to see if this applicant has applied to this job before by looking ath their applications
-    a)  if no, add a new entry into the Project Application
-        i. relate applicant to application
-        ii. relate application to Job
-    b) if yes, make updates to application if necessary
-4. Send wage and gender info for  
-*/
+    /*
+    TODO
+    1. Get base applicant data
+    2. check and see if you have seen this applicant before
+        a) if yes, get gender and locationinformation and add to database
+        b) if no, update the applicant if needed
+    3. check to see if this applicant has applied to this job before by looking ath their applications
+        a)  if no, add a new entry into the Project Application
+            i. relate applicant to application
+            ii. relate application to Job
+        b) if yes, make updates to application if necessary
+    4. Send wage and gender info for  
+    */
     BaseApplicant.genderize = function(name, picURL, source, sourceId, userId, laborMarket, city, country, jobId, jobCategoryGroup, jobCategory, wageRequested, timezone, next) {
         console.log(name, picURL, source, userId);
-        BaseApplicant.find({userId: userId}, function(err, applicant){
-            if(err){
-                console.log("Error looking up Applicants:"+ err);
-            }else if(!applicant){
-                BaseApplicant.buildApplicant(name, picURL, source, sourceId, userId, laborMarket, city, country, jobId, jobCategoryGroup, jobCategory, wageRequested, timezone, next)
-            }else{
-                BaseApplicant.updateApplicant(applicant, jobId, jobCategoryGroup, jobCategory, wageRequested, next);
+        BaseApplicant.find({
+            userId: userId
+        }, function(err, applicant) {
+            if (err) {
+                console.log("Error looking up Applicants:" + err);
+                next(err);
             }
-        })
-    },
-    
-    BaseApplicant.buildApplicant= function (name, picURL, source, sourceId, userId, laborMarket, city, country, jobId, jobCategoryGroup, jobCategory, wageRequested, timezone, next) {
+            if (applicant.length === 0) {
+                buildApplicant(name, picURL, source, sourceId, userId, laborMarket, city, country, jobId, jobCategoryGroup, jobCategory, wageRequested, timezone, next)
+                return;
+            }
+
+            updateApplicant(applicant, jobId, jobCategoryGroup, jobCategory, wageRequested, next);
+
+        });
+    };
+
+    let buildApplicant = function(name, picURL, source, sourceId, userId, laborMarket, city, country, jobId, jobCategoryGroup, jobCategory, wageRequested, timezone, next) {
         var firstName = name.split(/[ ,]+/); //HTPG
         var path = 'https://api.genderize.io/?name=' + firstName[0];
         var profile = {
@@ -41,20 +48,25 @@ TODO
             firstName: firstName[0],
             userId: userId,
             picURL: picURL,
+            state_longname: "NA",
+            state_shortname: "NA",
+            laborMarket:laborMarket
+        };
+        var application = {
+            name: name,
             city: city,
             country: country,
+            state_longname: "NA",
+            state_shortname: "NA",
             jobId: jobId,
+            sourceId:sourceId,
+            source:source,
+            userId:userId,
             jobCategory: jobCategory,
             wageRequested: wageRequested,
             timezone: timezone,
-            laborMarket: source,
-            state_longname: "NA",
-            state_shortname: "NA",
-            lastUpdatedBy: "asdfads",
-            lastUpdatedOn: Date(),
-            createdBy: "asdfas",
-            createdOn: Date()
-        };
+            laborMarket: source
+        }
         console.log(profile);
         console.log(path);
         //send HTTP request and get the data
@@ -74,7 +86,7 @@ TODO
                 console.dir(resp);
                 var genderInfo = resp;
                 if (resp.probability > .97) {
-                    createApplicant(genderInfo, profile, next);
+                    createApplicant(genderInfo, profile, application, next);
                 }
                 else {
                     if (picURL) {
@@ -83,28 +95,28 @@ TODO
                                 genderInfo.photo = null
                             else
                                 genderInfo.photo = returnObj;
-                            createApplicant(genderInfo, profile, next);
+                            createApplicant(genderInfo, profile, application, next);
                         });
                     }
                     else {
                         genderInfo.gender = "unknown";
-                        createApplicant(genderInfo, profile, next);
+                        createApplicant(genderInfo, profile, application, next);
                     }
                 }
             });
         });
     };
 
-    BaseApplicant.updateApplicant = function(applicant, jobId, jobCategoryGroup, jobCategory, wageRequested, next){
-        
-    }
-    /*
-        Author: Jerrid
-        Method: getGenderByFace(photoUrl, cb)
-        -- photoURL: Url to an online photo
-        -- cb: Callback function that takes in one status
-        Description: Finds a person's gender given the URL of an online photo
-    */
+    let updateApplicant = function(applicant, jobId, jobCategoryGroup, jobCategory, wageRequested, next) {
+            next("Method not implemented",{});
+        }
+        /*
+            Author: Jerrid
+            Method: getGenderByFace(photoUrl, cb)
+            -- photoURL: Url to an online photo
+            -- cb: Callback function that takes in one status
+            Description: Finds a person's gender given the URL of an online photo
+        */
     function getGenderByFace(photoUrl, cb) {
         if (!photoUrl) {
             cb && cb({
@@ -164,20 +176,20 @@ TODO
         });
     }
 
-   /* //Photo of Tyra Banks
-    var url = "http://images4.fanpop.com/image/photos/16500000/Smoke-eyes-pic-tyra-banks-16534918-450-450.jpg";
-    //Call above method
-    getGenderByFace(url, function(result) {
-        if (result.code) {
-            console.log("getGenderByFace() Error occurred: " + result.message);
-            return;
-        }
+    /* //Photo of Tyra Banks
+     var url = "http://images4.fanpop.com/image/photos/16500000/Smoke-eyes-pic-tyra-banks-16534918-450-450.jpg";
+     //Call above method
+     getGenderByFace(url, function(result) {
+         if (result.code) {
+             console.log("getGenderByFace() Error occurred: " + result.message);
+             return;
+         }
 
-        //Do what thou wilt with the result. It'll be a JSON obj
-        console.log(JSON.stringify(result));
-    });*/
+         //Do what thou wilt with the result. It'll be a JSON obj
+         console.log(JSON.stringify(result));
+     });*/
 
-    function createApplicant(genderInfo, profile, next) {
+    function createApplicant(genderInfo, profile, application, next) {
         profile.gender = genderInfo.gender;
         profile.genderNameConfidence = genderInfo.probability;
         if (genderInfo.photo) {
@@ -193,7 +205,16 @@ TODO
                     return;
                 }
                 console.log(applicant);
-                next(null, applicant);
+                application.applicantId = applicant.id;
+                BaseApplicant.app.models.ProjectApplication.create(application, function(err, projectApp) {
+                    if (err) {
+                        console.log(err)
+                        next(err);
+                        return;
+                    }
+                    applicant.ProjectApplication = projectApp;
+                    next(null, applicant);
+                });
             });
         };
         if (profile.country !== 'us')
