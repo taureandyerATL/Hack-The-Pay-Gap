@@ -1,0 +1,67 @@
+{
+  "name": "JobStats",
+  "base": "BaseModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "maleCount": {
+      "type": "number"
+    },
+    "femaleCount": {
+      "type": "number"
+    },
+    "ExpectedJobCategoryPercent": {
+      "type": "number"
+    },
+    "maleMin": {
+      "type": "number"
+    },
+    "maleMax": {
+      "type": "number"
+    },
+    "femaleMin": {
+      "type": "number"
+    },
+    "femaleMax": {
+      "type": "number"
+    },
+    "maleAve": {
+      "type": "number"
+    },
+    "femaleAve": {
+      "type": "number"
+    },
+    "industryAve": {
+      "type": "number"
+    },
+    "internalProficiency": {
+      "type": "string"
+    },
+    "externalProficiency": {
+      "type": "string"
+    },
+    "skills": {
+      "type": "array"
+    },
+    "applicantCount": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {
+        "job": {
+            "type": "belongsTo",
+            "model": "Job",
+            "foreignKey":""
+        },
+        "applications": {
+            "type": "hasMany",
+            "model": "ProjectApplication",
+            "foreignKey": "jobId"
+        }
+  },
+  "acls": [],
+  "methods": {}
+}

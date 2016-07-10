@@ -7,38 +7,105 @@ var stateFinder = require('./StateFinder');
 module.exports = function(BaseApplicant) {
 
     /*
+    
     TODO
-    1. Get base applicant data
+    DONE- 1. Get base applicant data
     2. check and see if you have seen this applicant before
-        a) if yes, get gender and locationinformation and add to database
+        DONE- a) if yes, get gender and locationinformation and add to database
         b) if no, update the applicant if needed
     3. check to see if this applicant has applied to this job before by looking ath their applications
-        a)  if no, add a new entry into the Project Application
+        DONE- a)  if no, add a new entry into the Project Application
             i. relate applicant to application
             ii. relate application to Job
         b) if yes, make updates to application if necessary
-    4. Send wage and gender info for  
+    4. Send wage and gender info for analysis
     */
-    BaseApplicant.genderize = function(name, picURL, source, sourceId, userId, laborMarket, city, country, jobId, jobCategoryGroup, jobCategory, wageRequested, timezone, next) {
+    BaseApplicant.genderize = function(name, picURL, source, sourceId, userId, laborMarket, city, country, jobId, jobCategoryGroup, jobCategory, wageRequested, timezone, progress, next) {
         console.log(name, picURL, source, userId);
-        BaseApplicant.find({
-            userId: userId
-        }, function(err, applicant) {
+        BaseApplicant.app.models.Job.findOne({
+            where: {
+                "jobPostSourceId": jobId
+            }
+        }, function(err, job) {
             if (err) {
-                console.log("Error looking up Applicants:" + err);
+                console.log("Error looking up Associated Job:" + err);
                 next(err);
             }
-            if (applicant.length === 0) {
-                buildApplicant(name, picURL, source, sourceId, userId, laborMarket, city, country, jobId, jobCategoryGroup, jobCategory, wageRequested, timezone, next)
-                return;
+            else {
+                if (job) {
+                    console.log(job);
+                    BaseApplicant.find({
+                        where: {
+                            "userId": userId
+                        }
+                    }, function(err, applicant) {
+                        if (err) {
+                            console.log("Error looking up Applicants:" + err);
+                            next(err, null);
+                        }
+                        else if (applicant){
+                            if(applicant.length === 0) {
+                                buildApplicant(job, name, picURL, source, sourceId, userId, laborMarket, city, country, jobId, jobCategoryGroup, jobCategory, wageRequested, timezone, next);
+                                return;
+                            }else {
+                                let application = applicationObj(job, name, picURL, source, sourceId, userId, laborMarket, city, country, jobId, jobCategoryGroup, jobCategory, wageRequested, timezone, next);
+                                updateApplicant(job, applicant, jobId, jobCategoryGroup, jobCategory, wageRequested, application, progress, next);
+                            }
+                        }
+                    });
+                }
+                else {
+                    var error = "no jobs found";
+                    next(error, null)
+                }
             }
-
-            updateApplicant(applicant, jobId, jobCategoryGroup, jobCategory, wageRequested, next);
-
         });
     };
+    let progressObj = (progress) => {
+        if(progress == "applied"){
+            return{
+                applied: 1
+            }
+        }else if(progress == "shortlisted" || progress == "merit"){
+            return{
+                shortlisted: 1
+            }
+        }else if(progress == "offered"){
+            return{
+                offered: 1
+            }
+        }else if(progress == "hired"){
+            return{
+                hired: 1
+            }
+        }else if(progress == "dropped"){
+            return{
+                dropped: 1
+            }
+        }
+    }
+    let applicationObj = (job, name, picURL, source, sourceId, userId, laborMarket, city, country, jobId, jobCategoryGroup, jobCategory, wageRequested, timezone) => {
+        return {
+            name: name,
+            city: city,
+            country: country,
+            state_longname: "NA",
+            state_shortname: "NA",
+            sourceJobId: jobId,
+            jobId: job.id,
+            sourceId: sourceId,
+            source: source,
+            userId: userId,
+            jobCategory: jobCategory,
+            wageRequested: wageRequested,
+            timezone: timezone,
+            laborMarket: source,
+            applied: 1
+        };
 
-    let buildApplicant = function(name, picURL, source, sourceId, userId, laborMarket, city, country, jobId, jobCategoryGroup, jobCategory, wageRequested, timezone, next) {
+    }
+
+    let buildApplicant = function(job, name, picURL, source, sourceId, userId, laborMarket, city, country, jobId, jobCategoryGroup, jobCategory, wageRequested, timezone, next) {
         var firstName = name.split(/[ ,]+/); //HTPG
         var path = 'https://api.genderize.io/?name=' + firstName[0];
         var profile = {
@@ -50,23 +117,11 @@ module.exports = function(BaseApplicant) {
             picURL: picURL,
             state_longname: "NA",
             state_shortname: "NA",
-            laborMarket:laborMarket
-        };
-        var application = {
-            name: name,
-            city: city,
+            laborMarket: laborMarket,
             country: country,
-            state_longname: "NA",
-            state_shortname: "NA",
-            jobId: jobId,
-            sourceId:sourceId,
-            source:source,
-            userId:userId,
-            jobCategory: jobCategory,
-            wageRequested: wageRequested,
-            timezone: timezone,
-            laborMarket: source
-        }
+            city: city
+        };
+        let application = applicationObj(job, name, picURL, source, sourceId, userId, laborMarket, city, country, jobId, jobCategoryGroup, jobCategory, wageRequested, timezone);
         console.log(profile);
         console.log(path);
         //send HTTP request and get the data
@@ -107,8 +162,61 @@ module.exports = function(BaseApplicant) {
         });
     };
 
-    let updateApplicant = function(applicant, jobId, jobCategoryGroup, jobCategory, wageRequested, next) {
-            next("Method not implemented",{});
+    let updateApplicant = function(job, applicant, jobId, jobCategoryGroup, jobCategory, wageRequested, application, progress, next) {
+            // at this point, we know the applicant is there and we know that job is valid as well.
+            // now we have to check that have the applicant, has applied to this job earlier, 
+            // if he has then just return, applicant already applied to the job
+            
+            let createApplication = () => {
+                application.applicantId = applicant.id;
+                BaseApplicant.app.models.ProjectApplication.create(application, function(err, projectApp) {
+                    if (err) {
+                        console.log(err)
+                        next(err);
+                        return;
+                    }
+                    //projectApp.Applicant(applicant);
+                    //applicant.ProjectApplication = projectApp;
+                    next(null, applicant);
+                });
+            };
+            let applicationFound = () => {
+                
+                //TODO: Upsert progression into found application
+                let progression = progressObj(progress)
+                BaseApplicant.app.models.ProjectApplication.update(progression, function(err, projectApp) {
+                    if (err) {
+                        console.log(err)
+                        next(err);
+                        return;
+                    }
+                    //projectApp.Applicant(applicant);
+                    //applicant.ProjectApplication = projectApp;
+                    next(null, applicant);
+                });
+                next(null, "Updates have been applied");
+            };
+            let postFindApplication = application => {
+                if (application != null) {
+                    applicationFound();
+                    return;
+                }
+                createApplication();
+
+            };
+
+            let errorHandler = err => {
+                next(err)
+            };
+            BaseApplicant.app.models.ProjectApplication.findOne({
+                    where: {
+                        applicantId: applicant.id,
+                        jobId: job.id
+                    }
+                })
+                .then(postFindApplication)
+                .catch(errorHandler)
+            next(null, "Method not implemented");
         }
         /*
             Author: Jerrid
@@ -199,27 +307,35 @@ module.exports = function(BaseApplicant) {
             }
         }
         var finalFunc = () => {
+            console.log("COUNTRY USED: " + profile.country);
+            // BaseApplicant.app.models.ProjectApplication
             BaseApplicant.create(profile, function(err, applicant) {
                 if (err) {
                     next(err);
                     return;
                 }
-                console.log(applicant);
                 application.applicantId = applicant.id;
+                console.log('-----------------');
+                console.log(applicant);
+                console.log('------------------');
+                //BaseApplicant.app.models.ProjectApplication.create(application, function(err, projectApp) {
                 BaseApplicant.app.models.ProjectApplication.create(application, function(err, projectApp) {
                     if (err) {
                         console.log(err)
                         next(err);
                         return;
                     }
-                    applicant.ProjectApplication = projectApp;
+                    //projectApp.Applicant(applicant);
+                    //applicant.ProjectApplication = projectApp;
                     next(null, applicant);
                 });
             });
         };
-        if (profile.country !== 'us')
+        if (profile.country !== 'us' && profile.country !== 'US' && profile.country !== 'USA' && profile.country !== 'usa') {
+            console.log("Not the US Country");
             finalFunc();
-
+            return;
+        }
         stateFinder(profile.city).then(state => {
                 profile.state_shortname = state.short_name;
                 profile.state_longname = state.long_name;
@@ -272,6 +388,9 @@ module.exports = function(BaseApplicant) {
                 type: 'string'
             }, {
                 arg: 'timezone',
+                type: 'string'
+            }, {
+                arg: 'progress',
                 type: 'string'
             }],
             returns: {

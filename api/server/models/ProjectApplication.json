@@ -15,6 +15,10 @@
             "type": "string",
             "required": "true"
         },
+        "sourceJobId": {
+            "type": "string",
+            "required": "true"
+        },
         "source": {
             "type": "string",
             "required": "true"
@@ -56,24 +60,53 @@
         },
         "city": {
             "type": "string"
+        },
+        "applicantId": {
+            "type": "string"
+        },
+        "applied": {
+            "type": "number"
+        },
+        "shortlisted": {
+            "type": "number"
+        },
+        "offered": {
+            "type": "number"
+        },
+        "hired": {
+            "type": "number"
+        },
+        "dropped": {
+            "type": "number"
+        },
+        "interviewed": {
+            "type": "number"
+        },
+        "percentile": {
+            "type": "number"
         }
     },
     "validations": [],
     "relations": {
-        "relBaseApplicant": {
-            "type": "hasOne",
+        "applicant": {
+            "type": "belongsTo",
             "model": "BaseApplicant",
-            "foreignKey":"applicantId"
+            "foreignKey":""
         },
-        "relJob": {
-            "type": "hasOne",
-            "model": "ProjectApplication",
-            "foreignKey":"JobId"
+        "job": {
+            "type": "belongsTo",
+            "model": "Job",
+            "foreignKey":""
         },
         "relRole":{
             "type": "hasOne",
             "model": "Role",
-            "foreignKey":"RoleId"
+            "foreignKey":"roleId"
+        },
+        "relStats":{
+            "type": "belongsTo",
+            "model": "JobStats",
+            "foreignKey":""
         }
     },
     "acls": [],

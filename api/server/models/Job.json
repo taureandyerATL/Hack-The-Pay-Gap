@@ -54,15 +54,15 @@
             "model": "Role",
             "foreignKey": "applicantionId"
         },
-        "relApplicants": {
-            "type": "hasAndBelongsToMany",
-            "model": "BaseApplicant",
-            "foreignKey": "applicantId"
+        "stats": {
+            "type": "hasOne",
+            "model": "JobStats",
+            "foreignKey": "jobId"
         },
-        "relProjectApplications": {
+        "applications": {
             "type": "hasMany",
             "model": "ProjectApplication",
-            "foreignKey": "applicantId"
+            "foreignKey": "jobId"
         }
     },
     "acls": [],

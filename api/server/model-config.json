@@ -35,9 +35,6 @@
   "BaseApplicant": {
     "dataSource": "htpg_db"
   },
-  "InternalApplicant": {
-    "dataSource": "htpg_db"
-  },
   "ProjectApplication": {
     "dataSource": "htpg_db"
   },
@@ -47,7 +44,7 @@
   "Economics": {
     "dataSource": "htpg_db"
   },
-    "JobsStats": {
+    "JobStats": {
     "dataSource": "htpg_db"
   },
   "DraftCheck": {

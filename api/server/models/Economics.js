@@ -9,70 +9,84 @@ var MIDAAS_API_KEY = "Xlu19QS9DBy29a7gj8DN0tTSKmfRmTv3ewDV1yD6";
 
 
 module.exports = function(Economics) {
-    /*var numberOfCalls = 0;
-    var numberOfUserRateLimitError = 0;
-    var numberOfRequestPerFolder = {};
-    
-    
-    var apiResponseHandler = (err, response, sucessCallback, errorCallback, subsequentCallBack) => {
-        var milliSecondsInASecond = 1000;
-        var randomTimeInMs = math.randomInt(milliSecondsInASecond);
-        var baseTimeInMs = 0;
-    
-        if (err) {
-            console.log(err, ' error returened ');
-            if (err.code === 403 && err.errors[0].reason === "userRateLimitExceeded") {
-                if (baseTimeInMs === 17) {
-                    // console.log('#########################################');
-                    errorCallback(err);
-                }
-                numberOfUserRateLimitError++;
-                console.log(' Kicking off the setTimeout ');
-                setTimeout(subsequentCallBack, (++baseTimeInMs * milliSecondsInASecond) + randomTimeInMs, sucessCallback, errorCallback)
-                return;
-            }
-            errorCallback(err);
-        }
-    
-        // promise is resolved here
-        sucessCallback(response);
+    //Taurean you'll have to change hte vars to represent their true names;
+    function linearInterpolation( perLower,  perUpper,  salLower, salUpper, salary) {
+        console.log(perLower,  perUpper,  salLower, salUpper, salary);
+        var pec = (((salary-salLower)*(perUpper - perLower))/(salUpper-salLower))+perLower;
+        return(pec);
     }
-
-    var getQuantiles = (fileId) => {
-        //----------HARD CODED STUFF HERE -----------
-        var gender = {male:'male',female:'female'};
-        var states = ["AL", "AK", "AR", "CA", "CO", "CT", "DE", "DC", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY"];
-        var age = '25-30';
-        var jobCategory = 'Computer Scientist';
-        var wage = 20.00;//$ per hour
-        var standardWorkHours = 2080;//There's 2080 work hours in a calendar year
+    
+    Economics.getPercentile= function(wage, gender, intProf, extProf, state, job, stats, application, next){
+        /***first get percentiles to compare***/
+        //get age group for proficiency
+        var agegroup
+        if (extProf == "Expert"){
+            agegroup= "45-54"; //seasoned talent
+        }else if (extProf == "Intermediate"){
+            agegroup= "35-44"; //just starting job
+        }else{
+            agegroup= "25-34"; //just starting workforce
+        }
+        var sex = "male";
+        var race = "white";
+        var salary = wage * 2080;
+        var percentile = 0;
         
-        var annualSalary = wage * standardWorkHours;
-        var industryAvg = 0;
-        //-------------------
-    
-        var serviceGetFiles = (successCallback, errorCallback) => {
-            numberOfCalls++;
-            if (!numberOfRequestPerFolder[fileId])
-                numberOfRequestPerFolder[fileId] = 0;
-    
-            numberOfRequestPerFolder[fileId]++;
-    
-            service.files.get({
-                auth: oauth2Client,
-                fileId: fileId.trim(),
-                orderBy: 'modifiedDate'
-            }, (err, response) => {
-                log.info('Get Files Response recd');
-                apiResponseHandler(err, response, successCallback, errorCallback, serviceGetFiles);
-            });
-    
-        };
-    
-        return new Promise((resolve, reject) => {
-            serviceGetFiles(resolve, reject);
-        });
-    };*/
+        /////GET MIDAAS DATA/////////
+         var postData = {
+            //year: "2014",
+            //state: state,
+            //compare: compare,
+            //race: "white",
+            //sex: "male",
+            agegroup: agegroup,
+            api_key: MIDAAS_API_KEY
+        }
+        console.log(postData);
+        postData = querystring.stringify(postData)
+        console.log(MIDAAS_quantile+postData);
+        request.get(
+            {
+                url: MIDAAS_quantile + postData,
+                body: postData,
+                json: true,
+                headers: { "Content-Type": "application/json" }
+            },
+            function(err, response, midaasData) {
+            
+                if (err) {
+                    console.log(err)
+                    //response.status(400).send(error);
+                } else {
+                    console.log("Body: " + JSON.stringify(midaasData));
+                    //console.log(midaasData);
+                    var data={};
+                    var priorData = {
+                        percentile: 0,
+                        salary: 0
+                    }
+                    for (var key in midaasData.overall) {
+                      if (midaasData.overall.hasOwnProperty(key)) {
+                        data.salary = midaasData.overall[key]
+                        data.percentile = key
+                        if(data.salary >= salary){
+                            console.log("SALARY: " + salary + ", Upper Percentile " + data.percentile + " with Salary " + data.salary + 'Lower Percentile ' + priorData.percentile + " with Salary " + priorData.salary)
+                            percentile = linearInterpolation(parseInt(priorData.percentile), parseInt(data.percentile), parseInt(priorData.salary), parseInt(data.salary), salary);
+                            console.log("Applicant Percentile: "+ percentile)
+                            break;
+                        }else{
+                            console.log(key + " -> " + midaasData.overall[key]);
+                            priorData.percentile = data.percentile;
+                            priorData.salary = data.salary;
+                        }
+                      }
+                    }
+                    next(err, midaasData);
+                    return;
+                }
+            }
+        );
+    };
     
     Economics.getStatistics = function(age, wage, next){
         var genders = {male:'male', female:'female'};      
@@ -99,7 +113,7 @@ module.exports = function(Economics) {
     
     Economics.getStatisticsByGender = function(age, gender, wage, next){
         //----------HARD CODED STUFF HERE -----------
-        var states = ["AL", "AK"];//, "AR", "CA", "CO", "CT", "DE", "DC", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY"];
+        var states = ["AL", "AK", "AR", "CA", "CO", "CT", "DE", "DC", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY"];
         //var age = '25-30';
         //var wage = 20.00;//$ per hour
         var standardWorkHours = 2080;//There's 2080 work hours in a calendar year
@@ -117,91 +131,104 @@ module.exports = function(Economics) {
         
         //console.log("Input --\n"+ gender.male + " (Hard coded) " + " Age: " + age + " hourly wage: " + wage + " Annual Salary: " + annualSalary + "\n\n");
         
-            states.forEach(function(state ,index){
-                setTimeout(function(){
-                    var options = {
-                       method:"POST",
-                       headers: {
-                          'Accept': 'application/json',
-                          'Content-Type' : 'application/x-www-form-urlencoded'
-                        },
-                       url: 'https://atl-htpg-taureandyeratl.c9users.io:8081/api/Economics/getQuantile',
-                       form:{
-                          gender:gender,
-                          state:state,
-                          age:age,
-                          race:race
-                       }
-                    };
-        
-                    request(options, function callback(error, response, midaasData) {
-                        if(error){
-                            console.log("quantile() Error: " + JSON.stringify(error));
-                            next(error);
-                            return;
-                        }
-                                
-                        if(response.statusCode !== 200){
+        states.forEach(function(state ,index){
+            setTimeout(function(){
+                var options = {
+                   method:"POST",
+                   headers: {
+                      'Accept': 'application/json',
+                      'Content-Type' : 'application/x-www-form-urlencoded'
+                    },
+                   url: 'https://atl-htpg-taureandyeratl.c9users.io:8081/api/Economics/getQuantile',
+                   form:{
+                      gender:gender,
+                      state:state,
+                      age:age,
+                      race:race
+                   }
+                };
+    
+                request(options, function callback(error, response, midaasData) {
+                    if(error){
+                        console.log("quantile() Error: " + JSON.stringify(error));
+                        next(error);
+                        return;
+                    }
                             
-                            next(error);
-                            console.log("quantile() response code: "+ response.statusCode + " Body: " + JSON.stringify(midaasData));
-                            return;
-                        }
+                    if(response.statusCode !== 200){
                         
-                        //Taureen you'll have to change hte vars to represent their true names;
-                        function linearInterpolation( a,  b,  f) { 
-                            return (a * (1.0 - f)) + (b * f);
-                            
-                        }
-                        
-                        _.map(JSON.parse(midaasData), function(overall){
-                            _.map(overall, function(overallObject){
-                                var data={state:state};
-                                var priorData = {
-                                    percentile: 0,
-                                    salary: 0
-                                };//stores the previous quantile data
-                                _.map(overallObject, function(val, key){
-                                        
-                                        //NOTE: Taureen: Do linear Interpolation Here. 
-                                     if(data.salary === undefined){
-                                         
-                                        data.percentile = linearInterpolation(Number(key.substring(0, key.length-1), priorData.percentile, 1));
-                                        data.salary = linearInterpolation(Number(val), priorData.salary, 1);
-                                        priorData = data;
-                                    }else if( annualSalary >= val){
-                                        data.salary = linearInterpolation(Number(val), priorData.percentile, 1);
-                                        data.percentile = linearInterpolation(Number(key.substring(0, key.length-1)), priorData.percentile, 1);
-                                        priorData = data;
-                                    }
-                                });
-                                output.compare.push(data);
+                        next(error);
+                        console.log("quantile() response code: "+ response.statusCode + " Body: " + JSON.stringify(midaasData));
+                        return;
+                    }
+                    
+                    
+                    
+                    _.map(JSON.parse(midaasData), function(overall){
+                        _.map(overall, function(overallObject){
+                            var data={state:state};
+                            var priorData = {
+                                percentile: 0,
+                                salary: 0
+                            };//stores the previous quantile data
+                            _.map(overallObject, function(val, key){
+                                    
+                                    //NOTE: Taureen: Do linear Interpolation Here. 
+                                 if(data.salary === undefined){
+                                     
+                                    data.percentile = linearInterpolation(Number(key.substring(0, key.length-1), priorData.percentile, 1));
+                                    data.salary = linearInterpolation(Number(val), priorData.salary, 1);
+                                    priorData = data;
+                                }else if( annualSalary >= val){
+                                    data.salary = linearInterpolation(Number(val), priorData.percentile, 1);
+                                    data.percentile = linearInterpolation(Number(key.substring(0, key.length-1)), priorData.percentile, 1);
+                                    priorData = data;
+                                }
                             });
-                            
-                            //console.log(JSON.stringify(output));
-                          if(index === states.length - 1){
-                              next(null,output);
-                              return;
-                          }
+                            output.compare.push(data);
                         });
+                        
+                        //console.log(JSON.stringify(output));
+                      if(index === states.length - 1){
+                          next(null,output);
+                          return;
+                      }
                     });
-                }, apiInvokeDelay);
-            });
+                });
+            }, apiInvokeDelay);
+        });
     };
     
-    Economics.getQuantile = function(gender, state, age, compare, race, next){ //parameters, next){
+    Economics.getQuantile = function(gender, state, age, agegroup, compare, race, next){ //parameters, next){
         //var postData = "{\"year\": \"2015\", \"state\": \"CA\", \"race\": \"white\", \"sex\":\"F\", \"agegroup\": \"30 to 40\"," + 
     	//			  "\"compare\": false," + "\"api_key\": \"Xlu19QS9DBy29a7gj8DN0tTSKmfRmTv3ewDV1yD6\", \"id\": 0}";
-        
-        //if agerang
         var postData = {
             year: "2014",
             state: state,
-            agerange: "25-30",
-            compare: compare,
+            //compare: compare,
             race: race,
             api_key: MIDAAS_API_KEY
         }
+        //"18-24", "25-34", "35-44", "45-54", "55-64", "65+"
+        if (age >= 45 || age <= 54){
+            postData.agegroup= "45-54";
+        }else if (age >= 35 || age <= 44){
+            postData.agegroup= "30-44";
+        }else if (age >= 25 || age <= 34){
+            postData.agegroup= "25-34";
+        }else if (age >= 18 || age <= 24){
+            postData.agegroup= "18-24";
+        }
+        
+        /*if (age >= 45 || age <= 54){
+            postData.agegroup= "45-54";
+        }else if (age >= 35 || age <= 44){
+            postData.agegroup= "30-44";
+        }else if(!age){
+            postData.agegroup= null;
+        }else{
+            postData.agegroup= "25-34";
+        }*/
         console.log(postData);
         postData = querystring.stringify(postData)
         console.log(MIDAAS_quantile+postData);
@@ -278,7 +305,7 @@ module.exports = function(Economics) {
         'getQuantile', 
         {
           http: {path: '/getQuantile', verb: 'Post'},
-          accepts: [{arg: 'gender', type: 'string'}, {arg: 'state', type: 'string'}, {arg: 'age', type: 'string'}, {arg: 'compare', type: 'string'}, {arg: 'race', type: 'string'}],
+          accepts: [{arg: 'gender', type: 'string'}, {arg: 'state', type: 'string'}, {arg: 'age', type: 'string'}, {arg: 'agegroup', type: 'string'}, {arg: 'compare', type: 'string'}, {arg: 'race', type: 'string'}],
           returns: {arg: 'MIDAAS DATA:', type: 'string'}
         }
     );
@@ -290,5 +317,12 @@ module.exports = function(Economics) {
           returns: {arg: 'MIDAAS DATA:', type: 'string'}
         }
     );
+    Economics.remoteMethod(
+        'getPercentile', 
+        {
+          http: {path: '/getPercentile', verb: 'Post'},
+          accepts: [{arg: 'wage', type: 'number'}, {arg: 'gender', type: 'string'}, {arg: 'intProf', type: 'string'}, {arg: 'extProf', type: 'string'},{arg: 'state', type: 'string'}, {arg: 'job', type: 'string'}, {arg: 'stats', type: 'string'}, {arg: 'application', type: 'string'}],
+          returns: {arg: 'percentile', type: 'string'}
+        }
+    );
 };
-
