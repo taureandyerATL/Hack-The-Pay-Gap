@@ -48,10 +48,19 @@
         },
         "posted": {
             "type": "boolean"
+        },
+        "jobId": {
+            "type": "string"
         }
     },
     "validations": [],
-    "relations": {},
+    "relations": {
+        "job": {
+            "type": "belongsTo",
+            "model": "Job",
+            "foreignKey":""
+        }
+    },
     "acls": [],
     "methods": []
 }

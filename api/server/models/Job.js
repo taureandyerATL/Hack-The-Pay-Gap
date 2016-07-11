@@ -35,7 +35,7 @@ to this:
 }
 */
 module.exports = function(Job) {
-    Job.formJob = function(jobCategory, jobProject, jobDescription, markets, jobId, userId, skills, roleName, internalProficiency, externalProficiency, next){
+    Job.formJob = function(jobCategory, jobProject, jobDescription, markets, jobId, userId, skills, roleName, internalProficiency, externalProficiency, draftId, next){
         var sourceMarkets = markets.split(",");
         var sourceSkills = skills.split(",");
         var jobData =
@@ -49,22 +49,24 @@ module.exports = function(Job) {
             skillsRequired: sourceSkills,
             roleName:roleName,
             internalProficiency: internalProficiency,
-            externalProficiency: externalProficiency
+            externalProficiency: externalProficiency,
+            draftId: draftId
         }
         Job.create(jobData, function(err, posted){
             if(err){
                 console.log("error in saving job data: "+err);
                 next(err,null);
             }else{
-                console.log("Job data saved: "+ posted);
+                console.log("Job data saved: ");
+                console.log(posted);
                 var stats= {
                     maleCount: 0,
                     femaleCount: 0,
                     jobCategory: posted.jobCategory,
                     ExpectedJobCategoryPercent: 0,
-                    maleMin: 0,
+                    maleMin: 99999,
                     maleMax: 0,
-                    femaleMin: 0,
+                    femaleMin: 99999,
                     femaleMax: 0,
                     maleAve: 0,
                     femaleAve: 0,
@@ -81,12 +83,21 @@ module.exports = function(Job) {
                         console.log(err)
                         next(err);
                         return;
+                    }else{
+                        console.log(jobstats);
+                        return;
                     }
-                    //projectApp.Applicant(applicant);
-                    //applicant.ProjectApplication = projectApp;
-                    console.log(jobstats);
-                    return;
                 });
+                Job.app.models.DraftCheck.updateAll({where: {"draftId": draftId}}, {"jobId": posted.id}, function(err, drafts){
+                    if (err) {
+                        console.log(err)
+                        next(err);
+                        return;
+                    }else{
+                        console.log(drafts);
+                        return;
+                    }
+                })
                 //Write function to relate draftchecks to job
                 next(null, posted);
             }
@@ -129,6 +140,9 @@ module.exports = function(Job) {
                 type: 'string'
             }, {
                 arg: 'externalProficiency',
+                type: 'string'
+            }, {
+                arg: 'draftId',
                 type: 'string'
             }],
             returns: {arg: 'Job transmitted:', type: 'string'}

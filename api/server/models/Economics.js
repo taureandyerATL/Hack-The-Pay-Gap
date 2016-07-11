@@ -20,9 +20,9 @@ module.exports = function(Economics) {
         /***first get percentiles to compare***/
         //get age group for proficiency
         var agegroup
-        if (extProf == "Expert"){
+        if (extProf == "Expert" || intProf == "advanced" || intProf == "expert"){
             agegroup= "45-54"; //seasoned talent
-        }else if (extProf == "Intermediate"){
+        }else if (extProf == "Intermediate" || intProf == "proficient" || intProf == "novice"){
             agegroup= "35-44"; //just starting job
         }else{
             agegroup= "25-34"; //just starting workforce
@@ -73,11 +73,72 @@ module.exports = function(Economics) {
                             console.log("SALARY: " + salary + ", Upper Percentile " + data.percentile + " with Salary " + data.salary + 'Lower Percentile ' + priorData.percentile + " with Salary " + priorData.salary)
                             percentile = linearInterpolation(parseInt(priorData.percentile), parseInt(data.percentile), parseInt(priorData.salary), parseInt(data.salary), salary);
                             console.log("Applicant Percentile: "+ percentile)
+                            Economics.app.models.ProjectApplication.findOne({where: {"id": application}}, function(err, projectApp){
+                                if(err){
+                                    console.log("no application found");
+                                }else{
+                                    console.log("original app:");
+                                    console.log(projectApp);
+                                    projectApp.percentile = percentile;
+                                    Economics.app.models.ProjectApplication.upsert(projectApp, function(err, updated){
+                                        if(err){
+                                            console.log("bad update: ");
+                                            console.log(err);
+                                        }
+                                        console.log("updated app");
+                                        console.log(updated);
+                                        Economics.app.models.JobStats.newApplicant(percentile, updated.jobId, gender);
+                                        /*
+                                        Economics.app.models.JobStats.findOne({where: {"sourceJobId": updated.jobId}}, function(err, stats){
+                                            if(err){
+                                                console.log("Error finding JobStats: ");
+                                                console.log(err);
+                                            }else{
+                                                //use gender to determine stats
+                                                if(gender == "male"){
+                                                    if(percentile < stats.maleMin){
+                                                        stats.maleMin = percentile;
+                                                    }
+                                                    if(percentile > stats.maleMax){
+                                                        stats.maleMax = percentile;
+                                                    }
+                                                    stats.maleAve = ((stats.maleAve*stats.maleCount)+percentile)/(stats.maleCount+1) //new average
+                                                    stats.maleCount += 1
+                                                    stats.applicantCount += 1
+                                                }else if(gender == "female"){
+                                                    if(percentile < stats.femaleMin){
+                                                        stats.femaleMin = percentile;
+                                                    }
+                                                    if(percentile > stats.femaleMax){
+                                                        stats.femaleMax = percentile;
+                                                    }
+                                                    stats.femaleAve = ((stats.femaleAve*stats.femaleCount)+percentile)/(stats.femaleCount+1) //new average
+                                                    stats.femaleCount += 1
+                                                    stats.applicantCount += 1
+                                                }else{
+                                                    console.log("no gender, no updates");
+                                                }
+                                                Economics.app.models.JobStats.upsert(stats, function(err, updatedStats){
+                                                    if(err){
+                                                        console.log("bad update of JobStats: ");
+                                                        console.log(err)
+                                                    }else{
+                                                        console.log("updated app");
+                                                        console.log(updatedStats);
+                                                    }
+                                                });
+                                            }
+                                        });*/
+                                        //next(undefined, updated);
+                                    })
+                                }
+                            })
                             break;
                         }else{
                             console.log(key + " -> " + midaasData.overall[key]);
                             priorData.percentile = data.percentile;
                             priorData.salary = data.salary;
+                            
                         }
                       }
                     }

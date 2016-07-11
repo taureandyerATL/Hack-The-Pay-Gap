@@ -33,6 +33,9 @@
         "skillsRequired": {
             "type": "array"
         },
+        "draftId": {
+            "type": "string"
+        },
         "posted": {
             "type": "boolean"
         }
@@ -44,10 +47,10 @@
             "model": "Project",
             "foreignKey": "projectId"
         },
-        "relJobDrafts": {
+        "drafts": {
             "type": "hasMany",
-            "model": "JobDescriptionAnalysis",
-            "foreignKey": "draftAnalysisId"
+            "model": "DraftCheckraft",
+            "foreignKey": "jobId"
         },
         "relRole": {
             "type": "hasMany",

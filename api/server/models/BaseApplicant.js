@@ -43,6 +43,7 @@ module.exports = function(BaseApplicant) {
                             console.log("Error looking up Applicants:" + err);
                             next(err, null);
                         }
+                        //TODO there is something wrong here.  we want to add an applicant where there is none.
                         else if (applicant){
                             if(applicant.length === 0) {
                                 buildApplicant(job, name, picURL, source, sourceId, userId, laborMarket, city, country, jobId, jobCategoryGroup, jobCategory, wageRequested, timezone, next);
@@ -61,7 +62,21 @@ module.exports = function(BaseApplicant) {
             }
         });
     };
-    let progressObj = (progress) => {
+    let progressObj = (progress, application) => {
+        if(progress == "applied"){
+            application.applied= 1
+        }else if(progress == "shortlisted" || progress == "merit"){
+            application.shortlisted= 1
+        }else if(progress == "offered"){
+            application.offered= 1
+        }else if(progress == "hired"){
+            application.hired= 1
+        }else if(progress == "dropped"){
+            application.dropped= 1
+        }
+        return application;
+    }
+    /*let progressObj = (progress) => {
         if(progress == "applied"){
             return{
                 applied: 1
@@ -83,7 +98,7 @@ module.exports = function(BaseApplicant) {
                 dropped: 1
             }
         }
-    }
+    }*/
     let applicationObj = (job, name, picURL, source, sourceId, userId, laborMarket, city, country, jobId, jobCategoryGroup, jobCategory, wageRequested, timezone) => {
         return {
             name: name,
@@ -177,14 +192,14 @@ module.exports = function(BaseApplicant) {
                     }
                     //projectApp.Applicant(applicant);
                     //applicant.ProjectApplication = projectApp;
-                    next(null, applicant);
+                    next(null, projectApp);
                 });
             };
             let applicationFound = () => {
                 
                 //TODO: Upsert progression into found application
-                let progression = progressObj(progress)
-                BaseApplicant.app.models.ProjectApplication.update(progression, function(err, projectApp) {
+                let progression = progressObj(progress,application)
+                BaseApplicant.app.models.ProjectApplication.upsert(progression, function(err, projectApp) {
                     if (err) {
                         console.log(err)
                         next(err);
@@ -198,7 +213,7 @@ module.exports = function(BaseApplicant) {
             };
             let postFindApplication = application => {
                 if (application != null) {
-                    applicationFound();
+                    applicationFound(application);
                     return;
                 }
                 createApplication();
@@ -327,7 +342,18 @@ module.exports = function(BaseApplicant) {
                     }
                     //projectApp.Applicant(applicant);
                     //applicant.ProjectApplication = projectApp;
-                    next(null, applicant);
+                    BaseApplicant.app.models.Job.findOne({where: {"sourceJobId": applicant.jobId}}, function(err, job){
+                        if (err) {
+                            next(err);
+                            return;
+                        }else{
+                            //state, job, and stats aren't needed
+                            BaseApplicant.app.models.Economics.getPercentile(projectApp.wageRequested, applicant.gender, job.internalProficiency, job.externalProficiency, undefined, job.id, undefined,  projectApp.id, next)
+                            next(null, applicant);
+                            return;
+                        }
+                    });
+                    
                 });
             });
         };
@@ -343,7 +369,29 @@ module.exports = function(BaseApplicant) {
             })
             .catch(next);
     }
-
+    BaseApplicant.updateProgress = function(userId, jobId, progress, next){
+        BaseApplicant.app.models.ProjectApplication.findOne({where: {and: [{"sourceJobId": jobId}, {"userId": userId}]}}, function(err, projectApp){
+            if(err){
+                console.log("Error finding Application");
+                console.log(err);
+                next(err);
+            }else{
+                var updates = progressObj(progress, projectApp);
+                BaseApplicant.app.models.ProjectApplication.upsert(updates, function(err, updated){
+                    if(err){
+                        console.log("Error updating Application");
+                        console.log(err);
+                        next(err);
+                    }else{
+                        console.log("Applicant updated");
+                        console.log(updated);
+                        next(null, updated);
+                    }
+                });
+            }
+        });
+    }
+    
     BaseApplicant.remoteMethod(
         'genderize', {
             http: {
@@ -388,6 +436,28 @@ module.exports = function(BaseApplicant) {
                 type: 'string'
             }, {
                 arg: 'timezone',
+                type: 'string'
+            }, {
+                arg: 'progress',
+                type: 'string'
+            }],
+            returns: {
+                root: true,
+                type: 'object'
+            }
+        }
+    );
+    BaseApplicant.remoteMethod(
+        'updateProgress', {
+            http: {
+                path: '/updateProgress',
+                verb: 'Post'
+            },
+            accepts: [{
+                arg: 'userId',
+                type: 'string'
+            }, {
+                arg: 'jobId',
                 type: 'string'
             }, {
                 arg: 'progress',
