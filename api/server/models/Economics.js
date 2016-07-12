@@ -129,7 +129,12 @@ module.exports = function(Economics) {
                                                 });
                                             }
                                         });*/
-                                        //next(undefined, updated);
+                                        if(next){
+                                            next(undefined, updated);
+                                            return;
+                                        }else{
+                                            return;
+                                        }
                                     })
                                 }
                             })
@@ -142,7 +147,7 @@ module.exports = function(Economics) {
                         }
                       }
                     }
-                    next(err, midaasData);
+                    //next(err, midaasData);
                     return;
                 }
             }

@@ -50,6 +50,9 @@
   "DraftCheck": {
     "dataSource": "htpg_db"
   },
+  "DemoUpload": {
+    "dataSource": "htpg_db"
+  },
   "Appuser": {
     "dataSource": "htpg_db",
     "public": true

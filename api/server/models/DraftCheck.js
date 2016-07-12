@@ -9,24 +9,8 @@ var jobDescription = 'Accenture helps leading Automotive and Industrial companie
 
 module.exports = function(DraftCheck) {
   DraftCheck.checkDraft = function(jobDescription, userId, userName, draftSource, draftId, jobCategory, roleName, marketSource, next) {
-    /*
-        [
-            {arg: 'jobDescription', type: 'string'},
-            {arg: 'userId', type: 'string'},
-            {arg: 'userName', type: 'string'},
-            {arg: 'draftSource', type: 'string'},
-            {arg: 'draftId', type: 'string'},
-            {arg: 'jobCategory', type: 'string'},
-            {arg: 'roleName', type: 'string'},
-            {arg: 'marketSource', type: 'array'}
-        ]
-    /*
-    1. Create draft schema
-    2. Post to textio using 
-    */
     console.log(jobDescription);
-    //var textioResponse2 = textio(jobDescription, jobCategory, next);
-    //console.log(textioResponse2);
+    
 
     var postTextioResponseFunc = (textioResponse) => {
       var textioResponseSample = {
@@ -173,7 +157,7 @@ module.exports = function(DraftCheck) {
         factors_score: textioResponse.data.document.feature_metadata.factors_pos - textioResponse.data.document.feature_metadata.factors_neg,
         factors_pos: textioResponse.data.document.feature_metadata.factors_pos,
         factors_neg: textioResponse.data.document.feature_metadata.factors_neg,
-        genderscore: textioResponse.data.document.feature_metadata.phrases_masculine - textioResponse.data.document.feature_metadata.phrases_feminine,
+        genderscore: textioResponse.data.document.feature_metadata.phrases_feminine - textioResponse.data.document.feature_metadata.phrases_masculine,
         jargon: textioResponse.data.document.stats.phrases_jargon_freq,
         attributes: textioResponse.data.document.filtered_factors.generic_scorer
       };

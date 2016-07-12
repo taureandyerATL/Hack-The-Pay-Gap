@@ -348,7 +348,7 @@ module.exports = function(BaseApplicant) {
                             return;
                         }else{
                             //state, job, and stats aren't needed
-                            BaseApplicant.app.models.Economics.getPercentile(projectApp.wageRequested, applicant.gender, job.internalProficiency, job.externalProficiency, undefined, job.id, undefined,  projectApp.id, next)
+                            BaseApplicant.app.models.Economics.getPercentile(projectApp.wageRequested, applicant.gender, job.internalProficiency, job.externalProficiency, undefined, job.id, undefined,  projectApp.id)
                             next(null, applicant);
                             return;
                         }
