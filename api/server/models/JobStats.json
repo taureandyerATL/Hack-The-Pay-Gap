@@ -36,6 +36,15 @@
     "industryAve": {
       "type": "number"
     },
+    "sourceJobId": {
+      "type": "string"
+    },
+    "jobDescriptionScore": {
+      "type": "number"
+    },
+    "genderBias": {
+      "type": "string"
+    },
     "internalProficiency": {
       "type": "string"
     },

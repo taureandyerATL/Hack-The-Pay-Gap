@@ -33,9 +33,6 @@
         "skillsRequired": {
             "type": "array"
         },
-        "draftId": {
-            "type": "string"
-        },
         "posted": {
             "type": "boolean"
         }

@@ -55,7 +55,7 @@ module.exports = function(Job) {
         Job.create(jobData, function(err, posted){
             if(err){
                 console.log("error in saving job data: "+err);
-                next(err,null);
+                next(err);
             }else{
                 console.log("Job data saved: ");
                 console.log(posted);
@@ -76,30 +76,29 @@ module.exports = function(Job) {
                     externalProficiency: posted.externalProficiency,
                     skills: posted.sourceSkills,
                     applicantCount: 0,
+                    sourceJobId: posted.jobPostSourceId,
                     jobId: posted.id
                 }
                 Job.app.models.JobStats.create(stats, function(err, jobstats) {
                     if (err) {
                         console.log(err)
-                        next(err);
-                        return;
+                        return next(err);
                     }else{
                         console.log(jobstats);
-                        return;
+                        Job.app.models.DraftCheck.updateAll({where: {"draftId": draftId}}, {"jobId": posted.id}, function(err, drafts){
+                            if (err) {
+                                console.log(err)
+                                return next(err);
+                            }else{
+                                console.log(drafts);
+                                return next(null, posted);
+                            }
+                        })
                     }
                 });
-                Job.app.models.DraftCheck.updateAll({where: {"draftId": draftId}}, {"jobId": posted.id}, function(err, drafts){
-                    if (err) {
-                        console.log(err)
-                        next(err);
-                        return;
-                    }else{
-                        console.log(drafts);
-                        return;
-                    }
-                })
+                
                 //Write function to relate draftchecks to job
-                next(null, posted);
+                //next(null, posted);
             }
         })
     },

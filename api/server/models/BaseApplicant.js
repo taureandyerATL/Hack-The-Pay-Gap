@@ -348,9 +348,18 @@ module.exports = function(BaseApplicant) {
                             return;
                         }else{
                             //state, job, and stats aren't needed
-                            BaseApplicant.app.models.Economics.getPercentile(projectApp.wageRequested, applicant.gender, job.internalProficiency, job.externalProficiency, undefined, job.id, undefined,  projectApp.id)
-                            next(null, applicant);
+                            BaseApplicant.app.models.Economics.getPercentile(projectApp.wageRequested, applicant.gender, job.internalProficiency, job.externalProficiency, undefined, job.id, undefined,  projectApp.id, function(err, percentile){
+                                if (err) {
+                            next(err);
                             return;
+                        }else{
+                            return next(null, applicant);
+                            }
+                            
+                                
+                            });
+                            
+                      
                         }
                     });
                     
@@ -381,11 +390,11 @@ module.exports = function(BaseApplicant) {
                     if(err){
                         console.log("Error updating Application");
                         console.log(err);
-                        next(err);
+                        return next(err);
                     }else{
                         console.log("Applicant updated");
                         console.log(updated);
-                        next(null, updated);
+                        return next(null, updated);
                     }
                 });
             }

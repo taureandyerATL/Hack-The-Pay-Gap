@@ -1,23 +1,5 @@
-/*
-        JobStats
-            -maleCount
-            -femaleCount
-            -ExpectedJobCategoryPercent
-            -maleMin
-            -maleMax
-            -femaleMin
-            -femaleMax
-            -maleAve
-            -femaleAve
-            -industryAve
-            -expertise?
-            -skills
-            -relJob
-            -applicantCount
-            -lastUpdate
-        */
 module.exports = function(JobStats) {
-    JobStats.newApplicant= function(percentile, jobId, gender){
+    JobStats.newApplicant= function(percentile, jobId, gender, next){
         console.log(jobId);
         JobStats.findOne({where: {"jobId": jobId}}, function(err, stats){
             if(err){
@@ -54,11 +36,11 @@ module.exports = function(JobStats) {
                     if(err){
                         console.log("bad update of JobStats: ");
                         console.log(err)
-                        return;
+                        return next(err);
                     }else{
                         console.log("updated app");
                         console.log(updatedStats);
-                        return;
+                        return next(null, stats);
                     }
                 });
             }
@@ -67,7 +49,7 @@ module.exports = function(JobStats) {
     
     JobStats.getApplicantStats= function(jobId, next){
     }
-    JobStats.getJSON = function(jobId, next){
+    JobStats.getSankeyJSON = function(jobId, next){
         /*
         1. get female stats
         2. get male stats
@@ -117,7 +99,7 @@ module.exports = function(JobStats) {
         });
         console.log(sankeyJson);
         next(null, sankeyJson);
-        
+    }
                         /*if(state != "hired"){
                             var whenDropped = {}
                             whenDropped[progress[progress.indexOf(state)+1]] = null;
@@ -155,9 +137,88 @@ module.exports = function(JobStats) {
             JobStats.app.models.ProjectApplication.Count({where: {and:[{"sourceJobId": jobId}, {"gender": gender},{"offered": 1},{"hired": null}{"dropped": 1}]}}, function(err, droppedApplied){
                 
             });*/
-        
-        
-    }
+
+        JobStats.getWage = function(jobId, next){
+            console.log("in get wage")
+            var demoStat = {
+                "maleCount": 3,
+                "femaleCount": 3,
+                "ExpectedJobCategoryPercent": 0,
+                "maleMin": 53.666666666666664,
+                "maleMax": 76.36363636363636,
+                "femaleMin": 53.666666666666664,
+                "femaleMax": 76.36363636363636,
+                "maleAve": 68.79797979797979,
+                "femaleAve": 61.23232323232323,
+                "industryAve": 0,
+                "internalProficiency": "advanced",
+                "externalProficiency": "expert",
+                "applicantCount": 6,
+                "lastUpdatedBy": "System",
+                "lastUpdatedOn": "2016-07-12T22:56:43.594Z",
+                "createdBy": "System",
+                "createdOn": "2016-07-12T22:56:38.755Z",
+                "id": "578575a6774bae8f556942d7",
+                "jobId": "578575a6774bae8f556942d6",
+                "jobCategory": "Web & Mobile Design",
+                "industrySalary": 0,
+                "sourceJobId": "job2"
+              }
+            JobStats.findOne({where: {"sourceJobId": jobId}}, function(err, stats){
+                if(err){
+                    console.log("Error getting JobStats");
+                    console.log(err);
+                    next(err)
+                    return;
+                }else{
+                    //var stats = demoStat;
+                    //build json for wage viewer
+                    
+                    var view = {
+                		colorSet: "shades",
+                		title:{
+                			text: "Wage Percentiles of Applicants for This Job by Gender ",
+                		},		
+                		axisY: {
+                			includeZero:false,
+                			title: "National Income Percentile",
+                			interval: 10,
+                			gridThickness: 0,
+                			minimum:0,
+                			maximum:100,
+                			stripLines:[
+                                {                
+                                    value:stats.industryAve,
+                                    color: "rgb(242,171,116)",
+                                    label:"Indusry Average: "+stats.industryAve+"%",
+                                    labelFontColor:"black",
+                                    showOnTop:true
+                                }
+                            ]
+    		            }, 
+                		axisX: {
+                			interval:10,
+                		},
+                		data: [
+                		{
+                			type: "rangeBar",
+                			showInLegend: true,
+                			yValueFormatString: "#0",
+                			legendText: "Wage Percentiles by Gender",
+                			dataPoints: [
+                				{x: 10, y:[stats.femaleMin, stats.femaleMax]},
+                				{x: 10, y:[stats.femaleAve - .5, stats.femaleAve + .5], label: "Female"},
+                				{x: 20, y:[stats.maleMin, stats.maleMax]},
+                				{x: 20, y:[stats.maleAve - .5, stats.maleAve + .5], label: "Male" }
+                			]
+                		}]
+                    }
+                    console.log(view);
+                    next(null, view);
+                }
+            })
+        }
+
     JobStats.getSankey= function(jobId, next){
         var sankey = {
             "links": [
@@ -289,9 +350,25 @@ module.exports = function(JobStats) {
         }
     );
     JobStats.remoteMethod(
-        'getJSON', {
+        'getSankeyJSON', {
             http: {
                 path: '/getJSON',
+                verb: 'Post'
+            },
+            accepts: [{
+                arg: 'jobId',
+                type: 'string'
+            }],
+            returns: {
+                root: true,
+                type: 'object'
+            }
+        }
+    );
+    JobStats.remoteMethod(
+        'getWage', {
+            http: {
+                path: '/getWage',
                 verb: 'Post'
             },
             accepts: [{

@@ -1,8 +1,9 @@
 'use strict';
 var request = require('request');
 var random = require('random-seed').create();
-var Q = require('q');
-
+var async = require('async');
+//var baseUrl= 'https://atl-htpg-taureandyeratl.c9users.io:8081/api/'; //URL to hit  
+var baseUrl = 'https://atl-htpg-taureandyeratl.c9users.io/api/'; //URL to hit   
 module.exports = function(DemoUpload) {
 
 /*
@@ -32,74 +33,513 @@ module.exports = function(DemoUpload) {
     });
 }*/
 
-  DemoUpload.upload= function(next){
+  DemoUpload.upload= function(cb){
     //Kick of upload of file in in order (maybe using async?)
-    var bodies = []
-    var errors = []
-    draftsUpload(bodies, errors, next);
-    next(errors, bodies);
-    return;
-  }
-  function draftsUpload(bodies, errors, next){
-    var bodies = []
-    var errors = []
-    drafts.forEach(function(job){
-      console.log(job);
-      /*return Q.spread(job, function (a, b) {
-        return a + b;
-    }).then*/
+    async.series([
+      draftsUpload,
+      jobsUpload,
+      applicantsUpload,
+      progressUpload
+    ], cb);
     
-      job.forEach(function(draft){
-        console.log("made it here")
-        console.log(draft);
+    
+  }
+  
+  DemoUpload.drafts = function(cb){
+      draftsUpload(cb);
+  }
+  DemoUpload.jobs = function(cb){
+      jobsUpload(cb);
+  }
+  DemoUpload.applicants = function(cb){
+      //applicantsUpload(cb);
+      oneJob(cb);
+  }
+  DemoUpload.progress = function(cb){
+      progressUpload(cb);
+  }
+  var draft = function(draftDesc, draftDone){
+    console.log("Draft");
+    console.log(draftDesc)
+    request({
+        url: baseUrl + 'DraftChecks/checkDraft', //URL to hit        
+        method: 'POST',        
+        json: draftDesc,
+        headers: {
+        "content-type": "application/json"}
+      },function(error, response, body){
+        if(error) {
+          console.log("ERROR WHILE  INSERTING DRAFT ::::" + error);
+          draftDone(error);
+        } 
+        else 
+        {
+          console.log("Draft inserted.");
+          //console.log(body);
+          return draftDone(null);
 
-        request({
-              url: 'https://atl-htpg-taureandyeratl.c9users.io:8081/api/DraftChecks/checkDraft', //URL to hit        
-              method: 'POST',        
-              json: draft,
-              headers: {
-              "content-type": "application/json",
-              },  
-            }, function(error, response, body){
-                 
-              if(error) {
-                console.log("ERROR WHILE  INSERTING DRAFT ::::" + error);
-              } 
-              else 
-              {
-              console.log("Draft inserted.");
-              }
-            });
-      });
-      return(errors, bodies);
+        }
     });
-    //console.log(next);
-    return;
   }
+  var draftJobs = function(job, doneCallback){
+    async.eachSeries(job, draft, function(draftErr){
+      console.log("job done");
+      return doneCallback(null);
+    });
+  }
+  function draftsUpload(next){
+    async.eachSeries(drafts, draftJobs, function(err){
+        console.log("drafts uploaded")
+        return next(null);
+      });
+  };
+  var sendJobs = function(job, done){
+    console.log(job);
+    request({
+        url: baseUrl + 'Jobs/newJob', //URL to hit        
+        method: 'POST',        
+        json: job,
+        headers: {
+        "content-type": "application/json"}
+        },function(error, response, body){
+           
+        if(error) {
+          console.log("ERROR WHILE INSERTING JOB ::::" + error);
+          return done(error);
+        } 
+        else 
+        {
+          console.log("Job inserted.");
+          console.log(body);
+          return done(null);
+
+        }  
+    });
+  }
+  
   function jobsUpload(next){
-    jobs.forEach(function(job){
-      request({
-              url: 'https://atl-htpg-taureandyeratl.c9users.io:8081/api/Jobs/newJob', //URL to hit        
-              method: 'POST',        
-              json: job,
-              headers: {
-              "content-type": "application/json",
-              },  
-            }, function(error, response, body){
-                 
-              if(error) {
-                console.log("ERROR WHILE  INSERTING DRAFT ::::" + error);
-              } 
-              else 
-              {
-
-              console.log("Draft inserted.");
-              }
-            });
-    })
+    console.log("i'm in jobs upload");
+    async.eachSeries(jobs, sendJobs, function(err){
+        if(err){
+          console.log("Error uploading job");
+          console.log(err);
+          return next(err);
+        }else{
+          console.log("Jobs finished uploading");
+          return next(null);
+        }
+        
+    });
   }
+  
+var applyJob = [];
+var iterateJob = function(job, done){
+  //get randome numbes and applications
+  var numApplications = getRandomInt(6,19);
+  console.log(numApplications)
+  var a = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19];
+  var apps = shuffle(a)
+  var apps = apps.slice(0, numApplications)
+  //applies order of shuffled applicants into the job queue
+  applyJob.push(apps);
+  console.log(applyJob);
+  //interates thorugh the numbers in the sliced app array
+  async.eachSeries(apps, function(app, doneCallback){
+    //Add job data
+    console.log("application");
+    console.log(app);
+    console.log(applicants[app]);
+    applicants[app].jobId = job.jobId;
+    applicants[app].jobCategory = job.jobCategory;
+    applicants[app].jobCategoryGroup = job.jobCategoryGroup;
+    request({
+      url: baseUrl+ 'BaseApplicants/genderize', //URL to hit        
+      method: 'POST',        
+      json: applicants[app],
+      headers: {
+        "content-type": "application/json",
+      },  
+      }, function(error, response, body){
+           
+      if(error) {
+          console.log(error);
+          return doneCallback(error);
+      } 
+      else 
+      {
+        console.log("uploaded");
+        console.log(app);
+        
+        return doneCallback(null, body);
+      }
+    });
+  },
+  function(err) {
+      if(err){
+      console.log("Error uploading job)")
+      console.log(err);
+      return done(err);
+    }else{
+      console.log("Applicantions for job ")
+      return done(null);
+    }
+  });
+}
 
+var oneJob = function(done){
+  //get randome numbes and applications
+  var numApplications = getRandomInt(6,8);
+  console.log(numApplications)
+  var a = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19];
+  var apps = shuffle(a)
+  var apps = apps.slice(0, numApplications)
+  //applies order of shuffled applicants into the job queue
+  applyJob.push(apps);
+  console.log(applyJob);
+  //interates thorugh the numbers in the sliced app array
+  async.eachSeries(apps, function(app, doneCallback){
+    //Add job data
+    console.log("application");
+    console.log(app);
+    console.log(applicants[app]);
+    applicants[app].jobId = jobs[0].jobId;
+    applicants[app].jobCategory = jobs[0].jobCategory;
+    applicants[app].jobCategoryGroup = jobs[0].jobCategoryGroup;
+    request({
+      url: baseUrl + 'api/BaseApplicants/genderize', //URL to hit    
+      method: 'POST',        
+      json: applicants[app],
+      headers: {
+        "content-type": "application/json",
+      },  
+      }, function(error, response, body){
+           
+      if(error) {
+          console.log(error);
+          return doneCallback(error);
+      } 
+      else 
+      {
+        console.log("uploaded");
+        console.log(app);
+        
+        return doneCallback(null, body);
+      }
+    });
+  },
+  function(err) {
+      if(err){
+      console.log("Error uploading job)")
+      console.log(err);
+      return done(err);
+    }else{
+      console.log("Applicantions for job ")
+      return done(null);
+    }
+  });
+}
+
+function applicantsUpload(next){
+  //randomize which user in the array of applicants applies to the job
+  //Will include progress as applicant array is needed for the jobs
+  async.each(jobs, iterateJob, function(err){
+    if(err){
+      console.log("Error interating job)")
+      console.log(err);
+      return next(err);
+    }else{
+      console.log("done with applications upload");
+      return next(null);
+    }
+  })
+}
+var runHired= function(app){
+  async.eachSeries(progress[0], function(progression, donePro){
+    progression.userId= applicants[app].userId;
+    progression.jobId= applicants[app].jobId
+    console.log(progression);
+    request({
+      url: baseUrl +'BaseApplicants/updateProgress', //URL to hit        
+      method: 'POST',        
+      json: progression,
+      headers: {
+        "content-type": "application/json",
+      },  
+      }, function(error, response, body){
+           
+      if(error) {
+          console.log(error);
+          return donePro(error);
+      } 
+      else 
+      {
+        console.log("uploaded");
+        console.log(app);
+        
+        return donePro(null);
+      }
+    });
+  }, function(error, response, body){
+             
+        if(error) {
+            console.log(error);
+            return;
+        } 
+        else 
+        {
+          console.log("uploaded");
+          console.log(app);
+          
+          return;
+        }
+      });
+}
+
+var progressCandidate = function(apps, progressArr, progressDone){
+  //for each application...
+  async.eachSeries(apps, function(app, appDone){
+  //for each progress state....
+    async.eachSeries(progress[progressArr], function(progression, donePro){
+      progression.userId= applicants[app].userId;
+      progression.jobId= applicants[app].jobId
+      console.log(progression);
+      request({
+        url: baseUrl + 'api/BaseApplicants/updateProgress', //URL to hit        
+        method: 'POST',        
+        json: progression,
+        headers: {
+          "content-type": "application/json",
+        },  
+        }, function(error, response, body){
+             
+        if(error) {
+            console.log(error);
+            return donePro(error);
+        } 
+        else 
+        {
+          console.log("uploaded");
+          console.log(app);
+          
+          return donePro(null);
+        }
+      });
+    }, function(error, response, body){
+               
+          if(error) {
+              console.log(error);
+              return appDone(error);
+          } 
+          else 
+          {
+            console.log("uploaded");
+            console.log(app);
+            return appDone(null);
+          }
+        });
+  }, function(error, response, body){
+             
+        if(error) {
+            console.log(error);
+            //return progressDone(error);
+            //return;
+        } 
+        else 
+        {
+          console.log("uploaded");
+          console.log(apps);
+          //return progressDone(null);
+          //return;
+        }
+      });
+
+}
+
+var offeredProgress = function(progression){
+  
+}
+function progressUpload(next){
+  console.log("In progress")
+  console.log(applyJob);
+  if(applyJob.length <= 2){
+    async.eachSeries(applyJob, function(appList, doneCallback){
+      //hire first on the list
+      runHired(appList[0])
+      //offer next set of people
+      var numOffers = getRandomInt(2,(appList.length/4));
+      //shortlist this set
+      var numShortLists = getRandomInt(2,(appList.length/3));
+      //slice up list
+      var offers = appList.slice(1, numOffers)
+      var shortlist = appList.slice(numOffers, numShortLists)
+      var drop = appList.slice(numShortLists,appList.length-1)
+      console.log(appList);
+      console.log(appList[0]);
+      console.log(offers);
+      console.log(shortlist);
+      console.log(drop);
+      async.series([
+        progressCandidate(hiring, 0),
+        progressCandidate(offers, 1),
+        progressCandidate(shortlist, 2),
+        progressCandidate(drop, 3)
+        ]);
+          
+      /*async.eachSeries(offers, progressCandidate,function(err) {
+         if(err){
+          console.log("Error uploading progress)")
+          console.log(err);
+          return next(err);
+        }else{
+          console.log("Offers for job1 done");
+        }
+      });
+      async.eachSeries(shortlist, progressCandidate,function(err) {
+         if(err){
+          console.log("Error uploading progress)")
+          console.log(err);
+          return next(err);
+        }else{
+          console.log("Offers for job1 done");
+        }
+      });
+      async.eachSeries(drop, progressCandidate,function(err) {
+         if(err){
+          console.log("Error uploading progress)")
+          console.log(err);
+          return next(err);
+        }else{
+          console.log("Offers for job1 done");
+        }
+      });*/
+      return doneCallback(null)
+      },function(err){
+        if(err){
+          console.log("Error uploading progress)")
+          console.log(err);
+          return next(err);
+        }else{
+          console.log("Progress for applicants ");
+          return next(null);
+        }
+      });
+  }else{
+    //runHired(applyJob[0])
+      //offer next set of people
+      var numOffers = getRandomInt(2,(applyJob.length/4));
+      //shortlist this set
+      var numShortLists = getRandomInt(2,(applyJob.length/3));
+      //slice up list
+      var hiring = [applyJob[0]]
+      var offers = applyJob.slice(1, numOffers)
+      var shortlist = applyJob.slice(numOffers, numShortLists)
+      var drop = applyJob.slice(numShortLists,applyJob.length-1)
+      console.log(applyJob);
+      console.log(applyJob[0]);
+      console.log(offers);
+      console.log(shortlist);
+      console.log(drop);
+      async.series([
+        progressCandidate(hiring, 0),
+        progressCandidate(offers, 1),
+        progressCandidate(shortlist, 2),
+        progressCandidate(drop, 3)
+        ]);
+      /*async.eachSeries(offers, progressCandidate,function(err) {
+         if(err){
+          console.log("Error uploading progress)")
+          console.log(err);
+          return next(err);
+        }else{
+          console.log("Offers for job1 done");
+        }
+      });
+      async.eachSeries(shortlist, progressCandidate,function(err) {
+         if(err){
+          console.log("Error uploading progress)")
+          console.log(err);
+          return next(err);
+        }else{
+          console.log("Offers for job1 done");
+        }
+      });
+      async.eachSeries(drop, progressCandidate,function(err) {
+         if(err){
+          console.log("Error uploading progress)")
+          console.log(err);
+          return next(err);
+        }else{
+          console.log("Offers for job1 done");
+        }
+      });*/
+      
+      //async.eachSeries(progress)
+      return next(null);
+  }
+}
+
+function shuffle(a) {
+    var j, x, i;
+    for (i = a.length; i; i--) {
+        j = Math.floor(Math.random() * i);
+        x = a[i - 1];
+        a[i - 1] = a[j];
+        a[j] = x;
+    }
+    return(a);
+}
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 DemoUpload.remoteMethod(
+        'drafts', {
+            http: {
+                path: '/drafts',
+                verb: 'Get'
+            },
+            returns: {
+              arg: 'Done', 
+              type: 'string'
+            }
+        }
+    );
+DemoUpload.remoteMethod(
+        'jobs', {
+            http: {
+                path: '/jobs',
+                verb: 'Get'
+            },
+            returns: {
+              arg: 'Done', 
+              type: 'string'
+            }
+        }
+    );
+DemoUpload.remoteMethod(
+        'applicants', {
+            http: {
+                path: '/applicants',
+                verb: 'Get'
+            },
+            returns: {
+              arg: 'Done', 
+              type: 'string'
+            }
+        }
+    );
+  DemoUpload.remoteMethod(
+        'progress', {
+            http: {
+                path: '/progess',
+                verb: 'Get'
+            },
+            returns: {
+              arg: 'Done', 
+              type: 'string'
+            }
+        }
+    );
+    DemoUpload.remoteMethod(
         'upload', {
             http: {
                 path: '/upload',
@@ -123,8 +563,8 @@ var jobs= [{
     "externalProficiency": "expert",
     "internalProficiency": "Intermediate",
     "roleName":"java developer",
-    "userName": "poster1",
-    "draftId":"ycKMwxz"
+    "userId": "poster1",
+    "markets": "upwork"
   },
   { 
     "jobCategory": "Web & Mobile Design",
@@ -136,36 +576,29 @@ var jobs= [{
     "externalProficiency": "expert",
     "internalProficiency": "advanced",
     "roleName":"java developer",
-    "userName": "poster1",
-    "draftId":"ycKMwxz"
+    "userId": "poster1",
+    "markets": "upwork"
   },
 ];
 
 var drafts= [
   [
       {
-        "jobDescription": "Sixth Ave Studios is headquartered in downtown Tacoma, WA. In the last 3 years we had the opportunity to work with notable clients such as Cartier, Gap, Levis, Mazda, Mercedes, Microsoft and Oreo. Our focus is primarily modern web software and enterprise level applications",
+        "jobDescription": "Sixth Ave Studios is headquartered in downtown Tacoma, WA. In the last 3 years we had the opportunity to work with notable clients such as Cartier, Gap, Levis, Mazda, Mercedes, Microsoft and Oreo. Our focus is primarily modern web software and enterprise level applications.\nJob Description\nThe Web Developer is an experienced developer that uses JavaScript , HTML, and CSS to build dynamic, responsive web applications. Our developers are deep problem solvers",
         "marketSource": ["dtb","upwork"],
-        "draftId": "ycKMwxz",
+        "draftId": "job1drafts",
         
         "draftSource": "CTSP"
       },
       {
-        "jobDescription": "Sixth Ave Studios is headquartered in downtown Tacoma, WA. In the last 3 years we had the opportunity to work with notable clients such as Cartier, Gap, Levis, Mazda, Mercedes, Microsoft and Oreo.",
+        "jobDescription": "Sixth Ave Studios is headquartered in downtown Tacoma, WA. In the last 3 years we had the opportunity to work with notable clients such as Cartier, Gap, Levis, Mazda, Mercedes, Microsoft and Oreo. Our focus is primarily modern web software and enterprise level applications.\nJob Description\nThe Web Developer is an experienced developer that uses JavaScript , HTML, and CSS to build dynamic, responsive web applications. Our developers are deep problem solvers.\nResponsibilities\n\t• Produce and maintain enterprise quality Javascript applications utilizing industry standard patterns and best practices using MV* (MVVM, MVC) client side architecture.\n\t• Implement designs and prototypes using modern HTML and CSS\n\t• Use modern JavaScript based build tools (NodeJS, Gulp, etc.)\n",
         "marketSource": ["dtb","upwork"],
-        "draftId": "ycKMwxz",
+        "draftId": "job1drafts",
         
         "draftSource": "CTSP"
       }
     ]
   ];
-//add 10 min & women
-// worker id's 1-20
-//Worker starts at Hired, offered & not hired (random)
-function generateApplicantStatus(){
-  var status = ['Applied','Hired','Offered','Not-Hired'];
-  return status[random(status.length)];
-}
 
 var applicants= [
   {
@@ -174,7 +607,7 @@ var applicants= [
       "source": "CTSP",
       "sourceId": "test",
       "userId": "worker1",
-      "laborMarket": "Upwork",
+      "laborMarket": "upwork",
       "city": "San Jose",
       "country": "US",
       "wageRequested": 15,
@@ -187,10 +620,10 @@ var applicants= [
       "source": "CTSP",
       "sourceId": "test",
       "userId": "worker2",
-      "laborMarket": "Upwork",
+      "laborMarket": "upwork",
       "city": "San Jose",
       "country": "US",
-      "wageRequested": 35,
+      "wageRequested": 64,
       "timezone": "GMT+05:30",
       "progress":"applied"
     },
@@ -200,10 +633,10 @@ var applicants= [
       "source": "CTSP",
       "sourceId": "test",
       "userId": "worker3",
-      "laborMarket": "Upwork",
+      "laborMarket": "upwork",
       "city": "San Jose",
       "country": "US",
-      "wageRequested": 25,
+      "wageRequested": 21,
       "timezone": "GMT+05:30",
       "progress":"applied"
     },
@@ -213,10 +646,10 @@ var applicants= [
       "source": "CTSP",
       "sourceId": "test",
       "userId": "worker4",
-      "laborMarket": "Upwork",
+      "laborMarket": "upwork",
       "city": "San Jose",
       "country": "US",
-      "wageRequested": 15,
+      "wageRequested": 25,
       "timezone": "GMT+05:30",
       "progress":"applied"
     },
@@ -226,10 +659,10 @@ var applicants= [
       "source": "CTSP",
       "sourceId": "test",
       "userId": "worker5",
-      "laborMarket": "Upwork",
+      "laborMarket": "upwork",
       "city": "San Jose",
       "country": "US",
-      "wageRequested": 35,
+      "wageRequested": 26,
       "timezone": "GMT+05:30",
       "progress":"applied"
     },
@@ -239,10 +672,10 @@ var applicants= [
       "source": "CTSP",
       "sourceId": "test",
       "userId": "worker6",
-      "laborMarket": "Upwork",
+      "laborMarket": "upwork",
       "city": "San Jose",
       "country": "US",
-      "wageRequested": 25,
+      "wageRequested": 69,
       "timezone": "GMT+05:30",
       "progress":"applied"
     },
@@ -252,10 +685,10 @@ var applicants= [
       "source": "CTSP",
       "sourceId": "test",
       "userId": "worker7",
-      "laborMarket": "Upwork",
+      "laborMarket": "upwork",
       "city": "San Jose",
       "country": "US",
-      "wageRequested": 15,
+      "wageRequested": 17,
       "timezone": "GMT+05:30",
       "progress":"applied"
     },
@@ -265,10 +698,10 @@ var applicants= [
       "source": "CTSP",
       "sourceId": "test",
       "userId": "worker8",
-      "laborMarket": "Upwork",
+      "laborMarket": "upwork",
       "city": "San Jose",
       "country": "US",
-      "wageRequested": 35,
+      "wageRequested": 64,
       "timezone": "GMT+05:30",
       "progress":"applied"
     },
@@ -278,10 +711,10 @@ var applicants= [
       "source": "CTSP",
       "sourceId": "test",
       "userId": "worker9",
-      "laborMarket": "Upwork",
+      "laborMarket": "upwork",
       "city": "San Jose",
       "country": "US",
-      "wageRequested": 25,
+      "wageRequested": 51,
       "timezone": "GMT+05:30",
       "progress":"applied"
     },
@@ -291,10 +724,10 @@ var applicants= [
       "source": "CTSP",
       "sourceId": "test",
       "userId": "worker10",
-      "laborMarket": "Upwork",
+      "laborMarket": "upwork",
       "city": "San Jose",
       "country": "US",
-      "wageRequested": 15,
+      "wageRequested": 75,
       "timezone": "GMT+05:30",
       "progress":"applied"
     },
@@ -304,10 +737,10 @@ var applicants= [
       "source": "CTSP",
       "sourceId": "test",
       "userId": "worker11",
-      "laborMarket": "Upwork",
+      "laborMarket": "upwork",
       "city": "San Jose",
       "country": "US",
-      "wageRequested": 35,
+      "wageRequested": 29,
       "timezone": "GMT+05:30",
       "progress":"applied"
     },
@@ -317,10 +750,10 @@ var applicants= [
       "source": "CTSP",
       "sourceId": "test",
       "userId": "worker12",
-      "laborMarket": "Upwork",
+      "laborMarket": "upwork",
       "city": "San Jose",
       "country": "US",
-      "wageRequested": 25,
+      "wageRequested": 23,
       "timezone": "GMT+05:30",
       "progress":"applied"
     },
@@ -330,10 +763,10 @@ var applicants= [
       "source": "CTSP",
       "sourceId": "test",
       "userId": "worker13",
-      "laborMarket": "Upwork",
+      "laborMarket": "upwork",
       "city": "San Jose",
       "country": "US",
-      "wageRequested": 15,
+      "wageRequested": 50,
       "timezone": "GMT+05:30",
       "progress":"applied"
     },
@@ -343,10 +776,10 @@ var applicants= [
       "source": "CTSP",
       "sourceId": "test",
       "userId": "worker14",
-      "laborMarket": "Upwork",
+      "laborMarket": "upwork",
       "city": "San Jose",
       "country": "US",
-      "wageRequested": 35,
+      "wageRequested": 47,
       "timezone": "GMT+05:30",
       "progress":"applied"
     },
@@ -356,10 +789,10 @@ var applicants= [
       "source": "CTSP",
       "sourceId": "test",
       "userId": "worker15",
-      "laborMarket": "Upwork",
+      "laborMarket": "upwork",
       "city": "San Jose",
       "country": "US",
-      "wageRequested": 25,
+      "wageRequested": 55,
       "timezone": "GMT+05:30",
       "progress":"applied"
     },
@@ -369,10 +802,10 @@ var applicants= [
       "source": "CTSP",
       "sourceId": "test",
       "userId": "worker16",
-      "laborMarket": "Upwork",
+      "laborMarket": "upwork",
       "city": "San Jose",
       "country": "US",
-      "wageRequested": 15,
+      "wageRequested": 69,
       "timezone": "GMT+05:30",
       "progress":"applied"
     },
@@ -382,10 +815,10 @@ var applicants= [
       "source": "CTSP",
       "sourceId": "test",
       "userId": "worker17",
-      "laborMarket": "Upwork",
+      "laborMarket": "upwork",
       "city": "San Jose",
       "country": "US",
-      "wageRequested": 35,
+      "wageRequested": 66,
       "timezone": "GMT+05:30",
       "progress":"applied"
     },
@@ -395,10 +828,10 @@ var applicants= [
       "source": "CTSP",
       "sourceId": "test",
       "userId": "worker18",
-      "laborMarket": "Upwork",
+      "laborMarket": "upwork",
       "city": "San Jose",
       "country": "US",
-      "wageRequested": 25,
+      "wageRequested": 19,
       "timezone": "GMT+05:30",
       "progress":"applied"
     },
@@ -408,10 +841,10 @@ var applicants= [
       "source": "CTSP",
       "sourceId": "test",
       "userId": "worker19",
-      "laborMarket": "Upwork",
+      "laborMarket": "upwork",
       "city": "San Jose",
       "country": "US",
-      "wageRequested": 15,
+      "wageRequested": 29,
       "timezone": "GMT+05:30",
       "progress":"applied"
     },
@@ -421,7 +854,7 @@ var applicants= [
       "source": "CTSP",
       "sourceId": "test",
       "userId": "worker20",
-      "laborMarket": "Upwork",
+      "laborMarket": "upwork",
       "city": "San Jose",
       "country": "US",
       "wageRequested": 35,
@@ -430,19 +863,18 @@ var applicants= [
     },
   ];
 var progress= [
-  {
-    "hired": [
+  [
       {
         "progress": "shortlisted"
-    },
-    {
-      "progress": "offered"
-    },
-    {
-      "progress": "hired"
-    }]
-  },
-  {"offered": [
+      },
+      {
+        "progress": "offered"
+      },
+      {
+        "progress": "hired"
+      }
+    ],
+  [
     {
       "progress": "shortlisted"
     },
@@ -452,9 +884,8 @@ var progress= [
     {
       "progress": "dropped"
     }]
-  },
-  {
-    "shortlisted":[
+  ,
+  [
       {
         "progress": "shortlisted"
       },
@@ -462,12 +893,11 @@ var progress= [
         "progress": "dropped"
       }
     ]
-  },
-  {
-    "applied": [
+  ,
+  [
       {
         "progress": "dropped"
       }
     ],
-  }
+
 ]

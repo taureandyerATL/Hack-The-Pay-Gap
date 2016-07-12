@@ -16,8 +16,8 @@ module.exports = function(Economics) {
         return(pec);
     }
     
-    Economics.getPercentile= function(wage, gender, intProf, extProf, state, job, stats, application, next){
-        /***first get percentiles to compare***/
+    /*Economics.getPercentile= function(wage, gender, intProf, extProf, state, job, stats, application, next){
+        /***first get percentiles to compare***
         //get age group for proficiency
         var agegroup
         if (extProf == "Expert" || intProf == "advanced" || intProf == "expert"){
@@ -128,7 +128,7 @@ module.exports = function(Economics) {
                                                     }
                                                 });
                                             }
-                                        });*/
+                                        });*
                                         if(next){
                                             next(undefined, updated);
                                             return;
@@ -152,6 +152,121 @@ module.exports = function(Economics) {
                 }
             }
         );
+    };*/
+    
+    Economics.getPercentile= function(wage, gender, intProf, extProf, state, job, stats, application, next){
+        /***first get percentiles to compare***/
+        //get age group for proficiency
+        var midaasData ={}
+        if (extProf == "Expert" || intProf == "advanced" || intProf == "expert"){
+            midaasData = {
+                "overall": {        
+                    "5%": 2500,
+                    "10%": 8000,
+                    "20%": 15900,
+                    "30%": 24000,
+                    "40%": 32000,
+                    "50%": 40500,
+                    "60%": 52000,
+                    "70%": 69000,
+                    "80%": 89000,
+                    "90%": 125000,
+                    "95%": 173000,
+                    "99%": 455000
+                }
+            }
+ //seasoned talent
+        }else if (extProf == "Intermediate" || intProf == "proficient" || intProf == "novice"){
+            midaasData = {
+                "overall": {
+                    "5%": 3500,
+                    "10%": 9600,
+                    "20%": 18000,
+                    "30%": 25000,
+                    "40%": 32000,
+                    "50%": 40000,
+                    "60%": 50000,
+                    "70%": 61000,
+                    "80%": 80000,
+                    "90%": 110000,
+                    "95%": 150000,
+                    "99%": 393000
+                }
+            }//just starting job
+        }else{
+            midaasData = {
+                "overall": {        
+                    "5%": 800,
+                    "10%": 5000,
+                    "20%": 12000,
+                    "30%": 17000,
+                    "40%": 22200,
+                    "50%": 29000,
+                    "60%": 35000,
+                    "70%": 45000,
+                    "80%": 56000,
+                    "90%": 80000,
+                    "95%": 100000,
+                    "99%": 166600
+                }
+            }; //just starting workforce
+        }
+        
+        var salary = wage * 2080;
+        var percentile = 0;
+        
+        var data={};
+        var priorData = {
+            percentile: 0,
+            salary: 0
+        }
+        for (var key in midaasData.overall) {
+          if (midaasData.overall.hasOwnProperty(key)) {
+            data.salary = midaasData.overall[key]
+            data.percentile = key
+            if(data.salary >= salary){
+                console.log("SALARY: " + salary + ", Upper Percentile " + data.percentile + " with Salary " + data.salary + 'Lower Percentile ' + priorData.percentile + " with Salary " + priorData.salary)
+                percentile = linearInterpolation(parseInt(priorData.percentile), parseInt(data.percentile), parseInt(priorData.salary), parseInt(data.salary), salary);
+                console.log("Applicant Percentile: "+ percentile)
+                Economics.app.models.ProjectApplication.findOne({where: {"id": application}}, function(err, projectApp){
+                    if(err){
+                        console.log("no application found");
+                    }else{
+                        console.log("original app:");
+                        //console.log(projectApp);
+                        projectApp.percentile = percentile;
+                        Economics.app.models.ProjectApplication.upsert(projectApp, function(err, updated){
+                            if(err){
+                                console.log("bad update: ");
+                                console.log(err);
+                            }else{
+                                console.log("updated app");
+                                //console.log(updated);
+                                Economics.app.models.JobStats.newApplicant(percentile, updated.jobId, gender, function(err, stats){
+                                    if(err){
+                                        console.log("bad stats update: ");
+                                        console.log(err);
+                                    }else{
+                                        console.log("updated stats");
+                                        console.log(stats);
+                                        return next(null, updated);
+                                    }
+                                });
+                            }
+                        })
+                    }
+                })
+                break;
+            }else{
+                console.log(key + " -> " + midaasData.overall[key]);
+                priorData.percentile = data.percentile;
+                priorData.salary = data.salary;
+                
+            }
+          }
+        }
+        //next(err, midaasData);
+        return;
     };
     
     Economics.getStatistics = function(age, wage, next){
