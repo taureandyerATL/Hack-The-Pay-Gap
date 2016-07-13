@@ -53,9 +53,6 @@
   "DemoUpload": {
     "dataSource": "htpg_db"
   },
-  "DemoUpload1": {
-    "dataSource": "htpg_db"
-  },
   "Appuser": {
     "dataSource": "htpg_db",
     "public": true

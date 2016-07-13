@@ -19,17 +19,14 @@
         "draftId": {
             "type": "string"
         },
-        "textioDocId": {
+        "toolDocId": {
             "type": "string"
         },
-        "textioSessionId": {
+        "toolSessionId": {
             "type": "string"
         },
-        "textioWeaknesses": {
-            "type": "string"
-        },
-        "textioStrenghts": {
-            "type": "string"
+        "foundStrenghtsandWeaknesses": {
+            "type": "array"
         },
         "jobPostSourceId": {
             "type": "string"
