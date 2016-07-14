@@ -1,5 +1,6 @@
 module.exports = function(JobStats) {
     JobStats.newApplicant= function(percentile, jobId, gender, next){
+        console.log("ENTERING JOB STATS FOR " + jobId);
         console.log(jobId);
         JobStats.findOne({where: {"jobId": jobId}}, function(err, stats){
             if(err){
@@ -9,7 +10,7 @@ module.exports = function(JobStats) {
             }else{
                 //use gender to determine stats
                 console.log(stats)
-                if(gender == "male"){
+                if(gender == "male" || gender == "Male"){
                     if(percentile < stats.maleMin){
                         stats.maleMin = percentile;
                     }
@@ -19,7 +20,7 @@ module.exports = function(JobStats) {
                     stats.maleAve = ((stats.maleAve*stats.maleCount)+percentile)/(stats.maleCount+1) //new average
                     stats.maleCount += 1;
                     stats.applicantCount += 1;
-                }else if(gender == "female"){
+                }else if(gender == "female" || gender == "Female"){
                     if(percentile < stats.femaleMin){
                         stats.femaleMin = percentile;
                     }
@@ -36,10 +37,12 @@ module.exports = function(JobStats) {
                     if(err){
                         console.log("bad update of JobStats: ");
                         console.log(err)
+                        console.log("LEAVING JOB STATS");
                         return next(err);
                     }else{
                         console.log("updated app");
                         console.log(updatedStats);
+                        console.log("LEAVING JOB STATS");
                         return next(null, stats);
                     }
                 });

@@ -18,10 +18,13 @@
         "postedMarkets": {
             "type": "array"
         },
+        "meritTask": {
+            "type": "boolean"
+        },
         "draftId": {
             "type": "string"
         },
-        "textioDocId": {
+        "toolDocId": {
             "type": "string"
         },
         "jobPostSourceId": {

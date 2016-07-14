@@ -198,7 +198,7 @@ var oneJob = function(done){
   console.log(applyJob);
   //interates thorugh the numbers in the sliced app array
   async.eachSeries(apps, function(app, doneCallback){
-    //Add job dataz
+    //Add job data
     console.log("application");
     console.log(app);
     console.log(applicants[app]);
@@ -242,7 +242,7 @@ var oneJob = function(done){
 function applicantsUpload(next){
   //randomize which user in the array of applicants applies to the job
   //Will include progress as applicant array is needed for the jobs
-  async.each(jobs, iterateJob, function(err){
+  async.eachSeries(jobs, iterateJob, function(err){
     if(err){
       console.log("Error interating job)")
       console.log(err);

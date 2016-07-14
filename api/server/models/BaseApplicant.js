@@ -46,11 +46,13 @@ module.exports = function(BaseApplicant) {
                         //TODO there is something wrong here.  we want to add an applicant where there is none.
                         else if (applicant){
                             if(applicant.length === 0) {
+                                console.log("build applicant");
                                 buildApplicant(job, name, picURL, source, sourceId, userId, laborMarket, city, country, jobId, jobCategoryGroup, jobCategory, wageRequested, timezone, next);
                                 return;
                             }else {
-                                let application = applicationObj(job, name, picURL, source, sourceId, userId, laborMarket, city, country, jobId, jobCategoryGroup, jobCategory, wageRequested, timezone, next);
-                                updateApplicant(job, applicant, jobId, jobCategoryGroup, jobCategory, wageRequested, application, progress, next);
+                                console.log("update applicant");
+                                let application = applicationObj(job, name, picURL, source, sourceId, userId, laborMarket, city, country, jobId, jobCategoryGroup, jobCategory, wageRequested, timezone);
+                                updateApplicant(job, applicant[0], jobId, jobCategoryGroup, jobCategory, wageRequested, application, progress, next);
                             }
                         }
                     });
@@ -183,16 +185,18 @@ module.exports = function(BaseApplicant) {
             // if he has then just return, applicant already applied to the job
             
             let createApplication = () => {
+                console.log(' -- $$$$$$$$$$$$$$$$$$$  --'); 
+                console.log('Trying to create a new application, in Update application');
+                console.log(' -- $$$$$$$$$$$$$$$$$$$  --'); 
                 application.applicantId = applicant.id;
                 BaseApplicant.app.models.ProjectApplication.create(application, function(err, projectApp) {
                     if (err) {
                         console.log(err)
-                        next(err);
-                        return;
+                        return next(err);
                     }
                     //projectApp.Applicant(applicant);
                     //applicant.ProjectApplication = projectApp;
-                    next(null, projectApp);
+                    return next(null, projectApp);
                 });
             };
             let applicationFound = () => {
@@ -202,27 +206,30 @@ module.exports = function(BaseApplicant) {
                 BaseApplicant.app.models.ProjectApplication.upsert(progression, function(err, projectApp) {
                     if (err) {
                         console.log(err)
-                        next(err);
-                        return;
+                        return next(err);
                     }
                     //projectApp.Applicant(applicant);
                     //applicant.ProjectApplication = projectApp;
-                    next(null, applicant);
+                    return next(null, applicant);
                 });
-                next(null, "Updates have been applied");
+                //next(null, "Updates have been applied");
             };
             let postFindApplication = application => {
                 if (application != null) {
-                    applicationFound(application);
-                    return;
+                    return applicationFound(application);
                 }
-                createApplication();
+                return createApplication();
 
             };
 
             let errorHandler = err => {
-                next(err)
+                return next(err)
             };
+            // console.log('%%%%%%%%%%%');
+            // console.log(job.id);
+            // console.log('%%%%%%%%%%%%');
+            // console.log(applicant.id);
+            // console.log('%%%%%%%%%%%%%');
             BaseApplicant.app.models.ProjectApplication.findOne({
                     where: {
                         applicantId: applicant.id,
@@ -231,7 +238,7 @@ module.exports = function(BaseApplicant) {
                 })
                 .then(postFindApplication)
                 .catch(errorHandler)
-            next(null, "Method not implemented");
+            //next(null, "Method not implemented");
         }
         /*
             Author: Jerrid
