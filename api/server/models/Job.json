@@ -21,6 +21,15 @@
         "meritTask": {
             "type": "boolean"
         },
+        "jobDescriptionScore": {
+            "type": "number"
+        },
+        "genderBias": {
+            "type": "string"
+        },
+        "strengthsAndWeaknesses": {
+            "type": "array"
+        },
         "draftId": {
             "type": "string"
         },
@@ -28,6 +37,9 @@
             "type": "string"
         },
         "jobPostSourceId": {
+            "type": "string"
+        },
+        "source": {
             "type": "string"
         },
         "posterId": {

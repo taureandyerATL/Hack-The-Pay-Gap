@@ -201,12 +201,13 @@ var oneJob = function(done){
     //Add job dataz
     console.log("application");
     console.log(app);
-    console.log(applicants[app]);
+    //console.log(applicants[app]);
     applicants[app].jobId = jobs[0].jobId;
     applicants[app].jobCategory = jobs[0].jobCategory;
     applicants[app].jobCategoryGroup = jobs[0].jobCategoryGroup;
+    console.log(applicants[app])
     request({
-      url: baseUrl + 'api/BaseApplicants/genderize', //URL to hit    
+      url: baseUrl + 'BaseApplicants/genderize', //URL to hit    
       method: 'POST',        
       json: applicants[app],
       headers: {
@@ -221,7 +222,7 @@ var oneJob = function(done){
       else 
       {
         console.log("uploaded");
-        console.log(app);
+        console.log(body);
         
         return doneCallback(null, body);
       }
@@ -379,39 +380,11 @@ function progressUpload(next){
       console.log(shortlist);
       console.log(drop);
       async.series([
-        progressCandidate(hiring, 0),
+        //progressCandidate(hiring, 0),
         progressCandidate(offers, 1),
         progressCandidate(shortlist, 2),
         progressCandidate(drop, 3)
         ]);
-          
-      /*async.eachSeries(offers, progressCandidate,function(err) {
-         if(err){
-          console.log("Error uploading progress)")
-          console.log(err);
-          return next(err);
-        }else{
-          console.log("Offers for job1 done");
-        }
-      });
-      async.eachSeries(shortlist, progressCandidate,function(err) {
-         if(err){
-          console.log("Error uploading progress)")
-          console.log(err);
-          return next(err);
-        }else{
-          console.log("Offers for job1 done");
-        }
-      });
-      async.eachSeries(drop, progressCandidate,function(err) {
-         if(err){
-          console.log("Error uploading progress)")
-          console.log(err);
-          return next(err);
-        }else{
-          console.log("Offers for job1 done");
-        }
-      });*/
       return doneCallback(null)
       },function(err){
         if(err){
@@ -445,35 +418,6 @@ function progressUpload(next){
         progressCandidate(shortlist, 2),
         progressCandidate(drop, 3)
         ]);
-      /*async.eachSeries(offers, progressCandidate,function(err) {
-         if(err){
-          console.log("Error uploading progress)")
-          console.log(err);
-          return next(err);
-        }else{
-          console.log("Offers for job1 done");
-        }
-      });
-      async.eachSeries(shortlist, progressCandidate,function(err) {
-         if(err){
-          console.log("Error uploading progress)")
-          console.log(err);
-          return next(err);
-        }else{
-          console.log("Offers for job1 done");
-        }
-      });
-      async.eachSeries(drop, progressCandidate,function(err) {
-         if(err){
-          console.log("Error uploading progress)")
-          console.log(err);
-          return next(err);
-        }else{
-          console.log("Offers for job1 done");
-        }
-      });*/
-      
-      //async.eachSeries(progress)
       return next(null);
   }
 }
@@ -564,7 +508,8 @@ var jobs= [{
     "internalProficiency": "Intermediate",
     "roleName":"java developer",
     "userId": "poster1",
-    "markets": "upwork"
+    "markets": "upwork",
+    "source": "CTSP"
   },
   { 
     "jobCategory": "Web & Mobile Design",
@@ -577,7 +522,8 @@ var jobs= [{
     "internalProficiency": "advanced",
     "roleName":"java developer",
     "userId": "poster1",
-    "markets": "upwork"
+    "markets": "upwork",
+    "source": "CTSP"
   },
 ];
 

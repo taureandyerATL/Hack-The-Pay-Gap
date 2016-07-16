@@ -48,6 +48,12 @@
         },
         "jobId": {
             "type": "string"
+        },
+        "draftScore": {
+            "type": "number"
+        },
+        "draftBias": {
+            "type": "string"
         }
     },
     "validations": [],

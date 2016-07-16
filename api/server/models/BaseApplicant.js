@@ -5,21 +5,6 @@ var _ = require('lodash');
 var stateFinder = require('./StateFinder');
 
 module.exports = function(BaseApplicant) {
-
-    /*
-    
-    TODO
-    DONE- 1. Get base applicant data
-    2. check and see if you have seen this applicant before
-        DONE- a) if yes, get gender and locationinformation and add to database
-        b) if no, update the applicant if needed
-    3. check to see if this applicant has applied to this job before by looking ath their applications
-        DONE- a)  if no, add a new entry into the Project Application
-            i. relate applicant to application
-            ii. relate application to Job
-        b) if yes, make updates to application if necessary
-    4. Send wage and gender info for analysis
-    */
     BaseApplicant.genderize = function(name, picURL, source, sourceId, userId, laborMarket, city, country, jobId, jobCategoryGroup, jobCategory, wageRequested, timezone, progress, next) {
         console.log(name, picURL, source, userId);
         BaseApplicant.app.models.Job.findOne({
@@ -183,7 +168,7 @@ module.exports = function(BaseApplicant) {
             // at this point, we know the applicant is there and we know that job is valid as well.
             // now we have to check that have the applicant, has applied to this job earlier, 
             // if he has then just return, applicant already applied to the job
-            
+            application.gender = applicant.gender;
             let createApplication = () => {
                 console.log(' -- $$$$$$$$$$$$$$$$$$$  --'); 
                 console.log('Trying to create a new application, in Update application');
@@ -194,9 +179,13 @@ module.exports = function(BaseApplicant) {
                         console.log(err)
                         return next(err);
                     }
-                    //projectApp.Applicant(applicant);
-                    //applicant.ProjectApplication = projectApp;
-                    return next(null, projectApp);
+                    BaseApplicant.app.models.Economics.getPercentile(projectApp.wageRequested, projectApp.gender, job.internalProficiency, job.externalProficiency, undefined, job.id, undefined,  projectApp.id, function(err, percentile){
+                        if (err) {
+                            return next(err);
+                        }else{
+                            return next(null, projectApp);
+                        }
+                    });
                 });
             };
             let applicationFound = () => {
@@ -337,6 +326,7 @@ module.exports = function(BaseApplicant) {
                     return;
                 }
                 application.applicantId = applicant.id;
+                application.gender = applicant.gender;
                 console.log('-----------------');
                 console.log(applicant);
                 console.log('------------------');

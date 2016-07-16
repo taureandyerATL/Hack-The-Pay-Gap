@@ -45,6 +45,9 @@
     "genderBias": {
       "type": "string"
     },
+    "strengthsAndWeaknesses": {
+        "type": "array"
+    },
     "internalProficiency": {
       "type": "string"
     },

@@ -71,18 +71,22 @@ module.exports = function(JobStats) {
             var lastState = "";
             var lastProgress = "";
             progress.forEach(function(state){
+                console.log(state);
                 if(state == "applied"){
-                    lastProgress = "Applications";
+                    lastProgress = "applications";
                 }
                 var getProgress = {};
                 getProgress[state] = 1;
-                JobStats.app.models.ProjectApplication.Count({where: {and:[{"sourceJobId": jobId}, {"gender": gender},getProgress]}}, function(err, count){
+                console.log(getProgress)
+                JobStats.app.models.ProjectApplication.count({where: {and: [{"sourceJobId": jobId}, {"gender": gender}, getProgress]}}, function(err, count){
                     if(err){
                         console.log("Error getting " + gender + " who " + state);
                         console.log(err);
                         next(err)
                         return;
                     }else{
+                        console.log("Got count");
+                        console.log(count)
                         if(!count){
                             
                         }else{
@@ -97,11 +101,11 @@ module.exports = function(JobStats) {
                         lastProgress = state + " ("+gender+")";
                         lastState = state;
                     }
-                });
+                });console.log(sankeyJson);
             });
+            console.log(sankeyJson);
+            next(null, sankeyJson);
         });
-        console.log(sankeyJson);
-        next(null, sankeyJson);
     }
                         /*if(state != "hired"){
                             var whenDropped = {}

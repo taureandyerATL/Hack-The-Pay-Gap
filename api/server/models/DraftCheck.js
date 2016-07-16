@@ -61,7 +61,9 @@ module.exports = function(DraftCheck) {
         draftSourceUser: userName,
         foundStrenghtsandWeaknesses: draftAnalysis.strengthsAndWeaknesses,
         jobCategory: jobCategory,
-        roleName: roleName
+        roleName: roleName,
+        draftScore: draftAnalysis.overall_score,
+        draftBias: draftScoring.genderscore
       }, function(err, draftPost) {
         if (err) {
           next(err);
