@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- contact: allan.enemark@accenture.com -->
+<head>
+    <!-- Meta
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta charset="utf-8">
+    <title>Accenture Hack the Pay Gap</title>
+    <meta name="description" content="demo">
+    <meta name="author" content="accenture">
+    <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,200' rel='stylesheet' type='text/css'>
+    <!-- CSSssss
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+    <link rel="stylesheet" href="css/main.css">
+    <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="icon" type="image/png" href="img/accenture-favicon.png">
+    <style>
+	.canvasjs-chart-credit {
+   display: none;
+				}
+	</style> 
+</head>
+
+<body>
+    <!-- Content 
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <!-- Top logos -->
+    <div class="container">
+        <div id="topbar">
+            <img id="logo-l" src="img/logo-accenture.png"> <img id="logo-r" src="img/hpg-logo.png">
+        </div>
+        <!-- Executive Summary For Good Business Operators -->
+        <div class="row hispacer">
+            <div class="four columns">
+                <h3><strong>Connect</strong></h3>
+                <p class="four-col"><a href="https://twitter.com/search?q=Hackthepaygap">#Hackthepaygap</a> is about all of us working together to close the gender pay gap by harnessing the power of data.</p>
+                <p>Learn more at <a href="https://paygap.pif.gov/"> https://paygap.pif.gov/ </a>.</p>
+            </div>
+            <div class="four columns">
+                <h3><strong>Inspire</strong></h3>
+                <p class="four-col">
+                    <blockquote>Ultimately, though, equal pay isn’t just an economic issue for millions of Americans and their families, it’s a question of who we are – and whether we’re truly living up to our fundamental ideals.
+                        <br>
+                        <span class="u-pull-right"> -President Barack Obama</span>
+                        <br>
+                    </blockquote>
+                </p>
+            </div>
+            <!--<div class="four columns">
+                <h3><strong>Act</strong></h3>
+                <label for="onedrop">Select Overview Data</label>
+                <select class="u-full-width" id="exampleRecipientInput" onchange="overviewChange()" >
+                    <option value="Option 1">All</option>
+                    <option value="Option 2">Visualization</option>
+                    <option value="Option 3">Hiring Wages</option>
+                    <option value="Option 4">Challenges</option>
+                </select>
+                <label for="twodrop">Select Project Data</label>
+                <select class="u-full-width" id="exampleRecipientInput2">
+                    <option value="Option 1">Data A</option>
+                    <option value="Option 2">Data B</option>
+                    <option value="Option 3">Data C</option>
+                </select>
+            </div>-->
+        </div>
+        <!-- Put the wage stuff here -->
+        <div id="divWageAnalysis">
+            <div class="row hispacer">
+                <div class="twelve columns">
+                    <h3>Job Pay Analysis</h3>
+                     <p class="t-desc">
+                        Overview of total project hiring details, illustrating where drop-off occurs and who ultimately gets hired.
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="twelve columns">
+                    <div id="wage" style="height: 400px; width: 100%;"></div>
+                </div>
+            </div>
+        </div>
+        <div id="bottombar">
+            <span class="footer-text">Accenture 2016</span>
+        </div>
+    </div>
+    <!-- container end -->
+    <!-- Script
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <script src="js/d3.min.js"></script>
+    <!--<script src="js/sankey.js"></script>
+    <script src="js/make-sankey.js"></script>-->
+	<script src="js/canvasjs.min.js"></script>
+    <script src="js/wageChart.js"></script>
+    <script src="js/make-wages.js"></script>
+    <script src="js/overviewdata.js"></script>
+   
+</body>
+
+</html>
