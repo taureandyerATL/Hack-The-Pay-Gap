@@ -365,12 +365,13 @@ function progressUpload(next){
   if(applyJob.length <= 2){
     async.eachSeries(applyJob, function(appList, doneCallback){
       //hire first on the list
-      runHired(appList[0])
+      //runHired(appList[0])
       //offer next set of people
       var numOffers = getRandomInt(2,(appList.length/4));
       //shortlist this set
       var numShortLists = getRandomInt(2,(appList.length/3));
       //slice up list
+      var hiring = [appList[0]];
       var offers = appList.slice(1, numOffers)
       var shortlist = appList.slice(numOffers, numShortLists)
       var drop = appList.slice(numShortLists,appList.length-1)
@@ -380,7 +381,7 @@ function progressUpload(next){
       console.log(shortlist);
       console.log(drop);
       async.series([
-        //progressCandidate(hiring, 0),
+        progressCandidate(hiring, 0),
         progressCandidate(offers, 1),
         progressCandidate(shortlist, 2),
         progressCandidate(drop, 3)
