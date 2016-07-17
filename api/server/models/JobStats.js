@@ -108,7 +108,7 @@ module.exports = function(JobStats) {
                             if (!count) {
                                 console.log("NOT FOUND for ");
                                 console.log(getProgress);
-                                return
+                                stateFinish(null, sankeyJson);
                             }
                             else {
                                 var name = state + " (" + gender + ")";
@@ -136,7 +136,7 @@ module.exports = function(JobStats) {
                                             if (!count) {
                                                 console.log("NOT FOUND for DROPPED at ");
                                                 console.log(getProgress);
-                                                return
+                                                stateFinish(null, sankeyJson);
                                             }
                                             else {
                                                 var name = "Dropped at " + state;

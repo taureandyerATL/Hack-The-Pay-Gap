@@ -142,7 +142,7 @@ module.exports = function(DemoUpload) {
   var applyJob = [];
   var iterateJob = function(job, done) {
     //get randome numbes and applications
-    var numApplications = getRandomInt(6, 19);
+    var numApplications = getRandomInt(8, 19);
     console.log(numApplications);
     var a = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19];
     var apps = shuffle(a);
@@ -195,7 +195,7 @@ module.exports = function(DemoUpload) {
 
   var oneJob = function(done) {
     //get randome numbes and applications
-    var numApplications = getRandomInt(6, 8);
+    var numApplications = getRandomInt(8, 19);
     console.log(numApplications);
     var a = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19];
     var apps = shuffle(a);
@@ -302,14 +302,14 @@ module.exports = function(DemoUpload) {
     });
   };
 
-  var progressCandidate = function(apps, progressArr, progressDone) {
+  var progressCandidate = function(apps, job, progressArr, progressDone) {
     //for each application...
     console.log("in progress of candidate");
     async.eachSeries(apps, function(app, appDone) {
       //for each progress state....
       async.eachSeries(progress[progressArr], function(progression, donePro) {
         progression.userId = applicants[app].userId;
-        progression.jobId = applicants[app].jobId;
+        progression.jobId = jobs[job].jobId;
         console.log(progression);
         request({
           url: baseUrl + 'BaseApplicants/updateProgress', //URL to hit        
@@ -321,12 +321,12 @@ module.exports = function(DemoUpload) {
         }, function(error, response, body) {
 
           if (error) {
-            console.log(error);
+            //console.log(error);
             return donePro(error);
           }
           else {
             console.log("uploaded");
-            console.log(body);
+            //console.log(body);
 
             return donePro(null);
           }
@@ -334,12 +334,12 @@ module.exports = function(DemoUpload) {
       }, function(error, response, body) {
 
         if (error) {
-          console.log(error);
+          //console.log(error);
           return appDone(error);
         }
         else {
-          console.log("uploaded");
-          console.log(app);
+          //console.log("uploaded");
+          //console.log(app);
           return appDone(null);
         }
       });
@@ -368,7 +368,7 @@ module.exports = function(DemoUpload) {
     console.log("In progress");
     console.log(applyJob);
     if (applyJob.length <= 2) {
-      async.eachSeries(applyJob, function(appList, doneCallback) {
+      async.forEachOfSeries(applyJob, function(appList, key, doneCallback) {
           //hire first on the list
           //runHired(appList[0])
           //offer next set of people
@@ -378,37 +378,37 @@ module.exports = function(DemoUpload) {
           //slice up list
           var hiring = [appList[0]];
           var offers = appList.slice(1, numOffers)
-          var shortlist = appList.slice(numOffers, numShortLists);
-          var drop = appList.slice(numShortLists, appList.length - 1);
+          var shortlist = appList.slice(numOffers, numOffers + numShortLists);
+          var drop = appList.slice(numOffers + numShortLists, appList.length);
           console.log(appList);
-          console.log(appList[0]);
+          console.log(hiring);
           console.log(offers);
           console.log(shortlist);
           console.log(drop);
           async.series([
             function(cb) {
-              progressCandidate(hiring, 0, cb);
+              progressCandidate(hiring, key, 0, cb);
             },
             function(cb) {
-              progressCandidate(offers, 1, cb);
+              progressCandidate(offers, key, 1, cb);
             },
             function(cb) {
-              progressCandidate(shortlist, 2, cb);
+              progressCandidate(shortlist, key, 2, cb);
             },
             function(cb) {
-              progressCandidate(drop, 3, cb);
+              progressCandidate(drop, key, 3, cb);
             }
           ]);
           return doneCallback(null);
         },
         function(err) {
           if (err) {
-            console.log("Error uploading progress)");
-            console.log(err);
+            //console.log("Error uploading progress)");
+            //console.log(err);
             return next(err);
           }
           else {
-            console.log("Progress for applicants ");
+            //console.log("Progress for applicants ");
             return next(null);
           }
         });
@@ -416,14 +416,14 @@ module.exports = function(DemoUpload) {
     else {
       //runHired(applyJob[0])
       //offer next set of people
-      var numOffers = getRandomInt(2, (applyJob.length / 4));
+      var numOffers = getRandomInt(1, (applyJob.length / 4));
       //shortlist this set
-      var numShortLists = getRandomInt(2, (applyJob.length / 3));
+      var numShortLists = getRandomInt(1, (applyJob.length / 3));
       //slice up list
       var hiring = [applyJob[0]];
-      var offers = applyJob.slice(1, numOffers);
-      var shortlist = applyJob.slice(numOffers, numShortLists);
-      var drop = applyJob.slice(numShortLists, applyJob.length - 1);
+      var offers = applyJob.slice(0, numOffers);
+      var shortlist = applyJob.slice(numOffers, numOffers + numShortLists);
+      var drop = applyJob.slice(numOffers + numShortLists-1, applyJob.length);
       console.log(applyJob);
       console.log(applyJob[0]);
       console.log(offers);
