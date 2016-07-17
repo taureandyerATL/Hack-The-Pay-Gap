@@ -25,7 +25,7 @@ module.exports = function(DraftCheck) {
         attributes: draftAnalysis.strengthsAndWeaknesses
       };
       console.log(draftAnalysis.strengthsAndWeaknesses)
-      var genderscore = parseInt(draftAnalysis.masculineTerms) - parseInt(draftAnalysis.feminineTerms)
+      var genderscore = parseInt(draftAnalysis.feminineTerms) - parseInt(draftAnalysis.masculineTerms)
       console.log(genderscore);
       if (genderscore > 0) { //Gets female bias
         if (genderscore < 2) {

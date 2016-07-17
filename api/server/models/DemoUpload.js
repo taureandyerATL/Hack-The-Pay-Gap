@@ -93,9 +93,10 @@ module.exports = function(DemoUpload) {
       if (err) {
         next(err);
         return;
-      }
+      }else{
       console.log("drafts uploaded");
       return next(null);
+      }
     });
   }
   var sendJobs = function(job, done) {

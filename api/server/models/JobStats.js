@@ -1,3 +1,5 @@
+var async = require("async");
+
 module.exports = function(JobStats) {
     JobStats.newApplicant = function(percentile, jobId, gender, next) {
         console.log("ENTERING JOB STATS FOR " + jobId);
@@ -59,12 +61,14 @@ module.exports = function(JobStats) {
     }
 
     JobStats.getApplicantStats = function(jobId, next) {}
-    JobStats.getSankeyJSON = function(jobId, next) {
+    
+    JobStats.getSankey = function(jobId, next) {
             /*
             1. get female stats
             2. get male stats
             3. save to data in json Object formed to Sankey json
             */
+            //jobId = "job1";
             var stats = {}
             var genders = ["male", "female"];
             var progress = ["applied", "shortlisted", "offered", "hired"];
@@ -76,26 +80,22 @@ module.exports = function(JobStats) {
             sankeyJson.nodes.push({
                 "name": "applications"
             });
-            genders.forEach(function(gender) {
+            async.eachSeries(genders, function(gender, genderFinish){
+            //genders.forEach(function(gender) {
                 var lastState = "";
                 var lastProgress = "";
-                progress.forEach(function(state) {
+                async.eachSeries(progress, function(state, stateFinish){
                     console.log(state);
                     if (state == "applied") {
                         lastProgress = "applications";
                     }
                     var getProgress = {};
                     getProgress[state] = 1;
-                    console.log(getProgress)
-                    JobStats.app.models.ProjectApplication.count({
-                        where: {
-                            and: [{
-                                "sourceJobId": jobId
-                            }, {
-                                "gender": gender
-                            }, getProgress]
-                        }
-                    }, function(err, count) {
+                    console.log('$$$$$$$$$$$$$$$$$$');
+                    console.log(jobId);
+                    console.log(getProgress);
+                    console.log('$$$$$$$$$$$$$$$$$$');
+                    JobStats.app.models.ProjectApplication.count({and: [{"sourceJobId": jobId}, {"gender": gender}, getProgress]}, function(err, count) {
                         if (err) {
                             console.log("Error getting " + gender + " who " + state);
                             console.log(err);
@@ -106,7 +106,9 @@ module.exports = function(JobStats) {
                             console.log("Got count");
                             console.log(count)
                             if (!count) {
-
+                                console.log("NOT FOUND for ");
+                                console.log(getProgress);
+                                return
                             }
                             else {
                                 var name = state + " (" + gender + ")";
@@ -119,19 +121,77 @@ module.exports = function(JobStats) {
                                     "target": state + " (" + gender + ")",
                                     "value": count
                                 });
+                                console.log(sankeyJson);
+                                if(state != "hired"){
+                                    JobStats.app.models.ProjectApplication.count({and: [{"sourceJobId": jobId}, {"gender": gender}, getProgress, {"dropped": 1}]}, function(err, count) {
+                                        if (err) {
+                                            console.log("Error getting dropped" + gender + " who " + state);
+                                            console.log(err);
+                                            next(err)
+                                            return;
+                                        }
+                                        else {
+                                            console.log("Got dropped count");
+                                            console.log(count)
+                                            if (!count) {
+                                                console.log("NOT FOUND for DROPPED at ");
+                                                console.log(getProgress);
+                                                return
+                                            }
+                                            else {
+                                                var name = "Dropped at " + state;
+                                                var node = {
+                                                    "name": name
+                                                };
+                                                //will add the node if it doesn't exist
+                                                console.log(node)
+                                                if(sankeyJson.nodes.indexOf(node) < 0){
+                                                    sankeyJson.nodes.push(node);
+                                                }
+                                                sankeyJson.links.push({
+                                                    "source": state + " (" + gender + ")",
+                                                    "target": name,
+                                                    "value": count
+                                                });
+                                            }
+                                        }
+                                        //get last info
+                                        lastProgress = state + " (" + gender + ")";
+                                        lastState = state;
+                                        //console.log(sankeyJson);
+                                        stateFinish(null, sankeyJson);
+                                    });
+                                }else{
+                                    stateFinish(null, sankeyJson);
+                                }
                             }
-                            //get last info
-
-
-                            lastProgress = state + " (" + gender + ")";
-                            lastState = state;
                         }
                     });
-                    console.log(sankeyJson);
+                    //console.log(sankeyJson);
+                }, function(err){
+                  if (err) {
+                    next(err);
+                    return;
+                  }else{
+                  console.log("sankey made uploaded");
+                  console.log(sankeyJson);
+                  console.log("updated Sankey")
+                  return genderFinish(null, sankeyJson);
+                  }
                 });
-                console.log(sankeyJson);
-                next(null, sankeyJson);
-            });
+            }, function(err){
+                if (err) {
+                    next(err);
+                    return;
+                  }else{
+                  console.log("sankey made uploaded");
+                  console.log(sankeyJson);
+                  next(null, sankeyJson);
+                  return;
+                  //return sankeyJson;
+                  }
+                }
+            );
         }
         /*if(state != "hired"){
             var whenDropped = {}
@@ -400,7 +460,7 @@ module.exports = function(JobStats) {
         
     }
     
-    JobStats.getSankey = function(jobId, next) {
+    /*JobStats.getSankey = function(jobId, next) {
         var sankey = {
             "links": [{
                     "source": "Applications",
@@ -552,7 +612,7 @@ module.exports = function(JobStats) {
         };
         next(null, sankey);
         return;
-    }
+    }*/
     JobStats.buildSankey = function(stats) {
         var sankey = {
             "links": [{
