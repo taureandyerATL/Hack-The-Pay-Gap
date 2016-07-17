@@ -317,6 +317,7 @@ module.exports = function(BaseApplicant) {
                 profile.gender = genderInfo.photo.gender;
             }
         }
+        profile.gender=profile.gender.toLowerCase();
         var finalFunc = () => {
             console.log("COUNTRY USED: " + profile.country);
             // BaseApplicant.app.models.ProjectApplication
