@@ -47,6 +47,9 @@
     "JobStats": {
     "dataSource": "htpg_db"
   },
+    "UserStats": {
+    "dataSource": "htpg_db"
+  },
   "DraftCheck": {
     "dataSource": "htpg_db"
   },

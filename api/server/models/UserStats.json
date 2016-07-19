@@ -1,5 +1,5 @@
 {
-  "name": "JobStats",
+  "name": "UserStats",
   "base": "BaseModel",
   "idInjection": true,
   "options": {

@@ -295,8 +295,8 @@ module.exports = function(BaseApplicant) {
         });
     }
 
-    /* //Photo of Tyra Banks
-     var url = "http://images4.fanpop.com/image/photos/16500000/Smoke-eyes-pic-tyra-banks-16534918-450-450.jpg";
+    /* //Photo of Mary Hamilton
+     var url = "http://media.bizj.us/view/img/8995932/mary-hamiltonaccenture*320xx3733-5616-0-0.jpg";
      //Call above method
      getGenderByFace(url, function(result) {
          if (result.code) {
