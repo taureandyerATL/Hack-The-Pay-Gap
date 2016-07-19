@@ -1,0 +1,118 @@
+{
+  "name": "UserStats",
+  "base": "BaseModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "maleCount": {
+      "type": "number"
+    },
+    "femaleCount": {
+      "type": "number"
+    },
+    "ExpectedJobCategoryPercent": {
+      "type": "number"
+    },
+    "maleMin": {
+      "type": "number"
+    },
+    "maleMax": {
+      "type": "number"
+    },
+    "femaleMin": {
+      "type": "number"
+    },
+    "femaleMax": {
+      "type": "number"
+    },
+    "maleAve": {
+      "type": "number"
+    },
+    "femaleAve": {
+      "type": "number"
+    },
+    "industryAve": {
+      "type": "number"
+    },
+    "sourceJobId": {
+      "type": "string"
+    },
+    "sourceUserId": {
+      "type": "string"
+    },
+    "jobDescriptionScore": {
+      "type": "number"
+    },
+    "genderBias": {
+      "type": "string"
+    },
+    "strengthsAndWeaknesses": {
+        "type": "array"
+    },
+    "internalProficiency": {
+      "type": "string"
+    },
+    "externalProficiency": {
+      "type": "string"
+    },
+    "skills": {
+      "type": "array"
+    },
+    "applicantCount": {
+      "type": "number"
+    },
+    "maleapplied": {
+      "type": "number",
+      "default":0
+    },
+    "maleshortlisted": {
+      "type": "number",
+      "default":0
+    },
+    "maleoffered": {
+      "type": "number",
+      "default":0
+    },
+    "malehired": {
+      "type": "number",
+      "default":0
+    },
+    "femaleapplied": {
+      "type": "number",
+      "default":0
+    },
+    "femaleshortlisted": {
+      "type": "number",
+      "default":0
+    },
+    "femaleoffered": {
+      "type": "number",
+      "default":0
+    },
+    "femalehired": {
+      "type": "number",
+      "default":0
+    },
+    "targetPercent": {
+      "type": "number",
+      "default":0
+    }
+  },
+  "validations": [],
+  "relations": {
+        "job": {
+            "type": "belongsTo",
+            "model": "Job",
+            "foreignKey":""
+        },
+        "applications": {
+            "type": "hasMany",
+            "model": "ProjectApplication",
+            "foreignKey": "jobId"
+        }
+  },
+  "acls": [],
+  "methods": {}
+}

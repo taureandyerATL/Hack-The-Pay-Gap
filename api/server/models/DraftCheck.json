@@ -19,17 +19,14 @@
         "draftId": {
             "type": "string"
         },
-        "textioDocId": {
+        "toolDocId": {
             "type": "string"
         },
-        "textioSessionId": {
+        "toolSessionId": {
             "type": "string"
         },
-        "textioWeaknesses": {
-            "type": "string"
-        },
-        "textioStrenghts": {
-            "type": "string"
+        "foundStrenghtsandWeaknesses": {
+            "type": "array"
         },
         "jobPostSourceId": {
             "type": "string"
@@ -48,10 +45,25 @@
         },
         "posted": {
             "type": "boolean"
+        },
+        "jobId": {
+            "type": "string"
+        },
+        "draftScore": {
+            "type": "number"
+        },
+        "draftBias": {
+            "type": "string"
         }
     },
     "validations": [],
-    "relations": {},
+    "relations": {
+        "job": {
+            "type": "belongsTo",
+            "model": "Job",
+            "foreignKey":""
+        }
+    },
     "acls": [],
     "methods": []
 }

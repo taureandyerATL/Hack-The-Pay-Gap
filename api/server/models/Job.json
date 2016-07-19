@@ -18,13 +18,28 @@
         "postedMarkets": {
             "type": "array"
         },
+        "meritTask": {
+            "type": "boolean"
+        },
+        "jobDescriptionScore": {
+            "type": "number"
+        },
+        "genderBias": {
+            "type": "string"
+        },
+        "strengthsAndWeaknesses": {
+            "type": "array"
+        },
         "draftId": {
             "type": "string"
         },
-        "textioDocId": {
+        "toolDocId": {
             "type": "string"
         },
         "jobPostSourceId": {
+            "type": "string"
+        },
+        "source": {
             "type": "string"
         },
         "posterId": {
@@ -44,20 +59,25 @@
             "model": "Project",
             "foreignKey": "projectId"
         },
-        "relJobDrafts": {
+        "drafts": {
             "type": "hasMany",
-            "model": "JobDescriptionAnalysis",
-            "foreignKey": "draftAnalysisId"
+            "model": "DraftCheckraft",
+            "foreignKey": "jobId"
         },
         "relRole": {
             "type": "hasMany",
             "model": "Role",
             "foreignKey": "applicantionId"
         },
-        "relApplicants": {
-            "type": "hasAndBelongsToMany",
-            "model": "BaseApplicant",
-            "foreignKey": "applicantId"
+        "stats": {
+            "type": "hasOne",
+            "model": "JobStats",
+            "foreignKey": "jobId"
+        },
+        "applications": {
+            "type": "hasMany",
+            "model": "ProjectApplication",
+            "foreignKey": "jobId"
         }
     },
     "acls": [],

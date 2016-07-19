@@ -79,10 +79,10 @@
     },
     "validations": [],
     "relations": {
-        "relProjectApplications": {
+        "Applications": {
             "type": "hasMany",
             "model": "ProjectApplication",
-            "foreignKey": "applicantionId"
+            "foreignKey": "applicantId"
         }
     },
     "acls": [],
