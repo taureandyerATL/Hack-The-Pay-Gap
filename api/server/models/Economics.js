@@ -5,7 +5,7 @@ var _ = require('lodash');
 var request = require("request");
 var math = require('mathjs');
 /**MIDAAS API KEY**/
-var MIDAAS_API_KEY = "Xlu19QS9DBy29a7gj8DN0tTSKmfRmTv3ewDV1yD6";
+var MIDAAS_API_KEY = "<<you have to get your own key!>>";
 
 
 module.exports = function(Economics) {
